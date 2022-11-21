@@ -13,7 +13,7 @@ var search = function(nums, target) {
         const ans = search(nums.slice(0,mi),target);
         return ans === -1 ? -1 : ans;
     } else {
-        const ans = search(nums.slice(mi+1,nums.length),target);
+        const ans = search(nums.slice(mi+1),target);
         return ans === -1 ? -1 : mi + ans + 1;
     }
 }
