@@ -10,7 +10,7 @@ var canConstruct = function(ransomNote, magazine) {
     while(!missing && ransomLetters.length){
         let char = ransomLetters.shift();
         let index = letters.indexOf(char);
-        console.log( char, index );
+        // console.log( char, index );
         if(index === -1){
             missing = true;
         } else {
