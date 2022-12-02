@@ -16,7 +16,7 @@ var isBalanced = function(root) {
 };
 
 const height = (root) => {
-        if(!root){ return 0 }
+    if(!root){ return 0 }
 
     if(!root.left && !root.right){
         return 1;
@@ -26,7 +26,7 @@ const height = (root) => {
 }
 
 const nodeIsBalanced = function(root) {
-        if(!root){ return true }
+    // if(!root){ return true }
 
     const left = root.left ? height(root.left) : 0;
     const right = root.right ? height(root.right) : 0;
