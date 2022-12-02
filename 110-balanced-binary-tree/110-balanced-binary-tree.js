@@ -18,11 +18,11 @@ var isBalanced = function(root) {
 const height = (root) => {
     if(!root){ return 0 }
 
-    if(!root.left && !root.right){
-        return 1;
-    } else {
+    // if(!root.left && !root.right){
+    //     return 1;
+    // } else {
         return Math.max(height(root.left),height(root.right)) + 1;
-    }
+    // }
 }
 
 const nodeIsBalanced = function(root) {
