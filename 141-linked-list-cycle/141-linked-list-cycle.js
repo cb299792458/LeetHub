@@ -11,10 +11,8 @@
  * @return {boolean}
  */
 var hasCycle = function(head, history = []) {
+    if(!head){return false}
     if(history.includes(head)){return true}
     history.push(head);
-    if(!head){return false}
     return hasCycle(head.next, history);
-
-       
 };
