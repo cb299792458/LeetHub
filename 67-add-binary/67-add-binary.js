@@ -12,7 +12,7 @@ var addBinary = function(a, b) {
     let answer = '';
     
     while(digitsA[place] !== undefined || digitsB[place] !== undefined || carry){
-        let sum = (digitsA[place] ? 1 : 0) + (digitsB[place] ? 1 : 0) + carry;
+        let sum = (digitsA[place] || 0) + (digitsB[place] || 0) + carry;
         
         if(sum > 1){
             carry = 1;
