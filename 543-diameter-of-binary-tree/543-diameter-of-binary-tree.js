@@ -11,11 +11,6 @@
  * @return {number}
  */
 var diameterOfBinaryTree = function(root) {
-    // let diameter = 0;
-    // if(root.left){diameter += height(root.left)}
-    // if(root.right){diameter += height(root.right)}
-    // return diameter;
-    
     if(!root){return 0}
     let left = diameterOfBinaryTree(root.left);
     let right = diameterOfBinaryTree(root.right);
