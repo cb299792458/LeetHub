@@ -3,13 +3,7 @@
  * @return {boolean}
  */
 var containsDuplicate = function(nums) {
-    let contained = [];
-    let ans = false;
-    nums.forEach((num)=>{
-        if(contained.includes(num)){
-            ans = true;
-        }
-        contained.push(num);
-    });
-    return ans;
+    const set = new Set(nums);
+    // console.log(set.entries());
+    return set.size !== nums.length;
 };
