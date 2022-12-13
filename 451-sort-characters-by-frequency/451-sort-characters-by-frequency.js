@@ -24,11 +24,7 @@ var frequencySort = function(s) {
         
         if(amount === 0){continue}
         
-        // for(let j = 0; j < amount; j++){
-            // output += char;
-            charAmount[char] = [char,amount];
-        // }
-        
+        charAmount[char] = [char,amount];
         
     }
     let toSort = Object.values(charAmount);
