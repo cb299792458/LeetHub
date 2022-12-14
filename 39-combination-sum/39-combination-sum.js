@@ -20,8 +20,6 @@ var combinationSum = function(candidates, target) {
     };
     
     dfs(target,[]);
-    console.log(combos);
-    // return combos.entries();
     
     let ans = [];
     let alreadyIn = [];
