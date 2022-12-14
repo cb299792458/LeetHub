@@ -28,8 +28,8 @@ var rightSideView = function(root) {
         }
     }
 
-    answer.forEach(ode => {
-        result.push(ode)
+    answer.forEach(node => {
+        result.push(node)
     })
 
     return result
