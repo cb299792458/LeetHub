@@ -9,7 +9,6 @@ var minSubArrayLen = function(target, nums) {
     let length = Infinity;
     let sum = 0;
     while(left <= nums.length){
-        // console.log(`left is ${left} and right is ${right} and sum is ${sum}`)
         if(sum<target && right<nums.length){
             sum += nums[right];
             right++;
