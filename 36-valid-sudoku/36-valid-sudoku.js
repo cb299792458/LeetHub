@@ -12,7 +12,9 @@ var isValidSudoku = function(board) {
             
             if(!rows[i]){rows[i] = new Set();}
             if(!cols[j]){cols[j] = new Set();}
-            if(!boxs[[Math.floor(i/3),Math.floor(j/3)]]){boxs[[Math.floor(i/3),Math.floor(j/3)]] = new Set();}
+            if(!boxs[[Math.floor(i/3),Math.floor(j/3)]]){
+                boxs[[Math.floor(i/3),Math.floor(j/3)]] = new Set();
+            }
             
             if(rows[i].has(board[i][j])){
                 return false;
@@ -31,7 +33,6 @@ var isValidSudoku = function(board) {
             } else if(board[i][j] !== '.'){
                 boxs[[Math.floor(i/3),Math.floor(j/3)]].add(board[i][j]);
             }
-            console.log(boxs)
         }
     }
 
