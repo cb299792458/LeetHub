@@ -31,6 +31,6 @@ var rightSideView = function(root) {
     answer.forEach(node => {
         result.push(node)
     })
-
+    console.log(result)
     return result
 };
