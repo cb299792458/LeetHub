@@ -14,8 +14,7 @@ var KthLargest = function(k, nums) {
 KthLargest.prototype.add = function(val) {
     this.elements.push(val);
     this.elements = this.elements.sort((a,b)=>{return a-b});
-    let index = this.elements.length > 2 ? -3 : -1;
-    console.log(this.elements)
+
     return this.elements.at(-this.k)
 };
 
