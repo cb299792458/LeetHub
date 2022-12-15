@@ -13,7 +13,7 @@ var updateMatrix = function(mat) {
             }
         }
     }
-    console.log(res)
+    // console.log(res)
 
     let directions = [[1,0], [0,1], [-1,0], [0,-1]]
     while (queue.length > 0) {
