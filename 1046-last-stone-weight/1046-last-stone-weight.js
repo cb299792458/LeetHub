@@ -3,6 +3,9 @@
  * @return {number}
  */
 var lastStoneWeight = function(stones) {
+    
+    // make a heap, much faster
+    
     while(stones.length>1){
         stones = stones.sort((a,b)=>{return a-b});
         console.log(stones);
