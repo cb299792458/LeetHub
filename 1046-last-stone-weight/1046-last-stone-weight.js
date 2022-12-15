@@ -18,13 +18,13 @@ var lastStoneWeight = function(stones) {
     return queue.size() === 0 ? 0 : queue.front().element
 
     
-    while(stones.length>1){
-        stones = stones.sort((a,b)=>{return a-b});
-        console.log(stones);
-        let x = stones.pop();
-        let y = stones.pop();
-        if(x === y) continue;
-        stones.push(x-y);
-    }
-    return stones[0] ? stones[0] : 0;
+    // while(stones.length>1){
+    //     stones = stones.sort((a,b)=>{return a-b});
+    //     console.log(stones);
+    //     let x = stones.pop();
+    //     let y = stones.pop();
+    //     if(x === y) continue;
+    //     stones.push(x-y);
+    // }
+    // return stones[0] ? stones[0] : 0;
 };
