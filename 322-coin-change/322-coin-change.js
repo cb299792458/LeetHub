@@ -18,6 +18,6 @@ var coinChange = function(coins, amount, memo = {}) {
         }
     }
     // console.log(memo)
-            memo[amount] = res;
+    memo[amount] = res;
     return res===Infinity ? -1 : res;
 };
