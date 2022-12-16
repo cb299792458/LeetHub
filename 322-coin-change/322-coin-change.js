@@ -9,15 +9,8 @@ var coinChange = function(coins, amount, memo = {}) {
     
     // check the memo
     if(memo[amount]) return memo[amount];
-    
-    // sort to try biggest coins first
-    // coins = coins.sort((a,b)=>{return b-a})
-    
+
     let minimumCoins = Infinity;
-    
-    // remove biggest coin
-    // let coinsCopy = coins.slice();
-    
     
     for(let coin of coins){
         
@@ -27,7 +20,7 @@ var coinChange = function(coins, amount, memo = {}) {
             minimumCoins = current;
         }
     }
-    // console.log(memo)
+
     return minimumCoins === Infinity ? -1 : minimumCoins;
     
 };
