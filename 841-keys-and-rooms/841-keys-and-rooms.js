@@ -9,9 +9,12 @@ var canVisitAllRooms = function(rooms) {
     const explore = (roomId) => {
         if(!visitedRooms.has(roomId)){
             visitedRooms.add(roomId);
-            rooms[roomId].forEach((keyId)=>{
-                explore(keyId);
-            });
+            // rooms[roomId].forEach((keyId)=>{
+            //     explore(keyId);
+            // });
+            for(let key of rooms[roomId]){
+                explore(key);
+            }
         }
     };
     
