@@ -17,7 +17,6 @@ var coinChange = function(coins, amount, memo = {}) {
             res = Math.min(res,newAns+1)
         }
     }
-    // console.log(memo)
     memo[amount] = res;
     return res===Infinity ? -1 : res;
 };
