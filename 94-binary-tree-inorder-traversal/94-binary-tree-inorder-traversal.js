@@ -12,7 +12,8 @@
  */
 var inorderTraversal = function(root) {
     if(!root) return [];
-    const left = root.left ? inorderTraversal(root.left) : [];
-    const right = root.right ? inorderTraversal(root.right) : [];
-    return left.concat([root.val]).concat(right);
+    // const left = root.left ? inorderTraversal(root.left) : [];
+    // const right = root.right ? inorderTraversal(root.right) : [];
+    // return left.concat([root.val]).concat(right);
+    return inorderTraversal(root.left).concat([root.val]).concat(inorderTraversal(root.right));
 };
