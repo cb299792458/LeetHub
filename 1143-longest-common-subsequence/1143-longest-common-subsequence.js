@@ -22,7 +22,7 @@ var longestCommonSubsequence = function(text1, text2) {
     for (let row = 1; row < dp.length; row++) {
         for (let col = 1; col < dp[0].length; col++) {
             if(text1[row-1] === text2[col-1]){
-                console.log(row,col)
+                // console.log(row,col)
                 dp[row][col] = dp[row-1][col-1] + 1;
             } else {
                 dp[row][col] = Math.max( dp[row-1][col], dp[row][col-1] );
@@ -30,6 +30,6 @@ var longestCommonSubsequence = function(text1, text2) {
         }
     };
     
-    console.log(dp);
+    // console.log(dp);
     return dp.at(-1).at(-1);
 };
