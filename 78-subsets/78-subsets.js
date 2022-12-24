@@ -8,7 +8,7 @@ var subsets = function(nums) {
     const results = [];
     const first = nums.shift();
     const nextSets = subsets(nums);
-    console.log(nextSets)
+
     for(let i=0;i<nextSets.length;i++){
         const nextSet = nextSets[i];
         results.push(nextSet);
