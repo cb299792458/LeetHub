@@ -3,12 +3,10 @@
  * @return {number}
  */
 var evalRPN = function(tokens) {
-    // console.log(parseInt(tokens[0]))
     let nums = [];
 
     for(let str of tokens){
         if(['+','-','*','/'].includes(str)){
-            // console.log(str)
             let first = nums.pop();
             let second = nums.pop();
             let result;
@@ -35,7 +33,6 @@ var evalRPN = function(tokens) {
         } else {
             nums.push(parseInt(str));
         }
-    console.log(nums)
     }
     return nums[0]
 };
