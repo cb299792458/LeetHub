@@ -9,7 +9,7 @@ var findMinArrowShots = function(points) {
     
     let arrows = [-Infinity];
     for(let i=0;i<points.length;i++){
-        if(arrows.at(-1)>points[i][1] || arrows.at(-1)<points[i][0]){
+        if(arrows.at(-1)<points[i][0]){
             arrows.push(points[i][1])
         }
     }
