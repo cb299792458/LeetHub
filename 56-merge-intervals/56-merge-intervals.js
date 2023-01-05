@@ -17,7 +17,6 @@ var merge = function(intervals) {
         if(prev[1]<interval[0]){
             res.push(prev);
             prev = interval;
-            // continue;
         } else if(prev[1]<interval[1]){
             prev[1] = interval[1];
         }
