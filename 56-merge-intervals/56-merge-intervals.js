@@ -18,10 +18,8 @@ var merge = function(intervals) {
             res.push(prev);
             prev = interval;
             continue;
-        } else {
-            if(prev[1]<interval[1]){
-                prev[1] = interval[1];
-            }
+        } else if(prev[1]<interval[1]){
+            prev[1] = interval[1];
         }
     }
     
