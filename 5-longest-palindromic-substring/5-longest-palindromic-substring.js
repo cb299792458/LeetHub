@@ -23,9 +23,7 @@ var longestPalindrome = function(s) {
         for(let k=0;;k++){
             if(s[i-k] && s[i+k+1] && s[i-k] === s[i+k+1]){
                 evenCurrent = s[i-k] + evenCurrent + s[i+k+1];
-            } else {
-                break;
-            }
+            } else break
         }
         if(longest.length<evenCurrent.length) longest = evenCurrent;
         
