@@ -24,6 +24,6 @@ var canCompleteCircuit = function(gas, cost) {
     
     
     if(gasTotal<0) return -1
-    if(beforeStart === gas.length-1) beforeStart = -1;
+    if(beforeStart === gas.length-1) return 0;
     return beforeStart+1;
 };
