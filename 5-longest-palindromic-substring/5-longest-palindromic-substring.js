@@ -4,9 +4,7 @@
  */
 var longestPalindrome = function(s) {
 
-    let dp = new Array(s.length);
     let longest = '';
-    
     
     for(let i=0;i<s.length;i++){
         let oddCurrent = s[i];
