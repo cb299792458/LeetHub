@@ -15,7 +15,7 @@ var longestPalindrome = function(s) {
                 oddCurrent = s[i-j] + oddCurrent + s[i+j];
             } else break;
         }
-        if(longest.length < oddCurrent.length) longest = oddCurrent;
+        if(longest.length<oddCurrent.length) longest = oddCurrent;
         
         let evenCurrent = '';
         for(let k=0;;k++){
