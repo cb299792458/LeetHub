@@ -9,13 +9,7 @@ var canCompleteCircuit = function(gas, cost) {
     let gasTotal = 0;
     
     for(let i in gas){
-        // let thisLoss = cost[i] - gas[i];
-        // if(thisLoss >= biggestLoss){
-        //     biggestLoss = thisLoss;
-        //     beforeStart = parseInt(i);
-        // }
-        gasTotal += gas[i];
-        gasTotal -= cost[i];
+        gasTotal += gas[i] - cost[i];
         if(gasTotal<=minGas){
             minGas = gasTotal;
             beforeStart = parseInt(i);
