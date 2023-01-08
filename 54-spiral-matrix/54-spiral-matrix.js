@@ -28,7 +28,7 @@ var spiralOrder = function(matrix) {
             res.push(matrix[r][c]);
         }
         
-        
+        // Set new coordinates, if they are out of bounds, set them back and rotate direction using modulo
         [r,c] = [r+dirs[dirIdx%4][0],c+dirs[dirIdx%4][1]];
         if(out.includes(`${r},${c}`)){
             [r,c] = [r-dirs[dirIdx%4][0],c-dirs[dirIdx%4][1]];
