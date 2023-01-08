@@ -29,10 +29,12 @@ var spiralOrder = function(matrix) {
         }
         
         // Set new coordinates, if they are out of bounds, set them back and rotate direction using modulo
-        [r,c] = [r+dirs[dirIdx%4][0],c+dirs[dirIdx%4][1]];
-        if(out.includes(`${r},${c}`)){
-            [r,c] = [r-dirs[dirIdx%4][0],c-dirs[dirIdx%4][1]];
+        let newCoords = [r+dirs[dirIdx%4][0],c+dirs[dirIdx%4][1]];
+        if(out.includes(`${newCoords[0]},${newCoords[1]}`)){
+            // [r,c] = [r-dirs[dirIdx%4][0],c-dirs[dirIdx%4][1]];
             dirIdx++;
+        } else {
+            [r,c] = newCoords;
         }
         
     }
