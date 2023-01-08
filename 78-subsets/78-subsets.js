@@ -12,7 +12,7 @@ var subsets = function(nums) {
     for(let i=0;i<nextSets.length;i++){
         const nextSet = nextSets[i];
         results.push(nextSet);
-        results.push(nextSet.concat(first));
+        results.push([first].concat(nextSet));
     }
     return results;
 };
