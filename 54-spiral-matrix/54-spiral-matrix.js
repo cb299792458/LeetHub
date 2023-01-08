@@ -22,7 +22,7 @@ var spiralOrder = function(matrix) {
     let res = [];
     while(res.length < rows*cols){
         
-        // Add new element to res
+        // Add new element to res, if it isn't already there
         if(!out.includes(`${r},${c}`)){
             out.push(`${r},${c}`);
             res.push(matrix[r][c]);
