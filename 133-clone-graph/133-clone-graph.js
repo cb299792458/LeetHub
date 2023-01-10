@@ -20,29 +20,8 @@ var cloneGraph = function(node, copies = {}) {
             copies[node.val].neighbors.push(cloneGraph(neighbor,copies));
         }
         
-    } else {
-        return copies[node.val];
-    }
+    } 
     
     return copies[node.val]
-    
-//     if(node.val){
-//         let copy = new Node(node.val,[]);
-//         node.val = undefined;
-        
-//         for(let neighbor of node.neighbors){
-//             neighborCopy = cloneGraph(neighbor);
-//             if(neighborCopy){
-//                 copy.neighbors.push(neighborCopy);
-//             }
-            
-//         }
-        
-//         console.log(copy)
-//         return copy;
-        
-//     } else {
-//         return;
-//     }
     
 };
