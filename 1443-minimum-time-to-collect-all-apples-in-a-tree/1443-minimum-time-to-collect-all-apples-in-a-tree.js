@@ -30,12 +30,8 @@ var minTime = function(n, edges, hasApple) {
         return res;
     }
 
-    findMustVisitNodes(0);
-    // let count = -1;
-    // for(let node of mustVisitMemo){
-    //     if(node) count++;
-    // }
-    return Math.max(count*2,0);
+    findMustVisitNodes(0); // Start checking from root, to avoid counting dead ends w/o apples
+    return Math.max(count*2,0); // For each visited node, must travel there and back.
 };
 
 const buildGraph = function(edges){
