@@ -10,11 +10,19 @@
  * @return {ListNode}
  */
 var middleNode = function(head) {
-    let arr = [];
-    while(head){
-        arr.push(head);
-        head = head.next;
+    // let arr = [];
+    // while(head){
+    //     arr.push(head);
+    //     head = head.next;
+    // }
+    // // console.log(arr);
+    // return arr[Math.floor((arr.length)/2)];
+    let slow = head;
+    let fast = head;
+    while(fast && fast.next){
+        if(fast && fast.next) fast = fast.next.next;
+        
+        slow = slow.next;
     }
-    // console.log(arr);
-    return arr[Math.floor((arr.length)/2)];
+    return slow;
 };
