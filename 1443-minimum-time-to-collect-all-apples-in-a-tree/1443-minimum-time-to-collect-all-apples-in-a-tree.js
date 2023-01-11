@@ -6,6 +6,7 @@
  */
 var minTime = function(n, edges, hasApple) {
     const graph = buildGraph(edges);
+    let count = -1; // Going to count every node that must be visited, except for root
     
     const checked = new Set;
     const mustVisitMemo = [];
@@ -23,17 +24,17 @@ var minTime = function(n, edges, hasApple) {
         for(let neighbor of graph[node]){ // If a node's descendent has an apple, it must be visited
             if(findMustVisitNodes(neighbor)) res = true;
         }
-        
+    
+        if(res) count++;
         mustVisitMemo[node] = res;
         return res;
     }
 
     findMustVisitNodes(0);
-    // console.log(mustVisitMemo)
-    let count = -1;
-    for(let node of mustVisitMemo){
-        if(node) count++;
-    }
+    // let count = -1;
+    // for(let node of mustVisitMemo){
+    //     if(node) count++;
+    // }
     return Math.max(count*2,0);
 };
 
