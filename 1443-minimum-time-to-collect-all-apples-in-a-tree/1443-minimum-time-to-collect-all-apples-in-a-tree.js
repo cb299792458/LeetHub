@@ -18,9 +18,9 @@ var minTime = function(n, edges, hasApple) {
         
         let res = false;
         
-        if(hasApple[node]) res = true;
+        if(hasApple[node]) res = true; // If node has an apple, it must be visited
         
-        for(let neighbor of graph[node]){
+        for(let neighbor of graph[node]){ // If a node's descendent has an apple, it must be visited
             if(findMustVisitNodes(neighbor)) res = true;
         }
         
@@ -29,7 +29,7 @@ var minTime = function(n, edges, hasApple) {
     }
 
     findMustVisitNodes(0);
-    console.log(mustVisitMemo)
+    // console.log(mustVisitMemo)
     let count = -1;
     for(let node of mustVisitMemo){
         if(node) count++;
