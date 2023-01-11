@@ -10,20 +10,20 @@ var floodFill = function(image, sr, sc, color) {
     return image;
 };
 
-const fill = function(image, sr, sc, color, prev){
+const fill = function(image, r, c, color, prev){
     if(
-        sr >= 0 &&
-        sc >= 0 &&
-        sr < image.length &&
-        sc < image[0].length &&
-        image[sr][sc] !== color &&
-        image[sr][sc] === prev
+        r >= 0 &&
+        c >= 0 &&
+        r < image.length &&
+        c < image[0].length &&
+        image[r][c] !== color &&
+        image[r][c] === prev
     ){
-        image[sr][sc] = color;
-        fill(image, sr + 1, sc, color, prev);
-        fill(image, sr - 1, sc, color, prev);
-        fill(image, sr, sc + 1, color, prev);
-        fill(image, sr, sc - 1, color, prev);
+        image[r][c] = color;
+        fill(image, r + 1, c, color, prev);
+        fill(image, r - 1, c, color, prev);
+        fill(image, r, c + 1, color, prev);
+        fill(image, r, c - 1, color, prev);
     }
     
 }
