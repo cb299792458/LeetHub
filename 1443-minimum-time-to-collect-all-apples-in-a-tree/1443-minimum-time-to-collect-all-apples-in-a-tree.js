@@ -18,21 +18,11 @@ var minTime = function(n, edges, hasApple) {
         
         let res = false;
         
-        if(hasApple[node]){
-            res = true;
+        if(hasApple[node]) res = true;
+        
+        for(let neighbor of graph[node]){
+            if(findMustVisitNodes(neighbor)) res = true;
         }
-        
-            for(let neighbor of graph[node]){
-                if(findMustVisitNodes(neighbor)){
-                    // mustVisitMemo[node] = true;
-                    // return true;
-                    res = true;
-                }
-            }
-        
-        
-
-        
         
         mustVisitMemo[node] = res;
         return res;
