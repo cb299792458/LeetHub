@@ -9,10 +9,10 @@ var minTime = function(n, edges, hasApple) {
     let count = -1; // Going to count every node that must be visited, except for root
     
     const checked = new Set;
-    const mustVisitMemo = [];
+    // const mustVisitMemo = [];
     
     const findMustVisitNodes = (node) => {
-        if(mustVisitMemo[node]!==undefined) return;
+        // if(mustVisitMemo[node]!==undefined) return;
         
         if(checked.has(node)) return;
         checked.add(node);
@@ -26,7 +26,7 @@ var minTime = function(n, edges, hasApple) {
         }
     
         if(res) count++;
-        mustVisitMemo[node] = res;
+        // mustVisitMemo[node] = res;
         return res;
     }
 
