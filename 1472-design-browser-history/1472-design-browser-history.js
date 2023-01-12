@@ -2,7 +2,7 @@
  * @param {string} homepage
  */
 var BrowserHistory = function(homepage) {
-    this.history =[homepage]
+    this.history = [homepage]
     this.currentPage = 0
 };
 /** 
