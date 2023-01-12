@@ -35,7 +35,7 @@ BrowserHistory.prototype.forward = function(steps) {
     if(this.history.length > steps + this.currentPage){
         this.currentPage += steps
     }else {
-        this.currentPage = this.history.length -1
+        this.currentPage = this.history.length - 1
     }
     return this.history[this.currentPage]
 };
