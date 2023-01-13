@@ -15,7 +15,6 @@ var canPartition = function(nums) {
         return false;
     }
 
-    // return canSum(nums,half);
     let possibilities = new Set;
     possibilities.add(0);
     for(let num of nums){
@@ -32,14 +31,4 @@ var canPartition = function(nums) {
     return false;
 };
 
-// const canSum = (originalNums,total) => {
-//     let nums = originalNums.slice();
-//     // console.log(nums,total)
-//     if(total<0) return false;
-//     if(total===0) return true;
-//     if(!nums.length) return false;
-    
-//     const num = nums.pop();
-//     return(canSum(nums,total-num) || canSum(nums,total));
-// }
 
