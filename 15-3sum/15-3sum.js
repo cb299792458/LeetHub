@@ -17,9 +17,7 @@ var threeSum = function(nums) {
                 let ans = [first, second, map[second]];
                 ans = ans.sort((a,b)=>a-b);
                 
-                if(set.has(`${ans[0]},${ans[1]},${ans[2]}`)){
-                    
-                } else {
+                if(!set.has(`${ans[0]},${ans[1]},${ans[2]}`)){
                     res.push(ans);
                     set.add(`${ans[0]},${ans[1]},${ans[2]}`)
                 }
