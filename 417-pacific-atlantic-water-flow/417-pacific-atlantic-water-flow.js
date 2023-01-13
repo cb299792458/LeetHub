@@ -12,14 +12,14 @@ var pacificAtlantic = function(heights) {
     
     const dirs = [[1,0],[0,1],[-1,0],[0,-1]];
     
-    const pSquares = {};
-    const aSquares = {};
+    const pSquares = new Set;
+    const aSquares = new Set;
     
     const dfs = (r,c,memo) => {
         const coords = `${r},${c}`;
-
-        if(memo[coords]) return;
-        memo[coords] = true;
+        if(memo.has(coords)) return;
+        memo.add(coords);
+        
         for(let dir of dirs){
             const newRow = r + dir[0];
             const newCol = c + dir[1];
@@ -44,7 +44,7 @@ var pacificAtlantic = function(heights) {
         for(let j = 0; j <= maxCol; j++){
             const coords = `${i},${j}`;
             
-            if(pSquares[coords]===true&&aSquares[coords]===true){
+            if(pSquares.has(coords)&&aSquares.has(coords)){
                 res.push([i,j]);
             }
         }
