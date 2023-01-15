@@ -20,7 +20,6 @@ class Solution:
 
             if(a_digit(i)):
                 carry += 1
-                # print(carry)
             if(b_digit(i)):
                 carry += 1
                 
