@@ -4,24 +4,24 @@ class Solution:
         def a_digit(i):
             a_start = len(a)-1
             if(a_start-i<0):
-                return '0'
-            return a[a_start-i]
+                return False
+            return a[a_start-i] == '1'
         
         def b_digit(i):
             b_start = len(b)-1
             if(b_start-i<0):
-                return '0'
-            return b[b_start-i]
+                return False
+            return b[b_start-i] == '1'
         
         
         res = ''
         carry = 0
         for i in range( 1 + max(len(a),len(b)) ):
 
-            if(a_digit(i)=='1'):
+            if(a_digit(i)):
                 carry += 1
                 # print(carry)
-            if(b_digit(i)=='1'):
+            if(b_digit(i)):
                 carry += 1
                 
             if(carry%2 == 1):
