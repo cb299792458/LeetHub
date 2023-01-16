@@ -24,6 +24,5 @@ var merge = function(nums1, m, nums2, n) {
             i++;
         } 
         
-        console.log(nums1,nums2,i,j)
     }
 };
