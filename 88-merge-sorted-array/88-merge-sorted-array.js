@@ -10,7 +10,7 @@ var merge = function(nums1, m, nums2, n) {
     
     while(i<m+n){
 
-        if(nums2[j]===undefined || (nums1[i] <= nums2[j] && i < m+j)){
+        if( nums2[j]===undefined || (nums1[i] <= nums2[j] && i < m+j)){
             i++;
         } else {
             let k = nums1.length-1;
