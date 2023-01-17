@@ -18,7 +18,7 @@ var goodNodes = function(root,largest = -Infinity) {
     if(!root){return 0}
     if(root.val >= largest){
         goodNode = 1;
-        largest = Math.max(largest,root.val);
+        largest = root.val;
     }
     
     return goodNode + goodNodes(root.left, largest) + goodNodes(root.right,largest);
