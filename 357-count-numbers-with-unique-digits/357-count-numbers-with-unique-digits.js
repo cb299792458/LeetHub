@@ -14,9 +14,8 @@ var countNumbersWithUniqueDigits = function(n) {
             multiplier--;
         }
         
-        dp.push(ans + dp.at(-1));
+        dp[i] = ans + dp[i-1];
     }
     
-    // console.log(dp)
     return dp[n];
 };
