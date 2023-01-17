@@ -3,18 +3,20 @@
  * @return {number}
  */
 var countNumbersWithUniqueDigits = function(n) {
-    if(n<1) return 1;
+    let dp = [1]
     
-    // answers with n digits
-    let ans = 9; // 9 choices for first digit
-    let multiplier = 9; // 10-1 choices for next digit
-    for(let digit = n; digit > 1 ; digit--){ // every following digit has one less choice
-        ans *= multiplier;
-        multiplier--;
+    for(let i=1;i<=n;i++){
+        console.log(i,dp)
+        let ans = 9; // 9 choices for first digit
+        let multiplier = 9; // 10-1 choices for next digit
+        for(let digit = i; digit > 1 ; digit--){ // every following digit has one less choice
+            ans *= multiplier;
+            multiplier--;
+        }
+        
+        dp.push(ans + dp.at(-1));
     }
     
-    // answers with n-1 digits
-    ans += countNumbersWithUniqueDigits(n-1);
-    
-    return ans;
+    // console.log(dp)
+    return dp[n];
 };
