@@ -8,15 +8,12 @@ var decodeString = function(s) {
     
     let i = 0;
     let repeats = 0;
-    
-    let prefix = ''
-    
+        
     while(!nums.includes(s[i]) && s[i]){
         i++;
     }
     
-    prefix = s.slice(0,i);
-    res += prefix;
+    res += s.slice(0,i);
     
     if(i===s.length) return res;
     
