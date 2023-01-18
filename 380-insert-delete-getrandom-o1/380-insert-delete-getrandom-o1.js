@@ -27,7 +27,7 @@ RandomizedSet.prototype.remove = function(val) {
  * @return {number}
  */
 RandomizedSet.prototype.getRandom = function() {
-    const entries = Array.from(this.set);
+    const entries = [...this.set]
     return entries[Math.floor(entries.length*Math.random())]
 };
 
