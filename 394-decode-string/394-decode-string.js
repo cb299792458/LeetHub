@@ -3,7 +3,6 @@
  * @return {string}
  */
 var decodeString = function(s) {
-    console.log(s)
     let res = ''
     let nums = '0123456789';
     
@@ -21,7 +20,6 @@ var decodeString = function(s) {
     
     if(i===s.length) return res;
     
-    console.log(res,i)
     while(nums.includes(s[i])){
         repeats *= 10;
         repeats += parseInt(s[i]);
