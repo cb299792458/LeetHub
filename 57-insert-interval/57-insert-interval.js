@@ -14,7 +14,6 @@ var insert = function(intervals, newInterval) {
 };
 
 function merge(intervals) {
-    console.log(intervals)
     let merged = true;
     while(merged === true){
         merged = false;
