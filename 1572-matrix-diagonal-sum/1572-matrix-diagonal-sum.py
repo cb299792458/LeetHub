@@ -1,6 +1,6 @@
 class Solution:
     def diagonalSum(self, mat: List[List[int]]) -> int:
-        # print(3//2)
+
         sum = 0
         for i in range(len(mat)):
             sum+=mat[i][i]
