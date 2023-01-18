@@ -19,7 +19,6 @@ var isAnagram = function(s, t) {
             counts[c] = -1;
         }
     }
-    // console.log(counts);
     let nums = Object.values(counts).filter((num)=>{
         return num != 0;
     })
