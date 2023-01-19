@@ -9,8 +9,6 @@ class Solution:
                     products[product] = 0
                 products[product] += 1
         
-        print(products)
-        
         count = 0
         for key in products:
             if products[key] > 1:
