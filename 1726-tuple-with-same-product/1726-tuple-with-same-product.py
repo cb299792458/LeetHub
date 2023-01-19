@@ -14,6 +14,6 @@ class Solution:
         count = 0
         for key in products:
             if products[key] > 1:
-                count+= products[key] * (products[key]-1)
+                count += products[key] * (products[key]-1)
             
         return count*4
