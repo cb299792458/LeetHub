@@ -8,7 +8,6 @@ var findSubsequences = function(nums) {
     const subsFromStart = function(start){
         let res = [];
         let first = nums[start];
-        let previous = first;
         for(let i=start+1;i<nums.length;i++){
             let temp = [];
             let current = nums[i];
