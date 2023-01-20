@@ -26,7 +26,6 @@ var invalidTransactions = function(transactions) {
         }
     }
     
-    return transactions.filter((transaction,index) => { // Use set of indices to avoid repeat
-        return res.has(index);
-    });
+    return transactions.filter( (transaction,index) => res.has(index) )// Use set of indices to avoid repeat
+
 };
