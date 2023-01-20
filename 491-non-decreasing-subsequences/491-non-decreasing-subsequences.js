@@ -24,8 +24,8 @@ var findSubsequences = function(nums) {
         return res
     } 
         
-    for(let left = 0; left<nums.length; left++){
-        res = res.concat(subsFromStart(left))
+    for(let i = 0; i<nums.length; i++){
+        res = res.concat(subsFromStart(i))
     }
     
     let finalRes = [];
@@ -37,6 +37,6 @@ var findSubsequences = function(nums) {
             finalRes.push(sub);
         }
     }
-    // finalRes.sort();
+
     return finalRes;
 };
