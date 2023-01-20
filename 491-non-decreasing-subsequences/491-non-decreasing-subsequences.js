@@ -37,7 +37,6 @@ var findSubsequences = function(nums) {
             finalRes.push(sub);
         }
     }
-    console.log(subsFromStart(0))
     finalRes.sort();
     return finalRes;
 };
