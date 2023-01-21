@@ -8,7 +8,6 @@ class Solution:
         for num in digits:
             temp = []
             for string in res:
-                
                 for char in letters[num]:
                     temp.append(string+char)
             res = temp
