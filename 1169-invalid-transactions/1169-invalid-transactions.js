@@ -16,7 +16,7 @@ var invalidTransactions = function(transactions) {
         }
         
         let j = i + 1;
-        while(transactions[j]){ // check for diff country
+        while(transactions[j] && transactions[j].split(',')[1] <= parseInt(t)+60 ){ // check for diff country
             const [n2,t2,a2,c2] = transactions[j].split(',');
             if( n===n2 && c!==c2 && t2-t <= 60){
                 res.add(i);
