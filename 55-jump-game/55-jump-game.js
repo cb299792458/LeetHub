@@ -9,7 +9,7 @@ var canJump = function(nums) {
     for(let i=0;i<nums.length;i++){
         if(dp[i]){
             for(let j=1;j<=nums[i];j++){
-                dp[i+j] = true;
+                if(!dp[i+j]) dp[i+j] = true;
             }
         }
     }
