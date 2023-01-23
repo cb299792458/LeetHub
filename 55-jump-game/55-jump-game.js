@@ -19,11 +19,8 @@ var canJump = function(nums) {
     let maxReach = 0;
     let i = 0;
     while(i<=maxReach && i < nums.length){
-        console.log(nums[i],i)
         maxReach = Math.max(maxReach,nums[i]+i);
         i++;
     }
-    
-        console.log(maxReach)
     return maxReach >= (nums.length - 1)
 };
