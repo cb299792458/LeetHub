@@ -1,7 +1,6 @@
 class Solution:
     def accountsMerge(self, accounts: List[List[str]]) -> List[List[str]]:
         skip = set()
-        res = []
         
         changed = True
         while changed:
@@ -30,8 +29,6 @@ class Solution:
                             
                 accounts[i] = [name] + emails
                 
-                
-        # print(accounts,skip)
-                    
+
             
         return [accounts[i] for i in range(0,len(accounts)) if i not in skip]
