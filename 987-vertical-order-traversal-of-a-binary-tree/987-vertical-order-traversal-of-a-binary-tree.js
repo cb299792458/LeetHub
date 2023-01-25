@@ -26,7 +26,6 @@ var verticalTraversal = function(root) {
     fillMap(root,0,0);
     let colIndices = Object.keys(nums);
     colIndices.sort((a,b)=>parseInt(a)-parseInt(b));
-    // console.log(nums);
     
     const ans = [];
     for(let colIndex of colIndices){
@@ -36,8 +35,6 @@ var verticalTraversal = function(root) {
         rowIndices.sort((a,b)=>parseInt(a)-parseInt(b));
         for(let rowIndex of rowIndices){
             nums[colIndex][rowIndex].sort((a,b)=>a-b)
-            // console.log(nums[colIndex][rowIndex])
-            // temp.push(nums[colIndex][rowIndex])
             temp = temp.concat(nums[colIndex][rowIndex])
         }
         
