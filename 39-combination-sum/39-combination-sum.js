@@ -4,31 +4,27 @@
  * @return {number[][]}
  */
 var combinationSum = function(candidates, target) {
-    let combos = [];
-    const dfs = (target, nums = []) => {
-        candidates.forEach((num)=>{
-            let thisTarget = target;
-            thisNums = nums.concat([num]);
-            thisTarget -= num;
-            if(thisTarget < 0){return}
-            if(thisTarget === 0){
-                combos.push(thisNums.sort());
-                return;
-            }
-            dfs(thisTarget,thisNums);
-        });
-    };
+    const ans = [];
+    const seen = new Set;
     
-    dfs(target,[]);
-    // return combos
-    let ans = [];
-    let alreadyIn = [];
-    for(let combo of combos){
-        if(!alreadyIn.includes(JSON.stringify(combo))){
-            alreadyIn.push(JSON.stringify(combo));
-            ans.push(combo);
+    function backtrack(combination,target){
+        if(target===0){
+            combination.sort()
+            if(!seen.has(combination.toString())){
+                seen.add(combination.toString())
+                ans.push(combination);
+            }
+            return;
+        }
+        
+        if(target<0){
+            return;
+        }
+        
+        for(let candidate of candidates){
+            backtrack([...combination,candidate], target - candidate);
         }
     }
-    
+    backtrack([],target);
     return ans;
 };
