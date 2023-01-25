@@ -24,10 +24,10 @@ var addTwoNumbers = function(l1, l2) {
     }
     
     let carry = 0;
-    let prev = null;
+    // let prev = null;
     let curr = null;
     while(stack1.length || stack2.length || carry){
-        prev = curr;
+        let prev = curr;
         
         const dig1 = stack1.pop();
         const dig2 = stack2.pop();
