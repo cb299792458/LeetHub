@@ -14,9 +14,7 @@ var binaryTreePaths = function(root) {
     const ans = new Set;
     
     function backtrack(node,path){
-        if(!node){
-            return;
-        }
+        if(!node) return;
         
         path.push(node.val);
         
