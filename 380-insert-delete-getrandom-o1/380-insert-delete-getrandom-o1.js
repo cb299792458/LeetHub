@@ -8,7 +8,7 @@ class RandomizedSet{
      * @param {number} val
      * @return {boolean}
      */
-    insert = function(val) {
+    insert(val) {
         let res = !this.set.has(val);
         this.set.add(val);
         return res;
@@ -18,7 +18,7 @@ class RandomizedSet{
      * @param {number} val
      * @return {boolean}
      */
-    remove = function(val) {
+    remove(val) {
         let res = this.set.has(val);
         this.set.delete(val);
         return res;
@@ -27,7 +27,7 @@ class RandomizedSet{
     /**
      * @return {number}
      */
-    getRandom = function() {
+    getRandom() {
         const entries = [...this.set]
         return entries[Math.floor(entries.length*Math.random())]
     }
