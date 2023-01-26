@@ -19,6 +19,5 @@ var numDecodings = function(s) {
         
 
     }
-    console.log(dp)
     return dp.at(-1);
 };
