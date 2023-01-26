@@ -10,8 +10,8 @@ var jump = function(nums) {
         for(let jumps = nums[i]; jumps > 0; jumps--){
             if(!memo[i+jumps]){
                 memo[i+jumps] = memo[i]+1;
-            } else {
-                memo[i+jumps] = Math.min(memo[i]+1,memo[i+jumps]);
+            // } else {
+            //     memo[i+jumps] = Math.min(memo[i]+1,memo[i+jumps]);
             }
             
         }
