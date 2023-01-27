@@ -6,17 +6,15 @@ var longestConsecutive = function(nums) {
     let hash = new Set(nums);
     let maxCount = 0;
     
-    nums.forEach((num) => {
-        if(hash.has(num-1)){return}
+    for(let num of nums){
+        if(hash.has(num-1)) continue;
         
-        let count = 0;
-        let start = num;
-        while(hash.has(num)){
-            count ++;
-            num ++;
+        let i = num;
+        while(hash.has(i)){
+            i++
         }
-        maxCount = Math.max(maxCount,count);
-    });
+        maxCount = Math.max(maxCount, i-num)
+    }
 
     return maxCount;
 };
