@@ -7,7 +7,7 @@ var findPeakElement = function(nums) {
     let left = 0;
     let right = nums.length - 1;
     
-    while(left <= right){
+    while(true){
         const mid = Math.floor((left+right)/2);
         if((nums[mid-1]===undefined || nums[mid]>nums[mid-1])&&(nums[mid+1]===undefined || nums[mid]>nums[mid+1])) return mid;
         if(nums[mid]<nums[mid+1]){
