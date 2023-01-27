@@ -18,7 +18,8 @@ class UndergroundSystem:
         self.closed_trips[route]['num'] += 1
 
     def getAverageTime(self, startStation: str, endStation: str) -> float:
-        return self.closed_trips[startStation+'-'+endStation]['sum']/self.closed_trips[startStation+'-'+endStation]['num']
+        route = self.closed_trips[startStation+'-'+endStation]
+        return route['sum']/route['num']
 
 
 # Your UndergroundSystem object will be instantiated and called as such:
