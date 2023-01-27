@@ -30,7 +30,5 @@ var findAnagrams = function(s, p) {
         }
     }
     
-    
-    
     return ans;
 };
