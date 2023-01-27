@@ -29,8 +29,6 @@ var lowestCommonAncestor = function(node, p, q, badMemo = new Set) {
         } else break
     }
     
-    
-    
     return current;
     
 };
