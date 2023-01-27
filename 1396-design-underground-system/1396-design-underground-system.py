@@ -1,8 +1,8 @@
 class UndergroundSystem:
 
     def __init__(self):
-        self.open_trips = {}
-        self.closed_trips = {}
+        self.open_trips = dict()
+        self.closed_trips = dict()
 
     def checkIn(self, id: int, stationName: str, t: int) -> None:
         self.open_trips[id] = {'start': stationName, 't': t}
