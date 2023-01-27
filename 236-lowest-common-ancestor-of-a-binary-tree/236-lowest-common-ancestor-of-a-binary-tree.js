@@ -11,7 +11,7 @@
  * @param {TreeNode} q
  * @return {TreeNode}
  */
-var lowestCommonAncestor = function(node, p, q, badMemo = new Set) {
+var lowestCommonAncestor = function(node, p, q) {
     // if(badMemo.has(node)) return false;
     
     const descendant = (node,child)=>{
