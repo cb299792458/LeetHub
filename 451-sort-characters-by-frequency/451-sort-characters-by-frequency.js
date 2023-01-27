@@ -36,9 +36,9 @@ var frequencySort = function(s) {
         return 1;
     });
     
-    for(let element of sorted){
+    for(let element of sorted){ // m = number of different characters
         let [char,amount] = element;
-        for(let i=0;i<amount;i++){
+        for(let i=0;i<amount;i++){ // n = amout of times character appears
             output += char;
         }
     }
