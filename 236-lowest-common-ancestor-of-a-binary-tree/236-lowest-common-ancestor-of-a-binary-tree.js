@@ -12,7 +12,6 @@
  * @return {TreeNode}
  */
 var lowestCommonAncestor = function(node, p, q) {
-    // if(badMemo.has(node)) return false;
     
     const descendant = (node,child)=>{
         if(!node) return false;
