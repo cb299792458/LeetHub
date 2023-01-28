@@ -4,9 +4,7 @@
  */
 var solveNQueens = function(n) {
     const ans = [];
-    
-    let seen = new Set;
-    
+       
     function parse(grid){
         let res = [];
         for(let i=0;i<n;i++){
