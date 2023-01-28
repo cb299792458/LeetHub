@@ -37,6 +37,7 @@ var solveNQueens = function(n) {
             sumdiags.add(row+col);
             difdiags.add(row-col);    
             grid[row][col] = 'Q';
+            
             backtrack(grid,queens+1,rows,cols,sumdiags,difdiags);
 
             rows.delete(row);
