@@ -34,17 +34,10 @@ KthLargest.prototype.add = function(val) {
     let newNode = new Node(val,n);
     p.next = newNode;
 
-    let current = this.head;
-    // while(current){
-    //     console.log(current.val);
-    //     current = current.next;
-    // }
-    
-    
+    let current = this.head;  
     
     for(let i=0;i<this.k;i++){
         if(current.next) current = current.next;
-//         // console.log(current)
     }
     
     return current.val;
