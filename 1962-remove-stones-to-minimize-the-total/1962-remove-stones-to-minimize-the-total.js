@@ -13,8 +13,9 @@ var minStoneSum = function(piles, k) {
     }
     for(let i=0;i<k;i++){
         let stones = queue.dequeue().element;
-        total -= Math.floor(stones/2);
-        stones -= Math.floor(stones/2);
+        let removed = Math.floor(stones/2);
+        total -= removed;
+        stones -= removed;
         queue.enqueue(stones);
     }
     
