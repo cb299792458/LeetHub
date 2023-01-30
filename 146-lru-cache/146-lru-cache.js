@@ -39,9 +39,6 @@ LRUCache.prototype.get = function(key) {
     node.next = second;
     second.prev = node;
 
-
-    
-    
     return node.val
 };
 
@@ -80,14 +77,6 @@ LRUCache.prototype.put = function(key, value) {
         this.tail.prev = nextToLast;
         this.map.delete(last.key);
     }
-    
-    
-    let c = this.head;
-    // while(c){
-    //     console.log(c.key, c.val);
-    //     c = c.next;
-    // }
-    
 };
 
 /** 
