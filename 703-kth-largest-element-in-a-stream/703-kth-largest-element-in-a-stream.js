@@ -2,9 +2,21 @@
  * @param {number} k
  * @param {number[]} nums
  */
+
+class Node{
+    constructor(val,next){
+        this.val = val;
+        this.next = next;
+    }
+}
 var KthLargest = function(k, nums) {
-    this.elements = [...nums].sort((a,b)=>{return a-b});
     this.k = k;
+    this.head = new Node(Infinity);
+    
+    for(let num of nums){
+        this.add(num);
+    }
+    
 };
 
 /** 
@@ -12,10 +24,30 @@ var KthLargest = function(k, nums) {
  * @return {number}
  */
 KthLargest.prototype.add = function(val) {
-    this.elements.push(val);
-    this.elements = this.elements.sort((a,b)=>{return a-b});
+    let p = this.head;
+    let n = p.next
+    while(n && n.val>val){
+        p = n;
+        n = n.next;
+    }
 
-    return this.elements.at(-this.k)
+    let newNode = new Node(val,n);
+    p.next = newNode;
+
+    let current = this.head;
+    // while(current){
+    //     console.log(current.val);
+    //     current = current.next;
+    // }
+    
+    
+    
+    for(let i=0;i<this.k;i++){
+        if(current.next) current = current.next;
+//         // console.log(current)
+    }
+    
+    return current.val;
 };
 
 /** 
