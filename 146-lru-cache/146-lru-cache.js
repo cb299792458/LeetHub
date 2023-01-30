@@ -13,8 +13,8 @@ class Node{
 var LRUCache = function(capacity) {
     this.capacity = capacity;
     this.map = new Map;
-    this.head = new Node('head','head');
-    this.tail = new Node('tail','tail');
+    this.head = new Node();
+    this.tail = new Node();
     this.head.next = this.tail;
     this.tail.prev = this.head;
 };
