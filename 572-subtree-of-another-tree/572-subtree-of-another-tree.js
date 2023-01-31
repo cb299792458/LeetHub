@@ -23,7 +23,6 @@ var isSameTree = function(p, q) {
 var isSubtree = function(root, subRoot) {
     
     if(!root) return !subRoot;
-    // if(!root)
     return isSameTree(root, subRoot) || isSubtree(root.left, subRoot) || isSubtree(root.right, subRoot)
 };
 
