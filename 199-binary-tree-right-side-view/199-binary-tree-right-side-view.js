@@ -12,25 +12,25 @@
  */
 var rightSideView = function(root) {
     //dfs
-    let stack = [{node: root, level: 1}]
-    let answer = new Map
-    let level = 1
-    let result = []
+    let stack = [{node: root, level: 1}];
+    let answer = new Map;
+    let level = 1;
+    let result = [];
 
     while(stack.length){
-        let curr = stack.pop()
+        let curr = stack.pop();
         if(curr.node){
-            if(!answer.has(curr.level)) answer.set(curr.level, curr.node.val)
+            if(!answer.has(curr.level)) answer.set(curr.level, curr.node.val);
 
-            if(curr.node.left) stack.push({node: curr.node.left, level: curr.level + 1})
-            if(curr.node.right) stack.push({node: curr.node.right, level: curr.level + 1})
+            if(curr.node.left) stack.push({node: curr.node.left, level: curr.level + 1});
+            if(curr.node.right) stack.push({node: curr.node.right, level: curr.level + 1});
 
         }
     }
 
     answer.forEach(node => {
-        result.push(node)
+        result.push(node);
     })
 
-    return result
+    return result;
 };
