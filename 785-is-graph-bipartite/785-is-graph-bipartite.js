@@ -36,7 +36,7 @@ var isBipartite = function(graph) {
         
         for(let connection of graph[currentNode]){
             if(currentSet.has(connection)){
-                console.log(a,b);
+                // console.log(a,b);
                 return false;
             } else {
                 otherSet.add(connection);
