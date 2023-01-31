@@ -15,6 +15,6 @@ var lastStoneWeight = function(stones) {
         if (first !== second) queue.enqueue(first-second)
     }
     
-    return queue.size() === 0 ? 0 : queue.front().element
+    return queue.isEmpty() ? 0 : queue.front().element
 
 };
