@@ -13,7 +13,7 @@
  * @return {Node}
  */
 var flatten = function(head, beforeHead=null, afterTail=null) {
-    if(!head) return null;
+    if(!head) return head;
     
     head.prev = beforeHead;
     if(beforeHead) beforeHead.next = head;
