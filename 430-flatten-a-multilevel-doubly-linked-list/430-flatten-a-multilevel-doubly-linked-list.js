@@ -40,7 +40,7 @@ var flatten = function(head, beforeHead=null, afterTail=null) {
         }
     }
 
-    if(current) current.next = afterTail;
+    current.next = afterTail;
     if(afterTail) afterTail.prev = current;
     
     return head;
