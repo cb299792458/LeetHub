@@ -15,7 +15,6 @@
 var flatten = function(head, beforeHead=null, afterTail=null) {
     if(!head) return null;
     
-    
     head.prev = beforeHead;
     if(beforeHead) beforeHead.next = head;
     
@@ -40,10 +39,7 @@ var flatten = function(head, beforeHead=null, afterTail=null) {
             current = current.next;
         }
     }
-    
-    
 
-    
     if(current) current.next = afterTail;
     if(afterTail) afterTail.prev = current;
     
