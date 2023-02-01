@@ -47,11 +47,5 @@ var flatten = function(head, beforeHead=null, afterTail=null) {
     if(current) current.next = afterTail;
     if(afterTail) afterTail.prev = current;
     
-    // let print = head;
-    // while(print){
-    //     console.log(print);
-    //     print=print.next;
-    // }
-    
     return head;
 };
