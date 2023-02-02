@@ -20,18 +20,27 @@ TimeMap.prototype.set = function(key, value, timestamp) {
  * @return {string}
  */
 TimeMap.prototype.get = function(key, timestamp) {
-    // if(!this.store[key]) return ""
-    return bsearch(this.store[key],timestamp);
-};
+    let store = this.store[key];
+    if(!store) return '';
 
-function bsearch(store,timestamp){
-    if(!store) return ''
-    if(store.length===1){
-        return store[0].timestamp <= timestamp ? store[0].value : '';
+    let left = 0, right = store.length-1;
+    if(timestamp<store[left].timestamp) return "";
+    if(timestamp>store[right].timestamp) return store[right].value;
+    
+    while(left<right){
+        let mid = Math.floor((left+right)/2);
+        if(store[mid].timestamp===timestamp) return store[mid].value;
+        if(store[mid].timestamp<timestamp){
+            left = mid+1;
+        }
+        if(store[mid].timestamp>timestamp){
+            right = mid-1;
+        }
+        
     }
-    const midIndex = Math.floor(store.length/2);
-    if(store[midIndex].timestamp > timestamp) return bsearch(store.slice(0,midIndex),timestamp);
-    return bsearch(store.slice(midIndex),timestamp);
+    console.log(left,right,timestamp);
+    if(store[left].timestamp===timestamp) return store[left].value;
+    return store[left-1].value;
     
 }
 
