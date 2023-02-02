@@ -14,7 +14,6 @@ var isAlienSorted = function(words, order) {
         return true;
     }
     
-    // console.log(sorted('asdfjb','asdfjh'))
     for(let i=0;i<words.length-1;i++){
         if(!sorted(words[i],words[i+1])) return false;
     }
