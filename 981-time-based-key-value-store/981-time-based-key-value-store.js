@@ -25,7 +25,6 @@ TimeMap.prototype.get = function(key, timestamp) {
 };
 
 function bsearch(store,timestamp){
-    // console.log(store)
     if(!store) return ''
     if(store.length===1){
         return store[0].timestamp <= timestamp ? store[0].value : '';
