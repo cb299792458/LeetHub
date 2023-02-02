@@ -38,7 +38,6 @@ TimeMap.prototype.get = function(key, timestamp) {
         }
         
     }
-    console.log(left,right,timestamp);
     if(store[left].timestamp===timestamp) return store[left].value;
     return store[left-1].value;
     
