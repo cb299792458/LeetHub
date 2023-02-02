@@ -11,8 +11,7 @@ var TimeMap = function() {
  */
 TimeMap.prototype.set = function(key, value, timestamp) {
     if(!this.store[key]) this.store[key] = [];
-    this.store[key].unshift({time:timestamp,val:value});
-    // this.store[key].sort((a,b)=>b.time-a.time);
+    this.store[key].push({timestamp,value});
 };
 
 /** 
@@ -22,11 +21,20 @@ TimeMap.prototype.set = function(key, value, timestamp) {
  */
 TimeMap.prototype.get = function(key, timestamp) {
     if(!this.store[key]) return ""
-    for(let pair of this.store[key]){
-        if(pair.time <= timestamp) return pair.val;
-    }
-    return ""
+    return bsearch(this.store[key],timestamp);
 };
+
+function bsearch(store,timestamp){
+    // console.log(store)
+    if(!store) return ''
+    if(store.length===1){
+        return store[0].timestamp <= timestamp ? store[0].value : '';
+    }
+    const midIndex = Math.floor(store.length/2);
+    if(store[midIndex].timestamp > timestamp) return bsearch(store.slice(0,midIndex),timestamp);
+    return bsearch(store.slice(midIndex),timestamp);
+    
+}
 
 /** 
  * Your TimeMap object will be instantiated and called as such:
