@@ -6,7 +6,6 @@
 var isAlienSorted = function(words, order) {
     function sorted(first,second){
         for(let i=0;i<first.length;i++){
-            console.log(first[i],second[i])
             if(first[i] && !second[i]) return false;
             if(order.indexOf(first[i])>order.indexOf(second[i])) return false;
             if(order.indexOf(first[i])<order.indexOf(second[i])) return true;
