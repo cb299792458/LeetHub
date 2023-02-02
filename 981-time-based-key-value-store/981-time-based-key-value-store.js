@@ -20,7 +20,7 @@ TimeMap.prototype.set = function(key, value, timestamp) {
  * @return {string}
  */
 TimeMap.prototype.get = function(key, timestamp) {
-    if(!this.store[key]) return ""
+    // if(!this.store[key]) return ""
     return bsearch(this.store[key],timestamp);
 };
 
