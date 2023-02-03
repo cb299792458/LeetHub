@@ -10,7 +10,7 @@ var convert = function(s, numRows) {
         arr[j] = [];
     }
     let i = 0;
-    console.log(arr);
+
     s.split('').forEach( (char) => {
         arr[i].push(char); 
         if(i===0){goingDown = true}
