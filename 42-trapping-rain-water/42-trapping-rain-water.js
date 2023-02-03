@@ -1,7 +1,3 @@
-/**
- * @param {number[]} height
- * @return {number}
- */
 var trap = function(height) {
     let area = 0;
     let left = 0;
@@ -23,6 +19,10 @@ var trap = function(height) {
             }
             right ++;
         } else {
+            // if(height[right+1] > height[right]){
+            //     left = right;
+            //     continue;
+            // }
             let enclosedHeight = Math.min(height[left],height[right])
 
             for(let mid=left+1;mid<right;mid++){
