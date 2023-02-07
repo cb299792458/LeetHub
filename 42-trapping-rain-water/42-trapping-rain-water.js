@@ -10,7 +10,6 @@ var trap = function(height) {
     for(let j=length-2;j>=0;j--){
         rightWall[j] = Math.max(rightWall[j+1],height[j+1]);
     }
-    console.log(leftWall,rightWall)
     
     let area = 0;
     for(let k=0;k<length;k++){
