@@ -16,9 +16,6 @@ var accountsMerge = function(accounts) {
         }
     }
     
-    // console.log(owners);
-    // console.log(emails);
-    
     let seen = new Set;
     let mergedAccounts = [];
     
@@ -33,11 +30,9 @@ var accountsMerge = function(accounts) {
             seen.add(current);
             for(let email of emails[current]){
                 userEmails.add(email);
-                // console.log(owners[email])
                 stack = stack.concat(owners[email]);
             }
         }
-        // console.log(userEmails)
         let emailArray = Array.from(userEmails);
         emailArray.sort((a,b)=>{
             if(a<b) return -1;
