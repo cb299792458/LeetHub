@@ -9,7 +9,6 @@ var search = function(nums, target) {
     
     while(left<right){
         let mid = Math.floor((left+right)/2);
-        console.log(left,mid,right)
         if(nums[mid]===target) return mid;
         if(nums[left] <= nums[mid]){
             // left not rotated
