@@ -13,6 +13,6 @@ class Solution:
                 right = mid
             else:
                 left = mid + 1
-               
+
         if nums[left] == target: return left
         return -1
