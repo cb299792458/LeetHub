@@ -4,6 +4,7 @@
  * @return {boolean}
  */
 var isAnagram = function(s, t) {
+
     let counts = {};
     for(let c of s){
         if(counts[c] !== undefined){
