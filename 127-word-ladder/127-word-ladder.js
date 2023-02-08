@@ -20,7 +20,7 @@ var ladderLength = function(beginWord, endWord, wordList) {
             for(let i=0;i<word.length;i++){
                 for(let letter of alphabet){
                     let newWord = word.slice(0,i) + (letter) + word.slice(i+1);
-                    // console.log(newWord)
+
                     if(newWord===endWord) return steps;
                     if(wordList.has(newWord)) temp.add(newWord);
                 }
