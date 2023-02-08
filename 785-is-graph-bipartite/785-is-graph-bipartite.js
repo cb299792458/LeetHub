@@ -3,9 +3,9 @@
  * @return {boolean}
  */
 var isBipartite = function(graph) {
-    const a = new Set;
-    const b = new Set;
-    const checked = new Set;
+    const a = new Set();
+    const b = new Set();
+    const checked = new Set();
     
     const stack = [];
     for(let i=0;i<graph.length;i++){
