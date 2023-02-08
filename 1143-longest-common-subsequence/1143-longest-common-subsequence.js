@@ -5,7 +5,6 @@
  */
 var longestCommonSubsequence = function(text1, text2) {
     
-    
     let dp = new Array(text1.length);
     for(let i = 0; i <= text1.length; i++){
         dp[i] = new Array(text2.length+1);
