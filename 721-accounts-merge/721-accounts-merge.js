@@ -22,19 +22,28 @@ var accountsMerge = function(accounts) {
     for(let i in accounts){
         if(seen.has(i)) continue;
         
-        let userEmails = new Set;
-        let stack = [i];
-        while(stack.length){
-            let current = stack.pop();
-            if(seen.has(current)) continue;
-            seen.add(current);
-            for(let email of emails[current]){
-                userEmails.add(email);
-                stack = stack.concat(owners[email]);
+        // let userEmails = new Set;
+        // let stack = [i];
+        // while(stack.length){
+        //     let current = stack.pop();
+        //     if(seen.has(current)) continue;
+        //     seen.add(current);
+        //     for(let email of emails[current]){
+        //         userEmails.add(email);
+        //         stack = stack.concat(owners[email]);
+        //     }
+        // }
+        
+        let name = accounts[i].shift();
+        let userEmails = new Set(accounts[i]);
+        userEmails.forEach((email)=>{
+            for(let owner of owners[email]){
+                seen.add(owner)
+                for(let email2 of emails[owner]){
+                    userEmails.add(email2);
+                }
             }
-            
-            
-        }
+        });
         
         
         let emailArray = Array.from(userEmails);
@@ -43,7 +52,7 @@ var accountsMerge = function(accounts) {
             return 1;
         });
         
-        mergedAccounts.push([accounts[i][0],...emailArray]);
+        mergedAccounts.push([name,...emailArray]);
     }
     return mergedAccounts;
 };
