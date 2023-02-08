@@ -16,12 +16,11 @@ var minWindow = function(s, t) {
     
     let left = 0, right = 0;
 
-            if(counts[s[right]]!==undefined){
-                counts[s[right]]--;
-                if(counts[s[right]]<=0) correctCounts++;
-            }    
+    if(counts[s[right]]!==undefined){
+        counts[s[right]]--;
+        if(counts[s[right]]===0) correctCounts++;
+    }    
     while(left < s.length){
-        // console.log(counts,correctCounts)
         if(valid()){
             if(!window||window[1]-window[0]>right-left) window=[left,right];
             if(counts[s[left]]!==undefined){
@@ -44,6 +43,5 @@ var minWindow = function(s, t) {
         }
         
     }
-    // console.log(window)
     return window ? s.slice(window[0],window[1]+1) : ''
 };
