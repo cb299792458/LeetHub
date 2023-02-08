@@ -8,8 +8,8 @@ var isBipartite = function(graph) {
     const checked = new Set();
     
     const stack = [];
-    for(let i=0;i<graph.length;i++){
-        stack.unshift(i);
+    for(let i=graph.length-1;i>=0;i--){
+        stack.push(i);
     }
     
     while(stack.length){
