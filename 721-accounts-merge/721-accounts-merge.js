@@ -16,7 +16,7 @@ var accountsMerge = function(accounts) {
         }
     }
     
-    let seen = new Set;
+    let seen = new Set();
     let mergedAccounts = [];
     
     for(let i in accounts){
