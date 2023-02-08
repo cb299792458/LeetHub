@@ -32,7 +32,11 @@ var accountsMerge = function(accounts) {
                 userEmails.add(email);
                 stack = stack.concat(owners[email]);
             }
+            
+            
         }
+        
+        
         let emailArray = Array.from(userEmails);
         emailArray.sort((a,b)=>{
             if(a<b) return -1;
