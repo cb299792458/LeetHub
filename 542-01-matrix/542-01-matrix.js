@@ -13,7 +13,6 @@ var updateMatrix = function(mat) {
             }
         }
     }
-    // console.log(res)
 
     let directions = [[1,0], [0,1], [-1,0], [0,-1]]
     while (queue.length > 0) {
@@ -28,7 +27,6 @@ var updateMatrix = function(mat) {
                     queue.push([newRow, newCol, level+1])
                     res[newRow][newCol] = level+1
                 }
-                // res[row][col] = res[newRow][newCol]
             }
         }
     }
