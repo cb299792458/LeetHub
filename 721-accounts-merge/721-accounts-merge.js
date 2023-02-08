@@ -39,7 +39,7 @@ var accountsMerge = function(accounts) {
             return 1;
         });
         
-        mergedAccounts.push([accounts[i][0],...emailArray])
+        mergedAccounts.push([accounts[i][0],...emailArray]);
     }
-    return mergedAccounts
+    return mergedAccounts;
 };
