@@ -7,8 +7,6 @@ var findOrder = function(numCourses, prerequisites) {
     let graph = buildGraph(prerequisites);
     let order = [];
     let taken = new Set();
-    console.log(graph, graph[0], graph[1])
-    
     
     let tookNewCourse = true;
     while(tookNewCourse){
