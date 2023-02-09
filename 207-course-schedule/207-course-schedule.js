@@ -27,7 +27,7 @@ var canFinish = function(numCourses, prerequisites) {
     for(let course = 0; course < numCourses; course++){
         if(!checkLoop(course)) return false;
     }
-    return res;
+    return true;
         
 };
 
