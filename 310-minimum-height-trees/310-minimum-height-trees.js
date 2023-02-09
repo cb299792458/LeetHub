@@ -33,9 +33,7 @@ function makeAdjacencyList(n,edges){
     }
     
     for(let edge of edges){
-        // if(!adjacencies[edge[0]]) adjacencies[edge[0]] = new Set();
         adjacencies[edge[0]].add(edge[1]);
-        // if(!adjacencies[edge[1]]) adjacencies[edge[1]] = new Set();
         adjacencies[edge[1]].add(edge[0]);
     }
     return adjacencies;
