@@ -4,7 +4,7 @@
  * @return {number[]}
  */
 var findMinHeightTrees = function(n, edges) {
-    let al = makeAdjacencyList(edges);
+    let al = makeAdjacencyList(n,edges);
 
     let nodes = new Set();
     for(let i=0;i<n;i++) nodes.add(i);
@@ -25,12 +25,17 @@ var findMinHeightTrees = function(n, edges) {
     return Array.from(nodes);
 }
 
-function makeAdjacencyList(edges){
+function makeAdjacencyList(n,edges){
     const adjacencies = [];
+    
+    for(let i=0;i<n;i++){
+        adjacencies[i] = new Set();
+    }
+    
     for(let edge of edges){
-        if(!adjacencies[edge[0]]) adjacencies[edge[0]] = new Set();
+        // if(!adjacencies[edge[0]]) adjacencies[edge[0]] = new Set();
         adjacencies[edge[0]].add(edge[1]);
-        if(!adjacencies[edge[1]]) adjacencies[edge[1]] = new Set();
+        // if(!adjacencies[edge[1]]) adjacencies[edge[1]] = new Set();
         adjacencies[edge[1]].add(edge[0]);
     }
     return adjacencies;
