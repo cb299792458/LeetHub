@@ -26,8 +26,8 @@ var addTwoNumbers = function(l1, l2) {
         carry = Math.floor(digit/10);
         current = current.next;
         
-        if(l1 && l1.val !== null) l1 = l1.next;
-        if(l2 && l2.val !== null) l2 = l2.next;
+        if(l1) l1 = l1.next;
+        if(l2) l2 = l2.next;
         
     }
     return dummy.next;
