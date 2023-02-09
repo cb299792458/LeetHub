@@ -8,5 +8,5 @@ var rob = function(nums) {
     for(let i = 2; i < nums.length; i++){
         max[i] = Math.max(max[i-2] + nums[i], max[i-1]);
     }
-    return Math.max(max.at(-1));
+    return max.at(-1);
 };
