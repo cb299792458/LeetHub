@@ -5,11 +5,9 @@
  */
 var findMinHeightTrees = function(n, edges) {
     let al = makeAdjacencyList(edges);
-    console.log(al)
 
     let nodes = new Set();
     for(let i=0;i<n;i++) nodes.add(i);
-    // console.log(nodes);
     
     while(nodes.size>2){
         let queue = [];
@@ -24,7 +22,6 @@ var findMinHeightTrees = function(n, edges) {
         }
 
     }
-    // console.log(nodes)
     return Array.from(nodes);
 }
 
