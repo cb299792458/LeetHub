@@ -28,6 +28,7 @@ var canFinish = function(numCourses, prerequisites) {
         if(!checkLoop(course)) return false;
     }
     return res;
+        
 };
 
 function buildGraph(prerequisites) {
@@ -37,7 +38,6 @@ function buildGraph(prerequisites) {
         
         if(!(a in graph)) graph[a] = [];
         graph[a].push(b);
-        
     }
     return graph;
 }
