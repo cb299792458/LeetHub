@@ -32,7 +32,6 @@ var findOrder = function(numCourses, prerequisites) {
         }
     }
     
-    
     return order.length===numCourses ? order : [];
 };
 
