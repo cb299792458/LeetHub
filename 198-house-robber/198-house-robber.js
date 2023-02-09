@@ -9,5 +9,4 @@ var rob = function(nums) {
         max[i] = Math.max(max[i-2] + nums[i], max[i-1]);
     }
     return Math.max(max.at(-1),max.at(-2));
-    
 };
