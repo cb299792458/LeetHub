@@ -4,16 +4,19 @@
  */
 var pivotIndex = function(nums) {
 
-    let sum = 0;
+    let length = nums.length;
+    let left=0,right=length-1;
+    let leftSums = new Array(nums.length);
+    let rightSums = new Array(nums.length);
+    leftSums[0] = 0;
+    rightSums[length-1] = 0;
     
-    for(let num of nums){
-        sum+=num;
+    for(let i=1;i<length;i++){
+        leftSums[i] = leftSums[i-1] + nums[i-1];
+        rightSums[length-i-1] = rightSums[length-i] + nums[length-i];
     }
     
-    let leftSum = 0;
-    for(let i=0;i<nums.length;i++){
-        if((sum-nums[i])/2 === leftSum) return i;
-        leftSum += nums[i];
-    }
-    return -1
+    console.log(leftSums,rightSums);
+    for(let i=0;i<length;i++) if(leftSums[i]===rightSums[i]) return i
+    return -1;
 };
