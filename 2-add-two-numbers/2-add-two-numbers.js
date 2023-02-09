@@ -19,7 +19,7 @@ var addTwoNumbers = function(l1, l2) {
     while(l1 || l2 || carry){
         digit = 0;
         if(l1) digit += l1.val;
-        if(l2 && l2.val !== null) digit += l2.val;
+        if(l2) digit += l2.val;
         digit += carry;
 
         current.next = new ListNode(digit % 10);
