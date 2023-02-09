@@ -6,7 +6,6 @@
 var canFinish = function(numCourses, prerequisites) {
     
     let graph = buildGraph(prerequisites);
-    let res = true;
     
     const checkLoop = (id) => {
         if(seen.has(id)){
