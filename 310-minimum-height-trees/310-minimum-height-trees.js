@@ -17,8 +17,8 @@ var findMinHeightTrees = function(n, edges) {
         for(let node of nodes) if(al[node].size===1) queue.push(node);
         
         for(let node of queue){
-            for(let a of al[node]){
-                al[a].delete(node);
+            for(let adj of al[node]){
+                al[adj].delete(node);
             }
             nodes.delete(node);
         }
