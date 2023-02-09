@@ -18,7 +18,7 @@ var addTwoNumbers = function(l1, l2) {
     let digit = 0;
     while(l1 || l2 || carry){
         digit = 0;
-        if(l1 && l1.val !== null) digit += l1.val;
+        if(l1) digit += l1.val;
         if(l2 && l2.val !== null) digit += l2.val;
         digit += carry;
 
