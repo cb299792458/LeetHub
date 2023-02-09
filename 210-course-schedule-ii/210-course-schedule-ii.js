@@ -22,9 +22,7 @@ var findOrder = function(numCourses, prerequisites) {
             }
             
             let canTake = true;
-            for(let prereq of graph[i]){
-                if(!taken.has(prereq)) canTake = false;
-            }
+            for(let prereq of graph[i]) if(!taken.has(prereq)) canTake = false;
             if(!canTake) continue;
             tookNewCourse = true;
             taken.add(i);
