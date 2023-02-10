@@ -40,16 +40,16 @@ var shortestBridge = function(grid) {
     let queue = [];
     
     function backtrack(r,c,dist, seen = new Set() ){
-        if(r<0||c<0||r===grid.length||c===grid[0].length) return;
-        if(seen.has(`${r},${c}`)) return;
+        if(r<0||c<0||r===grid.length||c===grid[0].length) return; // out of bounds
+        if(seen.has(`${r},${c}`)) return; // prevent looping path
         seen.add(`${r},${c}`);
         
-        if(grid[r][c]==='A'&&dist>0) return;
-        if(dist>ans) return;        
+        if(grid[r][c]==='A'&&dist>0) return; // don't hit first island, except first step
+        if(dist>ans) return; // stop when path already too long        
         
         if(grid[r][c]==='B'){
-            ans=Math.min(ans,dist-1);
-            return;
+            ans=Math.min(ans,dist-1); 
+            return; // save path length if shortest
         }
 
         queue.push([r+1,c,dist+1,seen]);
