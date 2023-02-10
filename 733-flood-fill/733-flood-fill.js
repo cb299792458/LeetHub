@@ -25,5 +25,4 @@ const fill = function(image, r, c, color, prev){
         fill(image, r, c + 1, color, prev);
         fill(image, r, c - 1, color, prev);
     }
-    
 }
