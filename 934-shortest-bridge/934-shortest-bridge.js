@@ -33,8 +33,9 @@ var shortestBridge = function(grid) {
     
     let ans = Infinity;
     let queue = [];
+    let seen = new Set();
     
-    function backtrack(r,c,dist, seen = new Set() ){
+    function backtrack(r,c,dist){
         if(r<0||c<0||r===grid.length||c===grid[0].length) return; // out of bounds
         if(seen.has(`${r},${c}`)) return; // prevent looping path
         seen.add(`${r},${c}`);
@@ -51,17 +52,17 @@ var shortestBridge = function(grid) {
         queue.push([r-1,c,dist+1]);
         queue.push([r,c+1,dist+1]);
         queue.push([r,c-1,dist+1]);
-        
-        while(queue.length){
-            let current = queue.shift();
-            backtrack(...current, seen);
-        }
     }
     
     for(let r=0;r<grid.length;r++){
         for(let c=0;c<grid[0].length;c++){
-            if(grid[r][c]==='A') backtrack(r,c,0);
+            if(grid[r][c]==='A') queue.push([r,c,0]);
         }
+    }
+    
+    while(queue.length){
+        let current = queue.shift();
+        backtrack(...current);
     }
     
     return ans;
