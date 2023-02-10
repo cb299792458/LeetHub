@@ -19,9 +19,7 @@ var getHint = function(secret, guess) {
         }
     }
     for(let key of Object.keys(s)){
-        if(g[key]){
-            cows += Math.min(s[key],g[key])
-        }
+        if(g[key]) cows += Math.min(s[key],g[key])
     }
     
     return bulls + 'A' + cows + 'B'
