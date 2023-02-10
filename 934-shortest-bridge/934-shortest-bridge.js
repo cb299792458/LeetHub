@@ -2,11 +2,6 @@
  * @param {number[][]} grid
  * @return {number}
  */
-var floodFill = function(image, sr, sc, color) {
-    fill(image, sr, sc, color, image[sr][sc])
-    return image;
-};
-
 const fill = function(image, r, c, color, prev){
     if(
         r >= 0 &&
