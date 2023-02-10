@@ -52,14 +52,14 @@ var shortestBridge = function(grid) {
             return; // save path length if shortest
         }
 
-        queue.push([r+1,c,dist+1,seen]);
-        queue.push([r-1,c,dist+1,seen]);
-        queue.push([r,c+1,dist+1,seen]);
-        queue.push([r,c-1,dist+1,seen]);
+        queue.push([r+1,c,dist+1]);
+        queue.push([r-1,c,dist+1]);
+        queue.push([r,c+1,dist+1]);
+        queue.push([r,c-1,dist+1]);
         
         while(queue.length){
             let current = queue.shift();
-            backtrack(...current);
+            backtrack(...current, seen);
         }
     }
     
