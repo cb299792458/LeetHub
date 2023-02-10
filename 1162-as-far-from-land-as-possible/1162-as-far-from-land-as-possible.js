@@ -25,15 +25,14 @@ var maxDistance = function(grid) {
         } 
     }
     
-    let hasLand = false;
     for(let r=0;r<grid.length;r++){
         for(let c=0;c<grid[0].length;c++){
             if(grid[r][c]===1){
                 queue.push([r,c,1])
-                hasLand = true;
             }
         }
-    }    
+    }
+    if(!queue.length) return -1;
     
     while(queue.length){
         let current = queue.shift();
@@ -46,5 +45,5 @@ var maxDistance = function(grid) {
         }
     }
         
-    return hasWater&&hasLand ? max-1 : -1;
+    return hasWater ? max-1 : -1;
 };
