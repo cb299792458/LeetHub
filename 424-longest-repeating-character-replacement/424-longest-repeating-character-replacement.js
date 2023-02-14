@@ -8,7 +8,6 @@ var characterReplacement = function(s, k) {
     let left=0,right=-1;res=0;
     
     while(right<s.length){
-        
         let most = Math.max(...Object.values(counts),0);
         
         if(right-left < k+most){
@@ -24,5 +23,6 @@ var characterReplacement = function(s, k) {
         
         res = Math.max(res,Math.min(most+k,right-left));
     }
+    // console.log(counts)
     return res;
 };
