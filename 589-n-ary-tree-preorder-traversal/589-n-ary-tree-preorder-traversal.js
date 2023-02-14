@@ -13,12 +13,10 @@
 var preorder = function(root) {
     let res = [];
     if(!root) return res;
+    
     res = res.concat(root.val);
+    for(let child of root.children) res = res.concat(preorder(child));
 
-        
-        for(let child of root.children){
-            res = res.concat(preorder(child));
-        }
 
     return res;
 };
