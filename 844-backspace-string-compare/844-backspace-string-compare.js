@@ -8,18 +8,12 @@ var backspaceCompare = function(s, t) {
     let stringT = [];
     
     for(let char of s){
-        if(char==='#'){
-            stringS.pop();
-        } else {
-            stringS.push(char);
-        }
+        if(char==='#') stringS.pop();
+        else stringS.push(char);
     }
     for(let char of t){
-        if(char==='#'){
-            stringT.pop();
-        } else {
-            stringT.push(char);
-        }
+        if(char==='#') stringT.pop();
+        else stringT.push(char);
     }
     
     return stringS.join()===stringT.join();
