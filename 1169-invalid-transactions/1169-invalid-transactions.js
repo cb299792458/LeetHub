@@ -8,7 +8,8 @@ var invalidTransactions = function(transactions) {
         return a.split(',')[1] - b.split(',')[1]
     });
     
-    let res = new Set;
+    let res = new Set; // Set containing indices of invalid transaction
+    
     for(let i=0;i<transactions.length;i++){ // check each transaction
         const [n,t,a,c] = transactions[i].split(',');
         if(a>1000){ // check for amount
@@ -27,6 +28,7 @@ var invalidTransactions = function(transactions) {
         }
     }
     
+    // console.log(res)
     // Use set of indices to avoid repeat
     return transactions.filter( (transaction,index) => res.has(index) )
 
