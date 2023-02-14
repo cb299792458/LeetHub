@@ -20,7 +20,7 @@ var levelOrder = function(root) {
 };
 
 function traverseLevel(level,res){
-    if(!level.length) return
+    if(!level.length) return;
     let thisLevel = [];
     let nextLevel = [];
     for(let node of level){
