@@ -21,7 +21,7 @@ var characterReplacement = function(s, k) {
         }
         
         
-        res = Math.max(res,Math.min(right-left));
+        res = Math.max(res,right-left);
     }
     return res;
 };
