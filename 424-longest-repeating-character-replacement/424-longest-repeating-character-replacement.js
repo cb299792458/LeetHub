@@ -20,7 +20,6 @@ var characterReplacement = function(s, k) {
             left++;
         }
         
-        
         res = Math.max(res,right-left);
     }
     return res;
