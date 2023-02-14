@@ -25,8 +25,7 @@ var mergeKLists = function(lists) {
             lists[next] = lists[next].next;
         }
         current = current.next;
-
-        
+       
     }
     
     return head.next;
