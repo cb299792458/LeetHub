@@ -24,6 +24,6 @@ var characterReplacement = function(s, k) {
         
         res = Math.max(res,Math.min(most+k,right-left));
     }
-    console.log(counts)
+    // console.log(counts)
     return res;
 };
