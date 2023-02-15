@@ -10,23 +10,27 @@
  * @return {ListNode}
  */
 var mergeKLists = function(lists) {
-    let head = new ListNode();
-    
-    let current = head;
-    while(current){
-        let next = null;
-        for(let i=0;i<lists.length;i++){
-            if(!lists[i]) continue;
-            if(lists[next]===undefined || lists[next].val > lists[i].val) next = i;
-        }
-        if(lists[next]) {
-            current.next = new ListNode(lists[next].val);
-
-            lists[next] = lists[next].next;
-        }
-        current = current.next;
-       
+    if(!lists.length) return null;
+    for(let i=1;i<lists.length;i++){
+        lists[0] = mergeTwoLists(lists[0],lists[i]);
     }
-    
-    return head.next;
+    return lists[0];
 };
+
+function mergeTwoLists(l1,l2){
+    let head = new ListNode();
+    let curr = head;
+    while(l1 && l2){
+        if(l1.val>l2.val){
+            curr.next = l2;
+            l2 = l2.next;
+        } else {
+            curr.next = l1;
+            l1 = l1.next;
+        }
+        curr = curr.next;
+    }
+    if(l1) curr.next = l1;
+    if(l2) curr.next = l2;
+    return head.next;
+}
