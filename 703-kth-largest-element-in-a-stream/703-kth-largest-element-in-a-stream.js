@@ -2,47 +2,28 @@
  * @param {number} k
  * @param {number[]} nums
  */
+class KthLargest{
+    constructor(k, nums) {
+        this.k = k
+        this.mpq = new MinPriorityQueue();
+        for(let num of nums) this.mpq.enqueue(num);
+        
+                while(this.mpq.size() > this.k) this.mpq.dequeue();
 
-class Node{
-    constructor(val,next){
-        this.val = val;
-        this.next = next;
-    }
-}
-var KthLargest = function(k, nums) {
-    this.k = k;
-    this.head = new Node(Infinity);
-    
-    for(let num of nums){
-        this.add(num);
-    }
-    
-};
+    };
 
 /** 
  * @param {number} val
  * @return {number}
  */
-KthLargest.prototype.add = function(val) {
-    let p = this.head;
-    let n = p.next
-    while(n && n.val>val){
-        p = n;
-        n = n.next;
-    }
+    add(val) {
+        this.mpq.enqueue(val);
 
-    let newNode = new Node(val,n);
-    p.next = newNode;
+        if(this.mpq.size() > this.k) this.mpq.dequeue();
 
-    let current = this.head;  
-    
-    for(let i=0;i<this.k;i++){
-        if(current.next) current = current.next;
-    }
-    
-    return current.val;
-};
-
+        return this.mpq.front().element
+    };
+}
 /** 
  * Your KthLargest object will be instantiated and called as such:
  * var obj = new KthLargest(k, nums)
