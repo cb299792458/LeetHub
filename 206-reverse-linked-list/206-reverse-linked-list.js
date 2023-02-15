@@ -20,7 +20,6 @@ var reverseList = function(head) {
 //     return end;
     
     let prev = null
-    // let current = head;
     
     while(head){
         let oldNext = head.next;
