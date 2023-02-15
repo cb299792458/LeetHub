@@ -9,7 +9,7 @@ class UndergroundSystem:
 
     def checkOut(self, id: int, stationName: str, t: int) -> None:
         open_trip = self.open_trips[id]
-        del self.open_trips[id] # Don't need this to pass
+        # del self.open_trips[id] # Don't need this to pass
         
         route = open_trip['start'] + '-' + stationName
         if not route in self.closed_trips:
