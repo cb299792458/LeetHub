@@ -8,7 +8,7 @@ class KthLargest{
         this.mpq = new MinPriorityQueue();
         for(let num of nums) this.mpq.enqueue(num);
         
-                while(this.mpq.size() > this.k) this.mpq.dequeue();
+        while(this.mpq.size() > this.k) this.mpq.dequeue();
 
     };
 
