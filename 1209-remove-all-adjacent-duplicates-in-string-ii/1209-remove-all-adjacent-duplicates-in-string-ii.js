@@ -30,10 +30,4 @@ var removeDuplicates = function(s, k) {
 };
 
 
-// deeedbbcccbdaa
-// ddbbcccbdaa
-// ddbbbdaa
-// dddaa
 // aa
-
-// O(n x k)
