@@ -15,7 +15,7 @@ var unhappyFriends = function(n, preferences, pairs) {
         }
         return preferredPartners;
     }
-    console.log("preferred partners: ", makePreferredPartners())
+    // console.log("preferred partners: ", makePreferredPartners())
     let preferredPartners = makePreferredPartners();
     
     let count = 0;
