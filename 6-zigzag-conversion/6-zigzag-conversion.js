@@ -1,31 +1,18 @@
-/**
- * @param {string} s
- * @param {number} numRows
- * @return {string}
- */
-var convert = function(s, numRows) {
-    let goingDown = true;
-    let arr = new Array(numRows);
-    for(let j=0; j<numRows; j++ ) {
-        arr[j] = [];
+function convert(s, numRows) {
+    if(numRows===1) return s;
+    function row(index){
+        let cycle = (2*numRows) - 2;
+        let cycleIdx = index % cycle;
+        if(cycleIdx<numRows) return cycleIdx
+        else return cycle - cycleIdx;
     }
-    let i = 0;
-
-    s.split('').forEach( (char) => {
-        arr[i].push(char); 
-        if(i===0){goingDown = true}
-        if(i===numRows-1){goingDown = false}
-        if(numRows === 1){}
-        else{
-            if(goingDown){i++} else {i--}
-        }
-    });
     
+    let rows = new Array(numRows).fill().map(() => new Array);
+    for(let i=0;i<s.length;i++) rows[row(i)].push(s[i]);
+
     let ans = '';
-    arr.forEach((sub) =>{
-        sub.forEach((char) =>{
-            ans += char;
-        })
-    })
-    return ans;
-};
+    for(let r of rows){
+        ans += r.join('')
+    }
+    return ans
+}
