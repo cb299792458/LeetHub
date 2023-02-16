@@ -10,8 +10,6 @@ function convert(s, numRows) {
     for(let i=0;i<s.length;i++) rows[row(i)].push(s[i]);
 
     let ans = '';
-    for(let r of rows){
-        ans += r.join('')
-    }
+    for(let r of rows) ans += r.join('')
     return ans
 }
