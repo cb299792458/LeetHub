@@ -14,11 +14,9 @@ var removeDuplicates = function(s, k) {
         let char = s[i];
         stack.push(char);
         
-        
         // check if the last k elements in the stack are the same;
         if(stack.length >= k){
             let lastK = stack.slice(stack.length-k);
-            // console.log(lastK)
             if( lastK.every((element) => element === stack.at(-1)) ){
                 for(let i=0;i<k;i++) stack.pop();
             } 
