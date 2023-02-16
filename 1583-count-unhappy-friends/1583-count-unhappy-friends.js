@@ -7,7 +7,7 @@
 var unhappyFriends = function(n, preferences, pairs) {
     
     function makePreferredPartners(){
-        let preferredPartners = new Array(n);
+        let preferredPartners = [];
         
         for(let [a,b] of pairs){
             preferredPartners[a] = ( preferences[a].slice(0,preferences[a].indexOf(b)) )  
