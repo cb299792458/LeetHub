@@ -1,10 +1,9 @@
 function convert(s, numRows) {
-    if(numRows===1) return s;
     function row(index){
-        let cycle = (2*numRows) - 2;
-        let cycleIdx = index % cycle;
+        let cycle = 2*numRows-2 || 1;
+        let cycleIdx = index%cycle;
         if(cycleIdx<numRows) return cycleIdx
-        else return cycle - cycleIdx;
+        else return cycle-cycleIdx;
     }
     
     let rows = new Array(numRows).fill().map(() => new Array);
