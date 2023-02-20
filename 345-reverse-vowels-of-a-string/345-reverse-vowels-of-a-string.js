@@ -4,7 +4,7 @@
  */
 var reverseVowels = function(s) {
     let vowels = new Set('aeiouAEIOU'.split(''));
-    console.log(vowels)
+
     let left=0,right=s.length-1;
     let arr = s.split('');
     while(left<right){
