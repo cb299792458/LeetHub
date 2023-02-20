@@ -15,9 +15,7 @@ var searchInsert = function(nums, target) {
             right = mid;
         }
     }
-    console.log(left)
-    // if(nums[left]===target) return left;
+    
     if(nums[left]<target) return left+1;
-    // if(nums[left]>target) return left-1;
     return left;
 };
