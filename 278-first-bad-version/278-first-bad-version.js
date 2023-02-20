@@ -20,7 +20,7 @@ var solution = function(isBadVersion) {
     return function(n) {
         let start = 0;
         let end = n;
-        while( start !== end ){
+        while( start < end ){
             let t = Math.floor((start + end)/2);
             if(isBadVersion(t)){
                 end = t;
