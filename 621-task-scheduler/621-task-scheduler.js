@@ -20,7 +20,6 @@ var leastInterval = function(tasks, n) {
                 continue;
             }
             
-            // console.log(taskDict[task])
             if(taskDict[task].count>mostNum && taskDict[task].cooldown<=0){
                 mostTask = task;
                 mostNum = taskDict[mostTask].count;
