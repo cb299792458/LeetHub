@@ -17,12 +17,15 @@ var buildTree = function(preorder, inorder) {
     let headVal = preorder.shift();
     let index = inorder.indexOf(headVal);
     
-    let leftInorder = inorder.slice(0,index);
-    let rightInorder = inorder.slice(index+1);
+//     let leftInorder = inorder.slice(0,index);
+//     let rightInorder = inorder.slice(index+1);
     
-    let leftPreorder = preorder.slice(0,index);
-    let rightPreorder = preorder.slice(index);
+//     let leftPreorder = preorder.slice(0,index);
+//     let rightPreorder = preorder.slice(index);
     
-    return new TreeNode(headVal, buildTree(leftPreorder,leftInorder), buildTree(rightPreorder,rightInorder));
+    return new TreeNode(headVal,
+                    buildTree(preorder.slice(0,index),inorder.slice(0,index)),
+                    buildTree(preorder.slice(index),inorder.slice(index+1))
+                );
     
 };
