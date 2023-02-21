@@ -27,7 +27,6 @@ var decodeString = function(s) {
     let openBrackets = 1;
     while(openBrackets > 0){
         j++;
-        // console.log(s[j])
         if(s[j]==='[') openBrackets++;
         if(s[j]===']') openBrackets--;
     }
