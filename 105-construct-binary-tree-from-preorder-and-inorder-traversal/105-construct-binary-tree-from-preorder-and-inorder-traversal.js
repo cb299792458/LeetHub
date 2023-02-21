@@ -23,8 +23,6 @@ var buildTree = function(preorder, inorder) {
     let leftPreorder = preorder.slice(0,index);
     let rightPreorder = preorder.slice(index);
     
-    let head = new TreeNode(headVal, buildTree(leftPreorder,leftInorder), buildTree(rightPreorder,rightInorder));
+    return new TreeNode(headVal, buildTree(leftPreorder,leftInorder), buildTree(rightPreorder,rightInorder));
     
-    
-    return head;
 };
