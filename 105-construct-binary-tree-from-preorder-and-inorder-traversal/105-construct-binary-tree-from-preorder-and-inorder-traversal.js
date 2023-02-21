@@ -15,11 +15,13 @@ var buildTree = function(preorder, inorder) {
     if(!preorder.length) return null;
     
     let headVal = preorder.shift();
-    let leftInorder = inorder.slice(0,inorder.indexOf(headVal));
-    let rightInorder = inorder.slice(inorder.indexOf(headVal)+1);
+    let index = inorder.indexOf(headVal);
     
-    let leftPreorder = preorder.filter(x=>leftInorder.includes(x));
-    let rightPreorder = preorder.filter(x=>rightInorder.includes(x));
+    let leftInorder = inorder.slice(0,index);
+    let rightInorder = inorder.slice(index+1);
+    
+    let leftPreorder = preorder.slice(0,index);
+    let rightPreorder = preorder.slice(index);
     
     let head = new TreeNode(headVal, buildTree(leftPreorder,leftInorder), buildTree(rightPreorder,rightInorder));
     
