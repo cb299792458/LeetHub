@@ -14,7 +14,7 @@
 var buildTree = function(preorder, inorder) {
     if(!preorder.length) return null;
     
-    let headVal = preorder.shift();
+    let headVal = preorder[0];
     let index = inorder.indexOf(headVal);
     
 //     let leftInorder = inorder.slice(0,index);
@@ -24,8 +24,8 @@ var buildTree = function(preorder, inorder) {
 //     let rightPreorder = preorder.slice(index);
     
     return new TreeNode(headVal,
-                    buildTree(preorder.slice(0,index),inorder.slice(0,index)),
-                    buildTree(preorder.slice(index),inorder.slice(index+1))
+                    buildTree(preorder.slice(1,index+1),inorder.slice(0,index)),
+                    buildTree(preorder.slice(index+1),inorder.slice(index+1))
                 );
     
 };
