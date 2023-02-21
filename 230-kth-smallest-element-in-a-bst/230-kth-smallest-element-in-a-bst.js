@@ -22,8 +22,8 @@ var kthSmallest = function(root, k) {
         if(traverse(node.right)) return traverse(node.right);
         return nums[k-1]
     }
-    // traverse(root);
-    // console.log(nums);
+
+    
     return traverse(root);
     
 };
