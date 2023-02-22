@@ -16,7 +16,6 @@ var shipWithinDays = function(weights, days) {
                 capacity = w - weight;
             }
         }
-        console.log(ships)
         return ships <= days;
     }
     checkWeight(16)
