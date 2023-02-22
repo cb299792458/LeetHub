@@ -25,7 +25,6 @@ var shipWithinDays = function(weights, days) {
     let res;
     while(left<=right){
         let mid = Math.floor((left+right)/2);
-        console.log(left,right,mid)
         if(checkWeight(mid)){
             res = mid;
             right = mid-1;
