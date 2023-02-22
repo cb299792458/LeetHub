@@ -5,13 +5,11 @@
  */
 var combinationSum2 = function(candidates, target) {
     const ans = [];
-    // const anset = new Set();
     candidates.sort();
     
     const backtrack = (nums, index, t) => {
         if(t<0) return;
         if(t===0){
-            // anset.add(nums.join(''));
             ans.push(nums);
             return;
         }
