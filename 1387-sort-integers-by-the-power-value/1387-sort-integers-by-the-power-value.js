@@ -4,9 +4,7 @@
  * @param {number} k
  * @return {number}
  */
-var getKth = function(lo, hi, k) {
-    let powers = {};
-    
+var getKth = function(lo, hi, k) {    
     function power(n){
         let count = 0;
         while(n>1){
@@ -32,6 +30,5 @@ var getKth = function(lo, hi, k) {
         return pa-pb;
     });
     
-    console.log(powers)
     return arr[k-1];
 };
