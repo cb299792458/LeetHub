@@ -34,6 +34,6 @@ var getKth = function(lo, hi, k) {
         return pa-pb;
     });
     
-    
+    console.log(powers)
     return arr[k-1];
 };
