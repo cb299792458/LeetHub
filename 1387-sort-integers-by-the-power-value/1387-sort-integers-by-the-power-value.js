@@ -11,13 +11,11 @@ var getKth = function(lo, hi, k) {
         let count = 0;
         let original = n;
         while(true){
-            // console.log(powerMemo[n])
             if(powerMemo[n] !== undefined){
                 count += powerMemo[n];
                 powerMemo[original] = count;
                 return count;
             }
-            
             
             count++;
             if(n%2===0){
