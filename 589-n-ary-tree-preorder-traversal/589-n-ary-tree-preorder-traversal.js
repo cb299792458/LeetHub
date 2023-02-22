@@ -17,6 +17,5 @@ var preorder = function(root) {
     res = res.concat(root.val);
     for(let child of root.children) res = res.concat(preorder(child));
 
-
     return res;
 };
