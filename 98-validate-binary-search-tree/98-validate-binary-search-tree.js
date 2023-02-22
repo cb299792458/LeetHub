@@ -13,7 +13,5 @@
 var isValidBST = function(root, max = Infinity, min = -Infinity) {
     if(!root) return true;
     if(root.val >= max || root.val <= min) return false;
-    // let newMax = Math.min(max,root.val);
-    // let newMin = Math.max(min,root.val);
     return(isValidBST(root.left,root.val,min) && isValidBST(root.right,max,root.val));
 };
