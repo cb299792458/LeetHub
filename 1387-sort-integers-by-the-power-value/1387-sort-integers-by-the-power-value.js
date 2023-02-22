@@ -18,11 +18,9 @@ var getKth = function(lo, hi, k) {
         return count;
     }
     
-    
     let arr = [];
     for(let i = lo; i <= hi; i++) arr.push(i);
-    
-    
+        
     arr.sort((a,b)=>{
         let pa = power(a);
         let pb = power(b);
