@@ -5,9 +5,20 @@
  * @return {number}
  */
 var getKth = function(lo, hi, k) {    
+    let powerMemo = {1: 0};
+    
     function power(n){
         let count = 0;
-        while(n>1){
+        let original = n;
+        while(true){
+            // console.log(powerMemo[n])
+            if(powerMemo[n] !== undefined){
+                count += powerMemo[n];
+                powerMemo[original] = count;
+                return count;
+            }
+            
+            
             count++;
             if(n%2===0){
                 n /= 2;
@@ -15,7 +26,7 @@ var getKth = function(lo, hi, k) {
                 n = 3*n+1
             }
         }
-        return count;
+        
     }
     
     let arr = [];
@@ -27,6 +38,6 @@ var getKth = function(lo, hi, k) {
         if(pa===pb) return a-b;
         return pa-pb;
     });
-    
+
     return arr[k-1];
 };
