@@ -5,7 +5,7 @@ var minPathSum = function(grid) {
     let table = new Array(height+1).fill().map(()=> new Array(width+1).fill(Infinity));
     
     table[height-1][width-1] = grid[height-1][width-1];
-    console.log(table);
+    // console.log(table);
     
     for(let row=height-1;row>=0;row--){
         for( let col=width-1;col>=0;col--){
@@ -14,6 +14,6 @@ var minPathSum = function(grid) {
         }
     }
 
-    console.log(table);
+    // console.log(table);
     return table[0][0];
 };
