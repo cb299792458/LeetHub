@@ -1,7 +1,7 @@
 class Solution:
     def sortArray(self, nums: List[int]) -> List[int]:
-        # nums.sort()
-        # return nums
+        nums.sort()
+        return nums
         # quicksort
 #         if len(nums) < 2: return nums
         
@@ -14,20 +14,20 @@ class Solution:
 
         # mergesort
         
-        if len(nums) < 2: return nums
-        left = nums[:len(nums)//2]
-        right = nums[len(nums)//2:]
+#         if len(nums) < 2: return nums
+#         left = nums[:len(nums)//2]
+#         right = nums[len(nums)//2:]
         
-        left = self.sortArray(left)
-        right = self.sortArray(right)
+#         left = self.sortArray(left)
+#         right = self.sortArray(right)
         
-        return merge(left,right)
+#         return merge(left,right)
     
-    def merge(left,right):
-        ans = []
-        while len(left) and len(right):
-            if(left[0] < right[0]):
-                ans.append(left.pop())
-            else:
-                ans.append(right.pop())
-        return ans + left + right
+#     def merge(left,right):
+#         ans = []
+#         while len(left) and len(right):
+#             if(left[0] < right[0]):
+#                 ans.append(left.pop())
+#             else:
+#                 ans.append(right.pop())
+#         return ans + left + right
