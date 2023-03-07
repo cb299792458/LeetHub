@@ -15,7 +15,7 @@ class MyQueue {
     
     peek(){
         if(!this.output.length) this.reverse();
-        return this.output.at(-1);
+        return this.output[this.output.length-1];
     }
     
     empty(){
@@ -23,8 +23,6 @@ class MyQueue {
     }
     
     reverse(){
-        while(this.input.length){
-            this.output.push(this.input.pop());
-        }
+        while(this.input.length) this.output.push(this.input.pop());
     }
 }
