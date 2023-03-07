@@ -4,7 +4,7 @@
  * @param {number} small
  */
 var ParkingSystem = function(big, medium, small) {
-    this.spots = {1: big, 2: medium, 3: small}
+    this.spots = [null,big,medium,small];
 };
 
 /** 
