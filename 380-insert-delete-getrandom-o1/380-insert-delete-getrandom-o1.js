@@ -4,32 +4,21 @@ class RandomizedSet{
         this.set = new Set
     };
     
-    /** 
-     * @param {number} val
-     * @return {boolean}
-     */
     insert(val) {
         let res = !this.set.has(val);
         this.set.add(val);
         return res;
     };
 
-    /** 
-     * @param {number} val
-     * @return {boolean}
-     */
     remove(val) {
         let res = this.set.has(val);
         this.set.delete(val);
         return res;
     };
 
-    /**
-     * @return {number}
-     */
     getRandom() {
-        const entries = [...this.set]
-        return entries[Math.floor(entries.length*Math.random())]
+        const entries = [...this.set];
+        return entries[Math.floor(entries.length*Math.random())];
     };
 
 };
