@@ -11,23 +11,6 @@ MagicDictionary.prototype.buildDict = function(dictionary) {
 };
 
 MagicDictionary.prototype.search = function(searchWord) {
-    // if(this.dict.has(searchWord)) return false;
-    
-//     let rightLength = false;
-//     for(let dictWord of this.dict){
-//         if(dictWord.length === searchWord.length) rightLength = true;
-//     }
-//     if(!rightLength) return false;
-    
-//     for(let index = 0; index<searchWord.length; index++){
-//         let char = searchWord[index];
-//         for(let letter of letters){ // for every letter
-//             if(char===letter) continue;
-            
-//             let newWord = searchWord.slice(0,index) + letter + searchWord.slice(index+1);
-//             if(this.dict.has(newWord)) return true;
-//         }
-//     }
     for(let word of [...this.dict]){
         if(compare(word,searchWord)===1) return true;
     }
