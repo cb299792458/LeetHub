@@ -12,7 +12,7 @@ MagicDictionary.prototype.buildDict = function(dictionary) {
 
 MagicDictionary.prototype.search = function(searchWord) {
     for(let word of [...this.dict]){
-        if(compare(word,searchWord)===1) return true;
+        if(compare(word,searchWord)) return true;
     }
     
     return false;
@@ -24,8 +24,9 @@ function compare(str1,str2){
     let differences = 0;
     for(let i=0;i<str1.length;i++){
         if(str1[i]!==str2[i]) differences++;
+        if(differences > 1) return false;
     }
-    return differences;
+    return differences===1;
 }
 
 
