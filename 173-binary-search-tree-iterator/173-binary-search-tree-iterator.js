@@ -1,6 +1,5 @@
 
 var BSTIterator = function(root) {
-    this.root = root;
     this.pointer = 0;
     this.nums = [-Infinity];
     let nums = this.nums;
