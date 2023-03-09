@@ -62,7 +62,6 @@ class LRUCache {
     evict(){
         if(this.hashMap.size > this.capacity){
             let node = this.tail.prev;
-            console.log('deleting ', node.key,node.val);
             this.delete(node);
             this.hashMap.delete(node.key);
         }
