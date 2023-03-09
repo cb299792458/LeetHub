@@ -10,6 +10,14 @@ MagicDictionary.prototype.buildDict = function(dictionary) {
 };
 
 MagicDictionary.prototype.search = function(searchWord) {
+    // if(this.dict.has(searchWord)) return false;
+    
+    let rightLength = false;
+    for(let dictWord of this.dict){
+        if(dictWord.length === searchWord.length) rightLength = true;
+    }
+    if(!rightLength) return false;
+    
     for(let index = 0; index<searchWord.length; index++){
         let char = searchWord[index];
         for(let letter of letters.split('')){
