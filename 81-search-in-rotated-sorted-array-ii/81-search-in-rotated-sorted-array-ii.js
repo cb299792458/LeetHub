@@ -10,7 +10,7 @@ var search = function(nums, target) {
     while(left<=right){
         let mid = Math.floor((left+right)/2);
         if(nums[mid]===target) return true;
-        console.log(left,mid,right)
+
         if (nums[mid] == nums[right]){
             right--;
             continue;
