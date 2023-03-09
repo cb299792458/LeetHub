@@ -1,4 +1,5 @@
-const letters = 'abcdefghijklmnopqrstuvwxyz';
+const str = 'abcdefghijklmnopqrstuvwxyz';
+const letters = str.split('');
 
 var MagicDictionary = function() {
     this.dict = new Set;
@@ -20,7 +21,7 @@ MagicDictionary.prototype.search = function(searchWord) {
     
     for(let index = 0; index<searchWord.length; index++){
         let char = searchWord[index];
-        for(let letter of letters.split('')){
+        for(let letter of letters){ // for every letter
             if(char===letter) continue;
             
             let newWord = searchWord.slice(0,index) + letter + searchWord.slice(index+1);
@@ -31,3 +32,14 @@ MagicDictionary.prototype.search = function(searchWord) {
     return false;
 };
 
+/*
+searchWords: scar
+dict has scar
+s->letter
+acar, bcar, ccar, scar NOT CHANGED
+
+
+*/
+function compare(str1,str2){
+    
+}
