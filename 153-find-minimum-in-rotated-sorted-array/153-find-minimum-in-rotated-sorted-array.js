@@ -1,0 +1,22 @@
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var findMin = function(nums) {
+    let left = 0;
+    let right = nums.length - 1;
+    while(left < right){
+        let mid = Math.floor((left+right)/2);
+        console.log(nums[left],nums[mid],nums[right]);
+        
+        if(nums[left] < nums[right]) return nums[left];
+        
+        if(nums[left]<=nums[mid]){
+            left = mid+1;
+        } else {
+            right = mid;
+        }
+    }
+    
+    return nums[left];
+};
