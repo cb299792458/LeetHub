@@ -7,7 +7,6 @@ var findMin = function(nums) {
     let right = nums.length - 1;
     while(left < right){
         let mid = Math.floor((left+right)/2);
-        console.log(nums[left],nums[mid],nums[right]);
         
         if(nums[left] < nums[right]) return nums[left];
         
