@@ -12,7 +12,6 @@
  */
 var sumNumbers = function(root) {
     function traverse(node, curr = 0){
-        // console.log(curr);
         if(!node) return curr;
         curr = (10*curr) + node.val;
         
