@@ -5,10 +5,9 @@
  */
 var characterReplacement = function(s, k) {
     let counts = {};
-    let left=0,right=-1;res=0;
+    let left=0,right=-1,res=0;
     let most = 0;
     while(right<s.length){
-        // let most = Math.max(...Object.values(counts),0);
         
         if(right-left < k+most){
             right++;
