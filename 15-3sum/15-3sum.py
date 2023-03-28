@@ -12,7 +12,6 @@ class Solution:
             while(j < k):
                 if(nums[i] + nums[j] + nums[k] == 0):
                     arr.append([nums[i],nums[j],nums[k]])
-                    
                 if(nums[i] + nums[j] + nums[k] > 0):
                     k -= 1
                 else:
