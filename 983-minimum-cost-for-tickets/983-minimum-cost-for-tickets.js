@@ -22,6 +22,5 @@ var mincostTickets = function(days, costs) {
             dp[i] = dp[i-1];
         }
     }
-    // console.log(dp)
     return dp.at(-1);
 };
