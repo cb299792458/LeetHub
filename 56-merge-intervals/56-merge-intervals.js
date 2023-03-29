@@ -9,10 +9,12 @@ var merge = function(intervals) {
     let res = [];
     let prev;
     for(let interval of intervals){
-        if(!prev){
-            prev = interval;
-            continue;
-        }
+        // if(!prev){
+        //     prev = interval;
+        //     continue;
+        // }
+        
+        prev ||= interval
         
         if(prev[1]<interval[0]){
             res.push(prev);
