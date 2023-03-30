@@ -4,6 +4,8 @@
  */
 var countBits = function(n) {
     
+    memo = [];
+    
     function binary(j){
         let ans = 0;
         while (j) {
@@ -13,9 +15,8 @@ var countBits = function(n) {
         return ans;
     }
     
-    memo = [];
     for(let i=0;i<=n;i++){
-        let j = i; 
+        let j=i; 
         memo.push(binary(j));
     }
     return memo;
