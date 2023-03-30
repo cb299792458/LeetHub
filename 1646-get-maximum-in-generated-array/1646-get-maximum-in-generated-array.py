@@ -9,5 +9,6 @@ class Solution:
                 nums.append(nums[i//2])
             else:
                 nums.append(nums[i//2] + nums[(i//2) + 1])
+                biggest = max(biggest,nums[i//2] + nums[(i//2) + 1])
         
-        return max(nums)
+        return biggest
