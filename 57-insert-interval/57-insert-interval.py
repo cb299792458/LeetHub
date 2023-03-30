@@ -11,8 +11,10 @@ class Solution:
                 before.append(interval)
             elif interval[0] > end:
                 after.append(interval)
+            
+            
             else:
                 start = min(start,interval[0])
                 end = max(end,interval[1])
 
-        return(before + [[start,end]] + after)
+        return before + [[start,end]] + after 
