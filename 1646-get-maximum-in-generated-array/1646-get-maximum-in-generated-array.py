@@ -8,7 +8,8 @@ class Solution:
             if i%2==0:
                 nums.append(nums[i//2])
             else:
-                nums.append(nums[i//2] + nums[(i//2) + 1])
-                biggest = max(biggest,nums[i//2] + nums[(i//2) + 1])
+                new_num = nums[i//2] + nums[(i//2) + 1]
+                nums.append(new_num)
+                biggest = max(biggest,new_num)
         
         return biggest
