@@ -13,5 +13,4 @@ class Solution:
                 
             endings = temp
             
-        # print(endings)
         return sum(endings.values())
