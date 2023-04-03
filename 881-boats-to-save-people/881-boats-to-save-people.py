@@ -1,8 +1,7 @@
 class Solution:
     def numRescueBoats(self, people: List[int], limit: int) -> int:
         people.sort(reverse=True)
-        l=0
-        r=len(people)-1
+        l,r=0,len(people)-1
         count=0
         
         while(l<=r):
