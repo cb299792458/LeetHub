@@ -10,16 +10,17 @@ class Solution:
 #                 memo[i] += memo[i-coin]
         
 #         return memo[amount]
-        
+
+
+        # DFS
         memo={}
-        
         def dfs(amt,idx):
-            if amt<0 or idx==len(coins): return 0
-            if amt==0: return 1
+            if amt<0 or idx==len(coins): return 0 # passed target amt, or last coin
+            if amt==0: return 1 # hit target
             
             if (amt,idx) in memo: return memo[(amt,idx)]
             
-            memo[(amt,idx)] = dfs(amt-coins[idx],idx) + dfs(amt,idx+1)
+            memo[(amt,idx)] = dfs(amt-coins[idx],idx) + dfs(amt,idx+1) # use current coin, or go to next
             return memo[(amt,idx)]
         
         
