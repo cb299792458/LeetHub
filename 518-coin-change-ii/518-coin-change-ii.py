@@ -7,5 +7,4 @@ class Solution:
             for i in range(coin,amount+1):
                 memo[i] += memo[i-coin]
         
-        
         return memo[amount]
