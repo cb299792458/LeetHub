@@ -7,4 +7,4 @@ class Solution:
         for s in strs:
             d[sort_chars(s)].append(s)
             
-        return list(d.values())
+        return d.values()
