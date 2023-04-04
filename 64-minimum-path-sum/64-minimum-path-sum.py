@@ -11,5 +11,5 @@ class Solution:
                 grid[row][col]+=min(grid[row][col+1],grid[row+1][col])
                 
                 
-        print(grid)
+        # print(grid)
         return grid[0][0]
