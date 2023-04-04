@@ -9,5 +9,5 @@ class Solution:
                 
                 matrix[r][c]+=min(ul,um,ur)
         
-        print(matrix)
+        # print(matrix)
         return min(matrix[-1])
