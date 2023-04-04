@@ -3,7 +3,6 @@ class Solution:
         seen = set()
         count=1
         for c in s:
-            print(seen)
             if c in seen:
                 count+=1
                 seen = set()
