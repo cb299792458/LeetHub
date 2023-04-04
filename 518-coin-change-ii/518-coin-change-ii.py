@@ -1,7 +1,7 @@
 class Solution:
     def change(self, amount: int, coins: List[int]) -> int:
         
-        # PURE DP/MEMO
+        # TABLE
         memo=[0]*(amount+1)
         memo[0]=1
 
@@ -12,7 +12,7 @@ class Solution:
         return memo[amount]
 
 
-#         # DFS/BACKTRACK
+#         # MEMO
 #         memo={}
 #         def dfs(amt,idx):
 #             if amt<0 or idx==len(coins): return 0 # passed target amt, or last coin
