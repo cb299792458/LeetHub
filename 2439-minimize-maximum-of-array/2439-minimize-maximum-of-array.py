@@ -1,7 +1,7 @@
 class Solution:
     def minimizeArrayValue(self, nums: List[int]) -> int:
-        def check(arr,n):
-            arr=arr.copy()
+        def check(n):
+            arr=nums.copy()
             for i in reversed(range(1,len(arr))):
                 if arr[i]>n:
                     arr[i-1]+=arr[i]-n
@@ -17,7 +17,7 @@ class Solution:
         l,r=0,max(nums)
         while l<r :
             m=(l+r)//2
-            if check(nums,m):
+            if check(m):
                 r=m
             else:
                 l=m+1
