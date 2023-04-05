@@ -14,7 +14,7 @@ class Solution:
         
         
         # # binary search
-        l,r=0,max(nums)
+        l,r=min(nums),max(nums)
         while l<r :
             m=(l+r)//2
             if check(m):
