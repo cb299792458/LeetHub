@@ -1,10 +1,8 @@
 class Solution:
     def minimizeArrayValue(self, nums: List[int]) -> int:
         def check(arr,n):
+            arr=arr.copy()
             for i in reversed(range(1,len(arr))):
-                # while arr[i]>n:
-                #     arr[i]-=1
-                #     arr[i-1]+=1
                 if arr[i]>n:
                     arr[i-1]+=arr[i]-n
                     arr[i]=n
@@ -19,7 +17,7 @@ class Solution:
         l,r=0,max(nums)
         while l<r :
             m=(l+r)//2
-            if check(nums.copy(),m):
+            if check(nums,m):
                 r=m
             else:
                 l=m+1
