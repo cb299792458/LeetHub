@@ -15,8 +15,7 @@ class Solution:
         #     if not check(nums.copy(),j): return j+1
         
         
-        # binary search
-        
+        # # binary search
         l,r=0,max(nums)
         while l<r :
             m=(l+r)//2
