@@ -6,7 +6,7 @@ class Solution:
             if r<0 or r>=m: return
             if c<0 or c>=n: return
             
-            if grid[r][c]==0: return
+            if not grid[r][c]: return
             grid[r][c]=0
             
             fill(r,c+1)
