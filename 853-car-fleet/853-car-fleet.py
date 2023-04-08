@@ -4,7 +4,7 @@ class Solution:
         cars.sort(key=lambda x: x[0], reverse=False)
                
         fleets=0
-        stack=[cars.pop()]
+        stack=deque([cars.pop()])
         
         while cars:
             new_car = cars.pop()
