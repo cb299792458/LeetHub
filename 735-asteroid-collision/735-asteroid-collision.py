@@ -1,6 +1,6 @@
 class Solution:
     def asteroidCollision(self, asteroids: List[int]) -> List[int]:
-        stack=[]
+        stack=deque()
         for asteroid in asteroids:
             stack.append(asteroid)
             
