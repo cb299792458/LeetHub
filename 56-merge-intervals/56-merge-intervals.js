@@ -1,5 +1,5 @@
 var merge = function(intervals) {
-    intervals = intervals.sort((a,b)=>a[0]-b[0]);
+    intervals.sort((a,b)=>a[0]-b[0]);
     intervals.push([Infinity,Infinity])
     
     let res = [];
