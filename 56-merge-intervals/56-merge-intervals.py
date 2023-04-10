@@ -8,4 +8,4 @@ class Solution:
                 stack[-1] = [stack[-1][0],max(stack[-1][1],intervals[i][1])]
             else:
                 stack.append(intervals[i])
-        return [*stack]
+        return stack
