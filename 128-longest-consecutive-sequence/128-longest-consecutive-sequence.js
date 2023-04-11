@@ -10,9 +10,7 @@ var longestConsecutive = function(nums) {
         if(hash.has(num-1)) continue;
         
         let i = num;
-        while(hash.has(i)){
-            i++
-        }
+        while(hash.has(i)) i++
         maxCount = Math.max(maxCount, i-num)
     }
 
