@@ -7,7 +7,7 @@ var curry = function(fn) {
     let num = fn.length;
     return function curried(...arg) {
         args.push(...arg);
-        if (args.length === num) return fn(...args)
+        if (args.length === num) return fn(...args);
         return curried;
     }
 };
