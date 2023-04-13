@@ -4,10 +4,10 @@
  */
 var curry = function(fn) {
     let curriedArgs = [];
-    let num = fn.length;
+    let numArgs = fn.length;
     return function _curried(...args) {
         curriedArgs.push(...args);
-        if (curriedArgs.length === num) return fn(...curriedArgs);
+        if (curriedArgs.length === numArgs) return fn(...curriedArgs);
         return _curried;
     }
 };
