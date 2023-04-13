@@ -40,7 +40,6 @@ var mergeTwoLists = function(list1, list2) {
         current = current.next;
     }
     
-    current.next = list1 ? list1 : list2;
+    current.next = list1 || list2;
     return dummy.next;
-    
 };
