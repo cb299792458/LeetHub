@@ -21,7 +21,7 @@ BrowserHistory.prototype.visit = function(url) {
 BrowserHistory.prototype.back = function(steps) {
     if(this.currentPage >= steps){
         this.currentPage -= steps
-    }else {
+    } else {
         this.currentPage = 0
     }
     return this.history[this.currentPage]
@@ -34,7 +34,7 @@ BrowserHistory.prototype.back = function(steps) {
 BrowserHistory.prototype.forward = function(steps) {
     if(this.history.length > steps + this.currentPage){
         this.currentPage += steps
-    }else {
+    } else {
         this.currentPage = this.history.length - 1
     }
     return this.history[this.currentPage]
