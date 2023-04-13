@@ -5,10 +5,10 @@
 var curry = function(fn) {
     let curriedArgs = [];
     let num = fn.length;
-    return function curried(...args) {
+    return function _curried(...args) {
         curriedArgs.push(...args);
         if (curriedArgs.length === num) return fn(...curriedArgs);
-        return curried;
+        return _curried;
     }
 };
 
