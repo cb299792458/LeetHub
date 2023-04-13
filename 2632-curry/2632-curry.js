@@ -3,11 +3,11 @@
  * @return {Function}
  */
 var curry = function(fn) {
-    let args = [];
+    let curriedArgs = [];
     let num = fn.length;
-    return function curried(...arg) {
-        args.push(...arg);
-        if (args.length === num) return fn(...args);
+    return function curried(...args) {
+        curriedArgs.push(...args);
+        if (curriedArgs.length === num) return fn(...curriedArgs);
         return curried;
     }
 };
