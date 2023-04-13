@@ -23,7 +23,6 @@ var mergeTwoLists = function(list1, list2) {
     // }
     
     // ITERATIVE same as mergesort
-    
     if(!list1) return list2
     if(!list2) return list1
     
