@@ -16,5 +16,6 @@ class Solution:
             return height
         
         l,r=l_height(root),r_height(root)
+        
         if l==r: return 2**l-1
         else: return 1+self.countNodes(root.left)+self.countNodes(root.right)
