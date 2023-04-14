@@ -6,7 +6,6 @@ class Solution:
             if l>r: return 0
             if str([l,r]) in memo: return memo[str([l,r])]
             
-            
             if s[l]==s[r]:
                 memo[str([l,r])]=2+dfs(l+1,r-1)
             else:
