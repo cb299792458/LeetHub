@@ -1,9 +1,7 @@
 class Solution:
     def longestPalindromeSubseq(self, s: str) -> int:
         memo = dict()
-        @cache
         def dfs(l,r):
-            # print(str([l,r]))
             if l==r: return 1
             if l>r: return 0
             if str([l,r]) in memo: return memo[str([l,r])]
