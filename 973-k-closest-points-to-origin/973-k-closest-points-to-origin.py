@@ -5,7 +5,6 @@ class Solution:
         tuples = []
         for point in points:
             dist = math.sqrt( point[0]**2 + point[1]**2 )
-        
             tuples.append((dist,point))
             
         heapq.heapify(tuples)
