@@ -8,17 +8,17 @@ class MyQueue:
         self.input.append(x)
 
     def pop(self) -> int:
-        self._stack_to_queue()
+        self._check()
         return self.output.pop()
 
     def peek(self) -> int:
-        self._stack_to_queue()
+        self._check()
         return self.output[-1]
 
     def empty(self) -> bool:
         return False if self.input or self.output else True
         
-    def _stack_to_queue(self):
+    def _check(self):
         if not self.output:
             while self.input:
                 self.output.append(self.input.pop())
