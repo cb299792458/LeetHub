@@ -15,22 +15,21 @@ var rotateRight = function(head, k) {
     let slow = head;
     const oldHead = head;
     
-    k = k % findLength(head)
+    k = k % findLength(head) // prevent k > length
     if(!head) return null;
     if(!head.next || !k) return head;
 
-    
     for(let i=0;i<k;i++){
         fast = fast.next;
     }
     
     while(fast.next){
-        fast = fast.next;
-        slow = slow.next;
+        fast = fast.next;  // fast will be oldTail
+        slow = slow.next; // slow will be newTail
     }
 
     const newHead = slow.next;
-    fast.next = oldHead;
+    fast.next = oldHead; // connect oldTail to oldHead
     slow.next = null;
     return newHead;
 };
