@@ -16,8 +16,8 @@ var rotateRight = function(head, k) {
     const oldHead = head;
     
     k = k % findLength(head) // prevent k > length
-    if(!head) return null;
-    if(!head.next || !k) return head;
+    // if(!head) return null;
+    if(!head || !head.next || !k) return head;
 
     for(let i=0;i<k;i++){
         fast = fast.next;
