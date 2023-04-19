@@ -1,10 +1,8 @@
 # 00100
 # 01010
 # 01110
-class Solution:
-    
+class Solution:  
     def closedIsland(self, grid: List[List[int]]) -> int:
-
         def fill(r,c):
             if r<0 or r>=len(grid): return
             if c<0 or c>=len(grid[0]): return
