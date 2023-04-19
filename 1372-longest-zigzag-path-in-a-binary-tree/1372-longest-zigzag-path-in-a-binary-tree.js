@@ -26,8 +26,11 @@ var longestZigZag = function(root) {
 
     }
     
-    helper(root,true,0);
-    helper(root,false,0);
+    // helper(root,true,0);
+    // helper(root,false,0);
+    helper(root.left,false,1);
+    helper(root.right,true,1)
+    
     return res;
     
 };
