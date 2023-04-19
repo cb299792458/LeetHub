@@ -10,8 +10,8 @@ class Solution:
                 res.append(combo)
                 return
             
-            _backtrack(combo+[candidates[idx]],idx)
-            _backtrack(list(combo),idx+1)
+            _backtrack([*combo,candidates[idx]],idx)
+            _backtrack([*combo],idx+1)
             
         _backtrack([],0)
         return res
