@@ -3,8 +3,8 @@ class Solution:
         res=[]
         
         def _backtrack(combo,idx):
-            amt=sum(combo)
             if idx > len(candidates)-1: return
+            amt=sum(combo)
             if amt>target: return
             if amt==target:
                 res.append(combo)
