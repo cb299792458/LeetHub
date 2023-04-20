@@ -24,7 +24,7 @@ class Solution:
             _traverse(node.right,2*index+1,level+1)
             
         _traverse(root,0,0)
-        # print(maxs,mins)
+
         diffs = [maxs[i]-mins[i] for i in range(len(maxs))]
         return max(diffs)+1
         
