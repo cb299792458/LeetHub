@@ -34,7 +34,3 @@ class Node:
                 if self.children[key].search(word[1:]):
                     return True
             return False
-
-        # bad, sat
-        # .at
-        # use recursion
