@@ -8,7 +8,7 @@ class Trie:
         
         for char in word:
             i = ord(char)-ord('a')
-            if current.children[i] == None: current.children[i] = Node()
+            if not current.children[i]: current.children[i] = Node()
             current = current.children[i]
         
         current.word = True
