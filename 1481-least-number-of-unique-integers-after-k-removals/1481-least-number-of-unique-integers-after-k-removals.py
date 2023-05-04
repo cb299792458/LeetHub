@@ -4,8 +4,6 @@ class Solution:
         
         freqs = [(f,n) for (n,f) in counts.items()]
         freqs.sort(key=lambda x: x[0], reverse=True)
-        print(freqs)
-        # freqs=deque(freqs)
         
         while k>0:
             if k>=freqs[-1][0]:
