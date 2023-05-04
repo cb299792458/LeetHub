@@ -5,7 +5,7 @@ class Solution:
         senate = [*senate]
         no_r=False
         no_d=False
-        while True:
+        while not no_r and not no_d:
             no_r=no_d=True
             for i in range(len(senate)):
                 if senate[i]=='R':
