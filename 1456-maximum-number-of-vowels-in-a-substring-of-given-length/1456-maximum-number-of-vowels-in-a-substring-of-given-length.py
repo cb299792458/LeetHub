@@ -8,6 +8,6 @@ class Solution:
         for i in range(k,len(s)):
             if s[i] in vowels: curr+=1
             if s[i-k] in vowels: curr-=1
-            print([i,k,curr])
+            # print([i,k,curr])
             res = max(curr,res)
         return res
