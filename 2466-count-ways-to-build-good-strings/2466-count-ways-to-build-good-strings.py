@@ -8,8 +8,7 @@ class Solution:
                 dp[i] = (dp[i-zero]+dp[i]) % (10**9+7)
             if i>=one:
                 dp[i] = (dp[i-one]+dp[i]) % (10**9+7)
-            
-        # print(dp)
+
         sum=0
         for i in range(low,high+1):
             sum = (sum + dp[i]) % (10**9+7)
