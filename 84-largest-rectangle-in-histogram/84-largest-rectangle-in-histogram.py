@@ -11,9 +11,7 @@ class Solution:
                 h=stack.pop()
                 res = max(res,w*h)
                 
-            while w+1:
-                stack.append(heights[i])
-                w-=1
+            stack += [heights[i]] * (w+1)
                 
                 
         return res
