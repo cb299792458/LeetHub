@@ -37,7 +37,7 @@ class Solution:
         for i in range(len(heights)):
             height = heights[i]
             width = next_smaller[i] - prev_smaller[i] - 1
-            print(next_smaller[i],prev_smaller[i],width)
+            # print(next_smaller[i],prev_smaller[i],width)
             res = max(res,height*width)
         
         return res
