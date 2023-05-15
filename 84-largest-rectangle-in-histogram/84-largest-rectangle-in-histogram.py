@@ -34,8 +34,8 @@ class Solution:
             next_smaller[i] = stack[-1] if stack else -1
             stack.append(i)
             
-        print(prev_smaller)
-        print(next_smaller)
+        # print(prev_smaller)
+        # print(next_smaller)
         for i in range(len(heights)):
             height = heights[i]
             width = next_smaller[i] - prev_smaller[i] - 1
