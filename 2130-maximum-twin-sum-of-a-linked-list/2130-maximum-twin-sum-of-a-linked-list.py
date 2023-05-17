@@ -6,8 +6,8 @@
 from collections import deque
 class Solution:
     def pairSum(self, head: Optional[ListNode]) -> int:
-        # nums = deque()
-        nums = []
+        nums = deque()
+        # nums = []
         
         curr = head
         
@@ -17,5 +17,5 @@ class Solution:
             
         res = float('-inf')
         while nums:
-            res = max(res,nums.pop()+nums.pop(0))
+            res = max(res,nums.pop()+nums.popleft())
         return res
