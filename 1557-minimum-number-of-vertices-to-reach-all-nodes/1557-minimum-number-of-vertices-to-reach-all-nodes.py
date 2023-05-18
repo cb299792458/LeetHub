@@ -5,4 +5,4 @@ class Solution:
         for [_,end] in edges:
             nodes.discard(end)
             
-        return nodes
+        return list(nodes)
