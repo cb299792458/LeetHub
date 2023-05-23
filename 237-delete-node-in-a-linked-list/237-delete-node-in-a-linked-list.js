@@ -16,20 +16,4 @@ var deleteNode = function(node) {
     node.val = temp.val;
     node.next = temp.next;
     
-    // deleteNode(temp);
-    
-    
-//     let curr = node;
-    
-//     while(curr){
-//         console.log('handling node #', curr.val)
-//         let temp = curr.next;
-        
-//         if(curr.next){
-//             curr.val = temp.val;
-//             curr.next = temp.next;
-//         }
-        
-//         curr = temp;
-//     }
 };
