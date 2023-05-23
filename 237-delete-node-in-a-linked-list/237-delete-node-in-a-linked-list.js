@@ -17,3 +17,15 @@ var deleteNode = function(node) {
     node.next = temp.next;
     
 };
+
+/*
+
+[4,5,9]
+ 4,1,9,X
+ 4,1,9
+ 
+ 
+ 
+5
+
+*/
