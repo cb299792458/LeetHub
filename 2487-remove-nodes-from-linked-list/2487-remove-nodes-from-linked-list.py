@@ -9,7 +9,6 @@ class Solution:
         stack = []
         
         curr = head
-        
         while curr:
             while stack and stack[-1].val < curr.val:
                 stack.pop()
