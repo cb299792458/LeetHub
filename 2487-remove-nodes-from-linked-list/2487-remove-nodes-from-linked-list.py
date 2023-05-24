@@ -3,11 +3,11 @@
 #     def __init__(self, val=0, next=None):
 #         self.val = val
 #         self.next = next
-from collections import deque
+
 class Solution:
     def removeNodes(self, head: Optional[ListNode]) -> Optional[ListNode]:
         dummy = ListNode(0,head)
-        stack = deque()
+        stack = []
         
         curr = head
         while curr:
@@ -18,8 +18,8 @@ class Solution:
             curr = curr.next
             
         curr = dummy
-        while stack:
-            curr.next = stack.popleft()
-            curr = curr.next
+        for node in stack:
+            curr.next = node
+            curr = node
             
         return dummy.next
