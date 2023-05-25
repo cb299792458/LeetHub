@@ -11,5 +11,5 @@ class Solution:
             total -= dp[i+maxPts]
             total += dp[i]
             
-        print(dp)
+        # print(dp)
         return dp[0] if dp[0]<=1 else 1
