@@ -38,7 +38,6 @@ var jsonToMatrix = function(arr) {
                 }
                 
                 // edge cases
-                // if(typeof current==='string' && current.length===1) continue;
                 if(fail) continue;
                 if(current===undefined) continue;
                 if(typeof current === 'object' && current !== null) continue;
