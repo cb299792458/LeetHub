@@ -18,7 +18,7 @@ class Solution:
             for d in dirs:
                 (nr,nc) = (r+d[0],c+d[1])
 
-                if -1<nr<len(grid) and -1<nc<len(grid[0]) and grid[nr][nc]==0 and ((nr,nc) not in seen):
+                if -1<nr<len(grid) and -1<nc<len(grid[0]) and not grid[nr][nc] and (nr,nc) not in seen:
                     seen.add((nr,nc))
                     queue.append((time+1,nr,nc))
         return -1
