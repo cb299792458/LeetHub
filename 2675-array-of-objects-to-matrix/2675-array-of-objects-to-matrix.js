@@ -31,14 +31,14 @@ var jsonToMatrix = function(arr) {
             
             let current = line;
             try{
-                let fail = false;
+                let hack = false;
                 for(let step of steps){
-                    if(typeof current==='string') fail=true;
+                    if(typeof current==='string') hack=true;
                     current = current[step];
                 }
                 
                 // edge cases
-                if(fail) continue;
+                if(hack) continue;
                 if(current===undefined) continue;
                 if(typeof current === 'object' && current !== null) continue;
                 
