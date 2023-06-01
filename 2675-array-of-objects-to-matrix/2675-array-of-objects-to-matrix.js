@@ -28,9 +28,11 @@ var jsonToMatrix = function(arr) {
             let current = line;
             try{
                 let hack = false;
-                /*
-                This hack is for when a path can lead into an array or a string. If it hits an array, the next key might be an index, but when the same path is checked and it points to a string, it will get that character in the string, but it should just continue, i.e., element not found.
-                */
+                // This hack is for when a path can lead into an array or a string. 
+                // If it hits an array, the next key might be an index, 
+                // but when the same path is checked and it points to a string, 
+                // it will get that character in the string, but it should just continue, 
+                // i.e., element not found, so leave result as ''.
                 
                 for(let step of steps){
                     if(typeof current==='string') hack=true;
