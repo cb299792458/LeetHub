@@ -13,8 +13,8 @@ class Solution:
             
             adj_list.append(adjs)
         
-        def dfs(i,exploded = None):
-            if exploded==None: exploded=set()
+        def dfs(i,exploded):
+            # if exploded==None: exploded=set()
             exploded.add(i)
             
             for adj in adj_list[i]:
@@ -22,4 +22,4 @@ class Solution:
             
             return len(exploded)
         
-        return max([dfs(i) for i in range(len(bombs))])
+        return max([dfs(i,set()) for i in range(len(bombs))])
