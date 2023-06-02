@@ -14,7 +14,6 @@ class Solution:
             adj_list.append(adjs)
         
         def dfs(i,exploded):
-            # if exploded==None: exploded=set()
             exploded.add(i)
             
             for adj in adj_list[i]:
