@@ -12,7 +12,7 @@ class Solution:
             for other in range(len(isConnected)):
                 if other==city: continue
                 if not isConnected[city][other] and not isConnected[other][city]: continue
-                if other not in seen: dfs(other)
+                dfs(other)
         
         for i in range(len(isConnected)):
             if i not in seen:
