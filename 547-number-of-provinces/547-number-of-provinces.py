@@ -10,8 +10,7 @@ class Solution:
             seen.add(city)
             
             for other in range(len(isConnected)):
-                if other==city: continue
-                if not isConnected[city][other]: continue
+                if other==city or not isConnected[city][other]: continue
                 dfs(other)
         
         for i in range(len(isConnected)):
