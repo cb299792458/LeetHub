@@ -17,14 +17,12 @@ class Codec:
         return head + left + right
 
     def deserialize(self, data):
-        # print(data)
         if not data: return None
         
         head = TreeNode(int(data.split()[0]))
         if len(data.split())==1: return head
         
         data = data[data.index(' ')+1:]
-        # print(data)
         
         left,right = '',''
         
@@ -41,7 +39,6 @@ class Codec:
             if i!=len(data): right = data[i+3:-1]
         else: right=data[2:-1]
         
-        # print(left,right)
         head.left = self.deserialize(left)
         head.right = self.deserialize(right)
         return head
