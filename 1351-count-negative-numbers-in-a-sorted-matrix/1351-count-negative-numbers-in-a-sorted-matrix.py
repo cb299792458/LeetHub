@@ -6,7 +6,7 @@ class Solution:
         res=0
         row,col=0,n-1
         while row<m:
-            print(f'row is {row} and col is {col} and res is {res}')
+            # print(f'row is {row} and col is {col} and res is {res}')
             
             if grid[row][col]>=0 or col==-1:
                 res += n-col-1
