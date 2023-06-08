@@ -5,9 +5,7 @@ class Solution:
         
         res=0
         row,col=0,n-1
-        while row<m:
-            # print(f'row is {row} and col is {col} and res is {res}')
-            
+        while row<m:            
             if grid[row][col]>=0 or col==-1:
                 res += n-col-1
                 row+=1
