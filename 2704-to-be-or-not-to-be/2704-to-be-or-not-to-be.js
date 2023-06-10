@@ -7,12 +7,11 @@ var expect = function(val) {
     
     function toBe(comp){
         if(val!==comp) throw("Not Equal")
-        return val===comp;
+        return true;
     }
     function notToBe(comp){
         if(val===comp) throw("Equal")
-        
-        return val!==comp;
+        return true;
     }
     return {toBe,notToBe}
 };
