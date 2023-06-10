@@ -18,10 +18,8 @@ class Solution:
             else:
                 minSum-=(target-spaces-1)*(target-spaces)//2
                 
-            print(target,minSum)
             return minSum
         
-        # check(271698267)
         
         l,r = 1,maxSum
         while l<r:
