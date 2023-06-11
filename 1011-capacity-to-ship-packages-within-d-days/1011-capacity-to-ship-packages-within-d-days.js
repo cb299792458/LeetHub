@@ -18,7 +18,7 @@ var shipWithinDays = function(weights, days) {
         }
         return ships <= days;
     }
-    checkWeight(16)
+    // checkWeight(16)
     
     let left = Math.max(...weights);
     let right = weights.reduce((num,sum) => num+sum );
