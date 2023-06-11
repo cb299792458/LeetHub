@@ -14,7 +14,6 @@ class SnapshotArray:
 
     def get(self, index: int, snap_id: int) -> int:
         timeline = self.array[index]
-        # print(timeline)
         l,r=0,len(timeline)-1
         
         while l<r:
