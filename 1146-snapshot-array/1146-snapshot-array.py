@@ -16,12 +16,12 @@ class SnapshotArray:
         timeline = self.array[index]
         l,r=0,len(timeline)-1
         
-        while l<r:
-            m=(l+r+1)//2
+        while l<=r:
+            m=(l+r)//2
             if timeline[m][0]<=snap_id:
-                l=m
+                l=m+1
             else: r=m-1
-        return timeline[l][1]
+        return timeline[r][1]
 
 
 # Your SnapshotArray object will be instantiated and called as such:
