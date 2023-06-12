@@ -8,7 +8,7 @@ class Solution:
         
         for n in nums[1:]:
             if n==prev+1:
-                prev+=1
+                prev=n
             else:
                 if prev==start:
                     res.append(str(start))
