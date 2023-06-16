@@ -17,7 +17,7 @@ class Solution:
                 if not i: continue
                 if n<root: left.append(n)
                 else: right.append(n)
-            
+            # nCr = n!/(r!(n-r)!)
             return fact(len(left)+len(right))*find_ways(left)*find_ways(right) // (fact(len(left))*fact(len(right)))
         
         return find_ways(nums) % (10**9 + 7) - 1
