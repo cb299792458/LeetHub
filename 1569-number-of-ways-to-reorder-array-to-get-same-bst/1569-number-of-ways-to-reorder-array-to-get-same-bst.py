@@ -8,7 +8,7 @@ class Solution:
             return facts[n]
         
         def find_ways(nums):
-            if not(len(nums)): return 1
+            if len(nums)==0: return 1
             
             root=nums[0]
             left=[]
