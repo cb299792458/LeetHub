@@ -8,6 +8,5 @@ class Solution:
             res.append(total//(2*k+1))
             total-=nums[i-2*k]
             
-        # print(res)
         if len(res)==0: return [-1]*len(nums)
         return [-1]*k+res+[-1]*k
