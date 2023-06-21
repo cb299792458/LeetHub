@@ -5,7 +5,7 @@ class Solution:
             for num,cost in zip(nums,costs):
                 res+=abs(num-target)*cost
             return res
-               
+
         l,r = min(nums),max(nums)
         
         while l<r:
