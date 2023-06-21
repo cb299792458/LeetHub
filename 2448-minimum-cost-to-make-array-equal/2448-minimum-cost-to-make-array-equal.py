@@ -5,13 +5,7 @@ class Solution:
             for num,cost in zip(nums,costs):
                 res+=abs(num-target)*cost
             return res
-        
-        # # TLE
-        # res=float('inf')
-        # for n in nums:
-        #     res=min(res,find_cost(n))
-        # return res
-        
+               
         l,r = min(nums),max(nums)
         
         while l<r:
