@@ -2,7 +2,6 @@ class Solution:
     def maxProfit(self, prices: List[int], fee: int) -> int:
         withstock=[-prices[0]]
         without=[0]
-        # prices.pop()
         
         for price in prices[1:]:
             # buy
