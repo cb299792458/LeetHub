@@ -10,6 +10,7 @@ class Solution:
             # sell
             sell = price + withstock[-1] - fee
             
+            # get best profit for both states
             withstock.append(max(buy,withstock[-1]))
             without.append(max(sell,without[-1]))
             
