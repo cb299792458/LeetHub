@@ -1,6 +1,5 @@
 class Solution:
     def longestArithSeqLength(self, nums: List[int]) -> int:
-
         dp=defaultdict(lambda: defaultdict(lambda: 1))
         ans=0
         
@@ -10,6 +9,4 @@ class Solution:
                 dp[r][diff] = dp[l][diff] + 1
                 ans = max(ans,dp[r][diff])
                 
-        return ans
-        
-        
+        return max([max(sub_dict.values()) for sub_dict in dp.values()])
