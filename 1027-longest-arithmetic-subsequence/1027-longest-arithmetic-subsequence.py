@@ -1,7 +1,7 @@
 class Solution:
     def longestArithSeqLength(self, nums: List[int]) -> int:
 
-        dp = defaultdict(lambda: defaultdict(lambda: 1))
+        dp=defaultdict(lambda: defaultdict(lambda: 1))
         ans=0
         
         for r in range(len(nums)):
