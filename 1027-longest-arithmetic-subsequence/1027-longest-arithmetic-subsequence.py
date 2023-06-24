@@ -3,8 +3,8 @@ class Solution:
         dp=defaultdict(lambda: defaultdict(lambda: 1))
         
         for r in range(len(nums)):
-            for l in range(0,r):
+            for l in range(r):
                 diff = nums[r]-nums[l]
                 dp[r][diff] = dp[l][diff] + 1
                 
-        return max( [max(vals.values()) for vals in dp.values()] )
+        return max( max(vals.values()) for vals in dp.values() )
