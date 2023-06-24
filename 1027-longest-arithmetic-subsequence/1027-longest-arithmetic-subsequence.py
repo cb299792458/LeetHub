@@ -7,4 +7,4 @@ class Solution:
                 diff = nums[r]-nums[l]
                 dp[r][diff] = dp[l][diff] + 1
                 
-        return max( max(vals.values()) for vals in dp.values() )
+        return max(max(vals.values()) for vals in dp.values())
