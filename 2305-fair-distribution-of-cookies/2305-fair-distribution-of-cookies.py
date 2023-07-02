@@ -3,6 +3,7 @@ class Solution:
         
         ans = float('inf')
         distributions=[0]*k
+        avg = sum(cookies)//k
         
         def backtrack(cookie,distributions):
             if cookie==len(cookies):
@@ -11,6 +12,7 @@ class Solution:
                 return
             
             for child in range(k):
+                if distributions[child]>avg: continue
                 distributions[child]+=cookies[cookie]
                 backtrack(cookie+1,distributions)
                 distributions[child]-=cookies[cookie]
