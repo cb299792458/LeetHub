@@ -1,21 +1,21 @@
 class Solution:
     def distributeCookies(self, cookies: List[int], k: int) -> int:
-        #Backtracking
-        def solve(ind,arr):
-            if ind==n:
+        
+        ans = float('inf')
+        distributions=[0]*k
+        
+        def backtrack(cookie,distributions):
+            if cookie==len(cookies):
                 nonlocal ans
-                mx=max(arr)
-                ans=min(ans,mx)
+                ans = min(ans,max(distributions))
                 return
-            for i in range(k):
-                arr[i]+=cookies[ind]
-                solve(ind+1,arr)
-                arr[i]-=cookies[ind]
-                if arr[i]==0:
-                    break
-
-        n=len(cookies)
-        ans=float('inf')
-        arr=[0 for i in range(k)]
-        solve(0,arr)
+            
+            for child in range(k):
+                distributions[child]+=cookies[cookie]
+                backtrack(cookie+1,distributions)
+                distributions[child]-=cookies[cookie]
+                if not distributions[child]: break
+        
+        backtrack(0,distributions)
         return ans
+                
