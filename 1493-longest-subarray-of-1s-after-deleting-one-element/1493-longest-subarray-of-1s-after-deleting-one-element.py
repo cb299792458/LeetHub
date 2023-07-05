@@ -8,7 +8,6 @@ class Solution:
                 l+=1
             else:
                 r+=1
-                # if r==len(nums): break
                 if nums[r]==0: has_zero=True
             
             res=max(res, r-l)
