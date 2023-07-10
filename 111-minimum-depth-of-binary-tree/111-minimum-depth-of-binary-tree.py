@@ -10,7 +10,5 @@ class Solution:
         if not root.left and not root.right: return 1
         l=self.minDepth(root.left) if root.left else float('inf')
         r=self.minDepth(root.right) if root.right else float('inf')
-        
-        
-        
+                
         return min(l,r)+1
