@@ -16,7 +16,6 @@ class Solution:
             copy=path.copy()
             copy.append(node)
             if node==target:
-                # print('hit')
                 nonlocal path_to_target
                 path_to_target=copy
             dfs(node.left,copy)
