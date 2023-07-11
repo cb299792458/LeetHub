@@ -25,9 +25,7 @@ class Solution:
         skips = set()
         
         def find_children(node,dist):
-            if not node: return
-            if dist<0: return
-            if node in skips: return
+            if not node or node in skips: return
             if not dist:
                 ans.append(node.val)
                 return
