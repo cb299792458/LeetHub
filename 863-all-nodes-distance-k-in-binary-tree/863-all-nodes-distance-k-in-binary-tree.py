@@ -29,8 +29,7 @@ class Solution:
             if dist<0: return
             if node in skips: return
             if not dist:
-                if node not in skips:
-                    ans.append(node.val)
+                ans.append(node.val)
                 return
             skips.add(node)
             find_children(node.left,dist-1)
