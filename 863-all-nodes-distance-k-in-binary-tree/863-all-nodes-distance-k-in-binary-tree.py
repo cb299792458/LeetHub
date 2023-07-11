@@ -27,6 +27,7 @@ class Solution:
         def find_children(node,dist):
             if not node: return
             if dist<0: return
+            if node in skips: return
             if not dist:
                 if node not in skips:
                     ans.append(node.val)
