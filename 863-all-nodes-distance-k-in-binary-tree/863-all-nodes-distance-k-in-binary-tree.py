@@ -18,6 +18,7 @@ class Solution:
             if node==target:
                 nonlocal path_to_target
                 path_to_target=copy
+                return
             dfs(node.left,copy)
             dfs(node.right,copy)
         dfs(root,[])
