@@ -10,6 +10,7 @@ class Solution:
         ans=[]
         path_to_target=None
         
+        # makes a list of all nodes on path from root to target
         def dfs(node, path):
             if not node: return
             copy=path.copy()
@@ -33,6 +34,7 @@ class Solution:
             find_children(node.left,dist-1)
             find_children(node.right,dist-1)
         
+        # reverse the list, then run helper on each node, reducing k by 1 each time
         path_to_target.reverse()
         for node in path_to_target:
             find_children(node,k)
