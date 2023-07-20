@@ -11,7 +11,7 @@ class Solution:
             trusted[trustee].update([truster])
             
         for person in range(1,n+1):
-            print(person, person in trusters, trusted[person])
+            # print(person, person in trusters, trusted[person])
             if person not in trusters and len(trusted[person]) == n-1:
                 return person
         
