@@ -19,6 +19,6 @@ class Solution:
         for k in range(n):
             if lengths[k]==max_length: answer+=paths[k]
                 
-        print(lengths)
-        print(paths)
+        # print(lengths)
+        # print(paths)
         return answer
