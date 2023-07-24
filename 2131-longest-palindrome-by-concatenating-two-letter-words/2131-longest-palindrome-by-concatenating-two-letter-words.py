@@ -5,7 +5,6 @@ class Solution:
         
         for word in words:
             a,b=word[0],word[1]
-            # if a==b: doubles+=1
             if counts[b+a]:
                 counts[b+a]-=1
                 length+=2
