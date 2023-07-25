@@ -10,5 +10,3 @@ class Solution:
                 l=m
             elif arr[m]>arr[m+1]:
                 r=m
-            
-        
