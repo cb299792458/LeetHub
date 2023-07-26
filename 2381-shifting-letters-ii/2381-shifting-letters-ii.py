@@ -2,8 +2,6 @@ class Solution:
     def shiftingLetters(self, s: str, shifts: List[List[int]]) -> str:
         alphabet='abcdefghijklmnopqrstuvwxyz'
         indices={c: i for i,c in enumerate(alphabet)}
-        # for i,c in enumerate(alphabet):
-        #     indices[c]=i
         s_by_idx = [indices[c] for c in s]
         
         deltas = [0 for _ in range(len(s)+1)]
