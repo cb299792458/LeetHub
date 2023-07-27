@@ -2,8 +2,8 @@ class Solution:
     def maxRunTime(self, n: int, batteries: List[int]) -> int:
         
         def check(time):
-            extra = sum([min(bat,time) for bat in batteries])
-            return extra//n>=time
+            total = sum([min(bat,time) for bat in batteries])
+            return total//n>=time
         
         l,r = 1,sum(batteries)//n
         
