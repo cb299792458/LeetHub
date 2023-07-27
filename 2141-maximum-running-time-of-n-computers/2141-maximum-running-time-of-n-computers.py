@@ -1,6 +1,6 @@
 class Solution:
     def maxRunTime(self, n: int, batteries: List[int]) -> int:
-        batteries.sort(reverse=True)
+        # batteries.sort(reverse=True)
         
         def check(time):
             # print(time)
