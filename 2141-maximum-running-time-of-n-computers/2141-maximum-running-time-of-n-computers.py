@@ -1,9 +1,7 @@
 class Solution:
     def maxRunTime(self, n: int, batteries: List[int]) -> int:
-        # batteries.sort(reverse=True)
         
         def check(time):
-            # print(time)
             extra = sum([min(bat,time) for bat in batteries])
 
             return extra//n>=time
