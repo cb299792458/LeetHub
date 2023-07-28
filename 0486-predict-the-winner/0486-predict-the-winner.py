@@ -1,5 +1,6 @@
 class Solution:
     def PredictTheWinner(self, nums: List[int]) -> bool:
+        @cache
         def score(l,r):
             if l==r:
                 return nums[l]
