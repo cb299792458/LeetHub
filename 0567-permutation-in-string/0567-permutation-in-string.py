@@ -9,7 +9,6 @@ class Solution:
         for i in range(len(s1),len(s2)):
             s2_counts[s2[i]]+=1
             s2_counts[s2[i-len(s1)]]-=1
-            # print(s2_counts)
             if s1_counts==s2_counts:
                 return True
             
