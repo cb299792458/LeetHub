@@ -24,8 +24,4 @@ class Solution:
         high_prev.next = None
         low_prev.next = high_dummy.next
         
-        current=low_dummy.next
-        # while current:
-        #     print(current.val)
-        #     current=current.next
         return low_dummy.next
