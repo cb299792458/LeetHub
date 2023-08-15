@@ -12,14 +12,14 @@ class Solution:
         while current:
             if current.val<x:
                 low_prev = current
-                current = current.next
+                # current = current.next
             else:
                 low_prev.next = current.next
                 
                 high_prev.next = current
                 high_prev = current
                 
-                current = current.next
+            current = current.next
                 
         high_prev.next = None
         low_prev.next = high_dummy.next
