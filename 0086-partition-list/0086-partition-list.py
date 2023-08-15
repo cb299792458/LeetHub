@@ -12,7 +12,6 @@ class Solution:
         while current:
             if current.val<x:
                 low_prev = current
-                # current = current.next
             else:
                 low_prev.next = current.next
                 
