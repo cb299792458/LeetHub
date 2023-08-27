@@ -1,9 +1,9 @@
 class Solution:
     def canCross(self, stones: List[int]) -> bool:
-        n=stones[-1]
-        dp = {}
-        for stone in stones:
-            dp[stone]=set()
+        # dp = {}
+        # for stone in stones:
+        #     dp[stone]=set()
+        dp = {stone:set() for stone in stones}
         dp[0].add(1)
         
         for curr in stones[1:]:
