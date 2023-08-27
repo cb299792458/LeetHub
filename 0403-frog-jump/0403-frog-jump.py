@@ -1,0 +1,17 @@
+class Solution:
+    def canCross(self, stones: List[int]) -> bool:
+        n=stones[-1]
+        dp = {}
+        for stone in stones:
+            dp[stone]=set()
+        dp[0].add(1)
+        
+        for curr in stones[1:]:
+            for prev in stones:
+                if prev==curr: break
+                if curr-prev in dp[prev]:
+                    dp[curr].add(curr-prev)
+                    dp[curr].add(curr-prev+1)
+                    dp[curr].add(curr-prev-1)
+        return dp[list(dp.keys())[-1]]
+                    
