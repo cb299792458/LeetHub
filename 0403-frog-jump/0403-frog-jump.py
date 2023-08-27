@@ -13,5 +13,5 @@ class Solution:
                     dp[curr].add(curr-prev)
                     dp[curr].add(curr-prev+1)
                     dp[curr].add(curr-prev-1)
-        return dp[list(dp.keys())[-1]]
+        return len(dp[list(dp.keys())[-1]])!=0
                     
