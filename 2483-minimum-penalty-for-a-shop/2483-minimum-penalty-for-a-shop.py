@@ -18,7 +18,6 @@ class Solution:
         
         o_pen.append(n_so_far)
         c_pen.append(y_to_come)
-        # print(o_pen,c_pen)
         
         best = None
         lowest = float('inf')
