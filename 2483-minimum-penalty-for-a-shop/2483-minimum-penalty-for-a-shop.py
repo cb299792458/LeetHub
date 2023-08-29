@@ -1,6 +1,5 @@
 class Solution:
     def bestClosingTime(self, customers: str) -> int:
-        n=len(customers)
         o_pen=[]
         c_pen=[]
         
