@@ -4,12 +4,7 @@ class Solution:
         heap = [(-count,char) for [char,count] in ctr.items()]
         heapq.heapify(heap)
         
-        # first = heapq.heappop(heap)
-        # res = [first[1]]
-        # if first[0]+1: heapq.heappush(heap,(first[0]+1,first[1]))
         res = []
-        
-        
         while heap:
             (count1,char1) = heapq.heappop(heap)
             if not res or res[-1] != char1:
