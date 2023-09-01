@@ -15,6 +15,7 @@ class Solution:
                 if count1+1: heapq.heappush(heap,(count1+1,char1))
             else:
                 if not heap: return ''
+                
                 (count2,char2) = heapq.heappop(heap)
                 heapq.heappush(heap,(count1,char1))
                 res.append(char2)
