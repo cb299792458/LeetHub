@@ -9,5 +9,4 @@ class Solution:
                     print(word,s[i:i+len(word)], i)
                     dp[i+len(word)] = min(dp[i],dp[i+len(word)])
         
-        print(dp)
         return dp[-1]
