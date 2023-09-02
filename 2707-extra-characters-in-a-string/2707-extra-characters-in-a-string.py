@@ -6,7 +6,6 @@ class Solution:
             dp[i]=min(dp[i],dp[i-1]+1)
             for word in dictionary:
                 if word==s[i:i+len(word)]:
-                    print(word,s[i:i+len(word)], i)
                     dp[i+len(word)] = min(dp[i],dp[i+len(word)])
         
         return dp[-1]
