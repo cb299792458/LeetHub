@@ -22,7 +22,7 @@ class Solution:
         orig = head
         curr = dummy.next
         while orig:
-            curr.random = copies[orig.random] if orig.random in copies else None
+            curr.random = copies[orig.random] if orig.random else None
             curr = curr.next
             orig = orig.next
         
