@@ -1,7 +1,7 @@
 class Solution:
     def bulbSwitch(self, n: int) -> int:
         on=0
-        for i in range(1,int(math.sqrt(n))+1):
+        for i in range(int(math.sqrt(n))):
             on+=1
         return on
         
