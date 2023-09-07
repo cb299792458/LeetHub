@@ -22,7 +22,7 @@ class Solution:
             current=nextNode
         
         
-        if before: current = before.next
+        current = before.next
         while current:
             temp = current.next
             
@@ -31,7 +31,7 @@ class Solution:
             
             current = temp
 
-        if before: before.next = after
+        before.next = after
         
         
         return dummy.next
