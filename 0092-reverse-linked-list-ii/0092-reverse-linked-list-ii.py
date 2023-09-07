@@ -21,7 +21,6 @@ class Solution:
                 current.next = None
             current=nextNode
         
-        
         current = before.next
         while current:
             temp = current.next
@@ -30,8 +29,6 @@ class Solution:
             after = current
             
             current = temp
-
         before.next = after
-        
         
         return dummy.next
