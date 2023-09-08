@@ -1,5 +1,7 @@
 class Solution:
     def getRow(self, numRows: int) -> List[int]:
+        # copy pasted from Pascal's Triangle I
+        # not optimized, could save space by only keeping last row
         triangle = [[1]]
         for _ in range(numRows):
             newRow = []
