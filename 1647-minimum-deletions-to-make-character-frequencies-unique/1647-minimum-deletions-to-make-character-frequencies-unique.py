@@ -1,7 +1,7 @@
 class Solution:
     def minDeletions(self, s: str) -> int:
         counts = Counter(s)
-        letters = sorted(list(counts.keys()), key=lambda k:counts[k], reverse=True)
+        letters = sorted(counts.keys(), key=lambda k:counts[k], reverse=True)
         
         seen = set()
         deletions = 0
