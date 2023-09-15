@@ -17,9 +17,9 @@ class Solution:
             heapq.heappush(pq,tup)
         
         while pq:
-            while pq and pq[0][1] in visited:
+            if pq[0][1] in visited:
                 heapq.heappop(pq)
-            if not pq: continue
+                continue
             (cost, point) = heapq.heappop(pq)
             total_cost += cost
             visited.add(point)
