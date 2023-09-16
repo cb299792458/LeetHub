@@ -10,11 +10,10 @@ class Solution:
         
         def possible(effort):
             queue = deque([(0,0)])
-            seen = set()
+            seen = set([(0,0)])
             
             while len(queue):
                 (r,c) = queue.popleft()
-                seen.add((r,c))
                 if r==rows-1 and c==cols-1: return True
                 for d in dirs:
                     nr,nc = r+d[0],c+d[1]
