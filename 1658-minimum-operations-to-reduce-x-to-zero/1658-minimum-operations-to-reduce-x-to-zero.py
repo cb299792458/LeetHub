@@ -1,20 +1,29 @@
 class Solution:
     def minOperations(self, nums: List[int], x: int) -> int:
-        total_sum = sum(nums)
-        target = total_sum - x
-        n = len(nums)
-        l = -1
-        curr = 0
-        count = float('inf')
-
-        for r in range(n):
-            curr += nums[r]
-
-            while curr > target and l < r:
-                l += 1
-                curr -= nums[l]
-
-            if curr == target:
-                count = min(count, n - (r - l))
-
-        return count if count != float('inf') else -1
+        n=len(nums)
+        l=-1
+        r=n
+        curr=0
+        count=-1
+        
+        while curr < x and r>0:
+            r-=1
+            curr+=nums[r]
+        if curr==x:
+            count = r-l
+        
+        
+        while l<n-1:
+            l+=1
+            curr+=nums[l]
+            
+            while curr>x and r<n:
+                curr-=nums[r]
+                r+=1
+                
+            if curr==x and l!=r:
+                count = max(count, r-l)
+                
+        print(count)
+        return n-count+1 if count!=-1 else count
+            
