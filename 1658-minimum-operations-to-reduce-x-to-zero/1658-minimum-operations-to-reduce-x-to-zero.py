@@ -24,6 +24,5 @@ class Solution:
             if curr==x and l!=r:
                 count = max(count, r-l)
                 
-        print(count)
         return n-count+1 if count!=-1 else count
             
