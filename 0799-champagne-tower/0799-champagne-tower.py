@@ -4,7 +4,6 @@ class Solution:
         for i in range(query_row+2):
             glasses.append([0]*(i+1))
         glasses[0][0]=poured
-        
 
         for r in range(query_row+1):
             for c in range(len(glasses[r])):
