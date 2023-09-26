@@ -8,8 +8,9 @@ class Solution:
         stack=[]
         for i,c in enumerate(s):
             if c in seen: continue
-            while stack and ord(stack[-1])>ord(c) and last_index[stack[-1]]>i:
+            while stack and stack[-1]>c and last_index[stack[-1]]>i:
                 seen.remove(stack.pop())
+                
             seen.add(c)
             stack.append(c)
         return ''.join(stack)
