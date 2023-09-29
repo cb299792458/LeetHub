@@ -1,6 +1,6 @@
 class Solution:
     def minTime(self, n: int, edges: List[List[int]], hasApple: List[bool]) -> int:
-        if not len([bool for bool in hasApple if bool]): return 0
+        if not [bool for bool in hasApple if bool]: return 0
         
         graph = defaultdict(list)
         for [a,b] in edges:
