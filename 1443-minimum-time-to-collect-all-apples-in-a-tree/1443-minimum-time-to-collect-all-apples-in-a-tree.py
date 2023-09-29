@@ -22,4 +22,4 @@ class Solution:
         
         dfs(0)
         
-        return max(len(must)*2 -2,0)
+        return max((len(must)-1)*2,0)
