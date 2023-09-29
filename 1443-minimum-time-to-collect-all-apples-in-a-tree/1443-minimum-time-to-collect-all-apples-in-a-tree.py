@@ -7,7 +7,7 @@ class Solution:
             graph[a].append(b)
             graph[b].append(a)
             
-        seen = set()
+        seen=set()
         time=-2
         
         def dfs(node):
