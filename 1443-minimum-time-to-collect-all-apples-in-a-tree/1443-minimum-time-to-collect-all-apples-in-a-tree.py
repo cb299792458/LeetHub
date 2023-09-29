@@ -8,7 +8,7 @@ class Solution:
             graph[b].append(a)
             
         seen = set()
-        must = set()
+        time=-2
         
         def dfs(node):
             if node in seen: return False
@@ -19,8 +19,9 @@ class Solution:
                 if dfs(neighbor): res = True
             
             if res:
-                must.add(node)
+                nonlocal time
+                time+=2
             return res
         dfs(0)
         
-        return (len(must)-1)*2
+        return time
