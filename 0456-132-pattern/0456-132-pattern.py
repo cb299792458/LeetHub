@@ -8,7 +8,7 @@ class Solution:
                 stack.pop()
                 
             if stack:
-                [large,small]=stack[-1]
+                (large,small)=stack[-1]
                 if small<n<large:
                     return True
             
