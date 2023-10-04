@@ -10,7 +10,7 @@ class MyHashMap:
         return self.array[key]
 
     def remove(self, key: int) -> None:
-        self.array[key]=-1
+        self.put(key,-1)
 
 
 # Your MyHashMap object will be instantiated and called as such:
