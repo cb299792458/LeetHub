@@ -17,8 +17,6 @@ class Solution:
                     root = i
         if root==None: return False
         
-        print(parents,root)
-        
         seen=set()
         def dfs(node):
             if node in seen: return
@@ -26,6 +24,6 @@ class Solution:
             if leftChild[node]!=-1: dfs(leftChild[node])
             if rightChild[node]!=-1: dfs(rightChild[node])
         dfs(root)
-        print(seen)
+
         return len(seen)==n
         
