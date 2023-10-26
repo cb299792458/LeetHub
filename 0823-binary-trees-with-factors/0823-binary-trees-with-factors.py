@@ -1,7 +1,7 @@
 class Solution:
     def numFactoredBinaryTrees(self, arr: List[int]) -> int:
         arr.sort()
-        trees = defaultdict(lambda: 1)
+        trees = {}
         
         for n in arr:
             trees[n]=1
