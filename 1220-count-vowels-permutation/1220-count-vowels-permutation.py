@@ -2,7 +2,7 @@ class Solution:
     def countVowelPermutation(self, n: int) -> int:
         mod = 10**9 + 7
         vowels = 'aeiou'
-        nexts = {
+        next_vowels = {
             'a': 'e',
             'e': 'ai',
             'i': 'aeou',
@@ -11,15 +11,15 @@ class Solution:
         }
         
         curr = 1
-        ends = {key: 1 for key in vowels}
+        endings = {key: 1 for key in vowels}
         
         while curr<n:
             new = defaultdict(int)
             for v in vowels:
-                for nx in nexts[v]:
-                    new[nx] += ends[v]
+                for nv in next_vowels[v]:
+                    new[nv] += endings[v]
             
-            ends = new
+            endings = new
             curr+=1
             
-        return sum(ends.values()) % mod
+        return sum(endings.values()) % mod
