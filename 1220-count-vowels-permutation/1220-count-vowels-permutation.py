@@ -1,13 +1,13 @@
 class Solution:
     def countVowelPermutation(self, n: int) -> int:
         mod = 10**9 + 7
-        vowels = 'aeiou'
+        vowels = ['a','e','i','o','u']
         next_vowels = {
-            'a': 'e',
-            'e': 'ai',
-            'i': 'aeou',
-            'o': 'iu',
-            'u': 'a'
+            'a': ['e'],
+            'e': ['a','i'],
+            'i': ['a','e','o','u'],
+            'o': ['i','u'],
+            'u': ['a']
         }
         
         curr = 1
