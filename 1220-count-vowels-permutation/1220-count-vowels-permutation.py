@@ -13,13 +13,12 @@ class Solution:
         curr = 1
         endings = {key: 1 for key in vowels}
         
-        while curr<n:
+        for _ in range(n-1):
             new_endings = defaultdict(int)
             for v in vowels:
                 for nv in next_vowels[v]:
                     new_endings[nv] += endings[v] % mod
             
             endings = new_endings
-            curr+=1
             
         return sum(endings.values()) % mod
