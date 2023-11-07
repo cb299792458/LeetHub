@@ -1,15 +1,15 @@
 class Solution:
     def decodeString(self, s: str) -> str:
+        # empty string base case
         if not s: return ''
         
-        print('S:',s)
         l, r = 0, len(s)-1
         prefix, suffix = '', ''
         while not s[l].isdigit():
             prefix = prefix + s[l]
             l+=1
 
-            # base case
+            # all letters base case
             if l == len(s):
                 return prefix
         while not s[r].isdigit() and s[r] != ']':
@@ -21,22 +21,22 @@ class Solution:
             k_string += s[l]
             l+=1
         k = int(k_string)
-        if s[l] != '[': print('non [ after k')
+
         l+=1
         left_brackets, right_brackets = 1, 0
-        substring = ''
+        substring = '[' # substring includes brackets (for nested case)
 
         while left_brackets > right_brackets:
-            # print(s, l)
             char = s[l]
 
             if char=='[':
                 left_brackets+=1
             elif char==']':
                 right_brackets+=1
-            substring += char
+            substring += char # always add char to substring, even [ or ]
+            
             l+=1
-        print(substring[:-1])
-        repeated_substring = k * self.decodeString(substring[:-1])
+        # remove first and last chars (always [ and ])
+        repeated_substring = k * self.decodeString(substring[1:-1])
         
         return prefix + repeated_substring + self.decodeString(s[l:r+1]) + suffix
