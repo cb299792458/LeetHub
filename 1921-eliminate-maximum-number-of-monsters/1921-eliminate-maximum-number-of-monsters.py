@@ -7,5 +7,4 @@ class Solution:
             if time <= i:
                 return i
             
-            
         return len(times)
