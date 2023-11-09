@@ -4,17 +4,17 @@ class Solution:
         
         for c in s:
             if c==']':
-                substring = ''
+                substack = deque()
                 while stack[-1] != '[':
-                    substring = stack.pop() + substring
+                    substack.appendleft(stack.pop())
                 stack.pop()
                 
-                k = ''
+                k = deque()
                 while stack and stack[-1].isdigit():
-                    k = stack.pop() + k
-                k=int(k)
+                    k.appendleft(stack.pop())
+                k=int(''.join(k))
                 
-                stack.append(k * self.decodeString(substring))
+                stack.append(k * self.decodeString(''.join(substack)))
             else: 
                 stack.append(c)
                 
