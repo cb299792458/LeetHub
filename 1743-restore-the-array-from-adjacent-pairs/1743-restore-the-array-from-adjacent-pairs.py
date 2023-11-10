@@ -16,10 +16,9 @@ class Solution:
         [start, end] = list(start_end)
         
         orig = [start]
-        seen=set(orig)
         while orig[-1] != end:
-            new = adjs[orig[-1]][0] if adjs[orig[-1]][0] not in seen else adjs[orig[-1]][1]
-            seen.add(new)
-            orig.append(new)
+            next = adjs[orig[-1]][0]
+            adjs[next].remove(orig[-1])
+            orig.append(next)
             
         return orig
