@@ -4,14 +4,11 @@ class Solution:
         start_end = set()
         
         for [a,b] in adjacentPairs:
-            if a in start_end:
-                start_end.remove(a)
-            else:
-                start_end.add(a)
-            if b in start_end:
-                start_end.remove(b)
-            else:
-                start_end.add(b)
+            for p in [a,b]:
+                if p in start_end:
+                    start_end.remove(p)
+                else:
+                    start_end.add(p)
                 
             adjs[a].append(b)
             adjs[b].append(a)
