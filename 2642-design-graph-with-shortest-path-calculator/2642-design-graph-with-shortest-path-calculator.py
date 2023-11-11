@@ -5,7 +5,6 @@ class Graph:
         self.n = n
         for [start,end,cost] in edges:
             self.adjs[start][end] = cost
-        
 
     def addEdge(self, edge: List[int]) -> None:
         [start, end, cost] = edge
