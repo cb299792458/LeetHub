@@ -9,11 +9,7 @@ class Graph:
 
     def addEdge(self, edge: List[int]) -> None:
         [start, end, cost] = edge
-        # if end not in self.adjs[start]:
-        self.adjs[start][end] = cost
-        # else:
-        #     self.adjs[start][end] = min(self.adjs[start][end], cost)
-        
+        self.adjs[start][end] = cost       
 
     def shortestPath(self, node1: int, node2: int) -> int:        
         pq = [(0,node1)]
