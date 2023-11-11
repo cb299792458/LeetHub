@@ -22,10 +22,8 @@ class Graph:
         while pq:
             cost, node = heapq.heappop(pq)
             if node==node2: return cost
-            
-            neighbors = self.adjs[node].items()
                         
-            for [next_node, next_cost] in neighbors:
+            for [next_node, next_cost] in self.adjs[node].items():
                 if next_node in visited: continue
                 heapq.heappush(pq,(cost+next_cost,next_node))
             
