@@ -11,12 +11,12 @@ class Solution:
                     adj_list[i].add(j)
                     adj_list[j].add(i)
                     
-        q = deque([(1,i) for i,s in enumerate(routes) if source in s])
+        q = deque([(i,1) for (i,s) in enumerate(routes) if source in s])
                 
         seen = set()
                 
         while q:
-            (buses, i) = q.popleft()
+            (i, buses) = q.popleft()
             route = routes[i]
             
             if target in route:
@@ -27,6 +27,6 @@ class Solution:
             seen.add(i)
             
             for j in adj_list[i]:
-                q.append((buses+1,j))
+                q.append((j,buses+1))
                 
         return -1
