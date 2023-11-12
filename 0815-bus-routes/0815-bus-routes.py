@@ -17,9 +17,8 @@ class Solution:
                 
         while q:
             (i, buses) = q.popleft()
-            route = routes[i]
             
-            if target in route:
+            if target in routes[i]:
                 return buses
             
             if i in seen:
