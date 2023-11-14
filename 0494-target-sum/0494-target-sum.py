@@ -14,4 +14,4 @@ class Solution:
                 memo[i+1][prev_total+num] += count 
                 memo[i+1][prev_total-num] += count
                 
-        return memo[-1][target]
+        return memo[n][target]
