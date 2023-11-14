@@ -5,7 +5,7 @@ class Solution:
         # memo[i][total] is the count of ways to reach a total after assigning i symbols
         memo[0][0] = 1
 
-        for i, [prev_dict, num] in enumerate(zip(memo,nums)):
+        for [i, [prev_dict, num]] in enumerate(zip(memo,nums)):
             for [prev_total, count] in prev_dict.items():
                 # for every way to get prev_total, there are that many ways to get to
                 # prev_total+num next round, because you can add num to prev_total 
