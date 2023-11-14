@@ -1,13 +1,22 @@
 class Solution:
-    def numOfMinutes(self, n: int, headID: int, manager: List[int], informTime: List[int]) -> int:
-        subordinates = [[] for _ in range(n)]
-        for emp,man in enumerate(manager):
-            if man!=-1: subordinates[man].append(emp)
-                
-        def dfs(id):
-            next = 0
-            for sub in subordinates[id]:
-                next = max(next,dfs(sub))
-            return next + informTime[id]
-                
-        return dfs(headID)
+    def numOfMinutes(self, n: int, headID: int, managers: List[int], informTime: List[int]) -> int:
+        subordinates = defaultdict(list)
+        
+        for employee, manager in enumerate(managers):
+            if manager==-1: continue
+            subordinates[manager].append(employee)
+        # print(subordinates)
+        longest = 0
+        
+        def dfs(emp, time):
+            # print(emp, time)
+            if not subordinates[emp]:
+                nonlocal longest
+                longest = max(longest, time)
+                return
+            
+            for sub in subordinates[emp]:
+                dfs(sub, time + informTime[emp])
+            
+        dfs(headID, 0)
+        return longest
