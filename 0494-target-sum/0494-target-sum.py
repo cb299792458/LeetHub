@@ -1,10 +1,11 @@
 class Solution:
     def findTargetSumWays(self, nums: List[int], target: int) -> int:
-        memo = [defaultdict(int) for _ in range(len(nums)+1)]
+        n = len(nums)
+        memo = [defaultdict(int) for _ in range(n+1)]
         # memo[i][total] is the count of ways to reach a total after assigning i symbols
         memo[0][0] = 1
         
-        for i in range(len(nums)):
+        for i in range(n):
             prev_dict = memo[i]
             num = nums[i]
             for [prev_total, count] in prev_dict.items():
