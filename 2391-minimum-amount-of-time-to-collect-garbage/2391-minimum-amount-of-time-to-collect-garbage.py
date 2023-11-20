@@ -10,7 +10,6 @@ class Solution:
                     last_index[t] = i
                     
         travel = [0] + travel
-        # print(time, travel, last_index)
         for t in types:
             time += sum(travel[:last_index[t]+1])
         return time
