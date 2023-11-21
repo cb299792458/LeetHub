@@ -5,11 +5,6 @@ class Solution:
         
         mod = 10**9 + 7
         nums = [n - rev(n) for n in nums]
-        counts = Counter()
-        pairs = 0
-        
-        for n in nums:
-            pairs += counts[n]
-            counts[n] += 1
-            
-        return pairs % mod
+        counts = Counter(nums)
+
+        return sum([n*(n-1)//2 for n in counts.values()]) % mod
