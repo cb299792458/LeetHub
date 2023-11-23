@@ -1,6 +1,5 @@
 class Solution:
     def checkArithmeticSubarrays(self, nums: List[int], l: List[int], r: List[int]) -> List[bool]:
-        # nums.sort()
         def check(arr):
             arr.sort()
             diff=arr[1]-arr[0]
