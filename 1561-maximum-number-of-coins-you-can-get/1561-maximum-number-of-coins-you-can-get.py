@@ -1,10 +1,5 @@
 class Solution:
     def maxCoins(self, piles: List[int]) -> int:
-        piles.sort()
-        dq = deque(piles)
-        coins = 0
-        while dq:
-            dq.pop()
-            coins+=dq.pop()
-            dq.popleft()
-        return coins
+        n=len(piles)//3
+        piles.sort(reverse=True)
+        return sum([piles[i] for i in range(1,2*n+1,2)])
