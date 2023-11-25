@@ -14,9 +14,8 @@ class Solution:
             curr += i*n
             curr -= (N-1-i)*n
             i += 1
-            
+
             curr -= passed
-            
             passed += n
             coming -= n
             curr += coming
