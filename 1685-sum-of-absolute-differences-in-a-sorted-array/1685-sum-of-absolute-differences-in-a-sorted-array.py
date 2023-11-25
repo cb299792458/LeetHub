@@ -1,17 +1,18 @@
 class Solution:
     def getSumAbsoluteDifferences(self, nums: List[int]) -> List[int]:
         N=len(nums)
-        prefix=[None]*N
-        suffix=[None]*N
+        prefix=[]
+        suffix=[]
         l,r=0,0
         
         for i in range(N):
             l+=nums[i]
-            prefix[i]=l
+            prefix.append(l)
             
             r+=nums[-1-i]
-            suffix[-1-i]=r
-
+            suffix.append(r)
+            
+        suffix=suffix[::-1]
         result = []
         
         for i in range(N):
