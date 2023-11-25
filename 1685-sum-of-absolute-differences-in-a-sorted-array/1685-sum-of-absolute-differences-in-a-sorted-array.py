@@ -9,10 +9,7 @@ class Solution:
         coming = total
         
         for n in nums:
-            curr = 0
-            
-            curr += i*n
-            curr -= (N-1-i)*n
+            curr = (2*i-N+1)*n
             i += 1
 
             curr -= passed
