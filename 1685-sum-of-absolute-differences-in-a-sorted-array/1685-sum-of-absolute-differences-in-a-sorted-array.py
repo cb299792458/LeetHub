@@ -4,9 +4,11 @@ class Solution:
         prefix=[None]*N
         suffix=[None]*N
         l,r=0,0
+        
         for i in range(N):
             l+=nums[i]
             prefix[i]=l
+            
             r+=nums[-1-i]
             suffix[-1-i]=r
 
