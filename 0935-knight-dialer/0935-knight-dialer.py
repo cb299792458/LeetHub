@@ -15,7 +15,7 @@ class Solution:
         mod=10**9+7
         memo=[1]*10
         
-        for _ in range(n-1):
+        for _ in range(1,n):
             new_memo=[0]*10
             for old in range(10):
                 for new in adjs[old]:
