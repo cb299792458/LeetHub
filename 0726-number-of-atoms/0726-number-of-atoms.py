@@ -16,25 +16,22 @@ class Solution:
             self.sub = None
             
         for c in formula:
-            if c.isupper():
-                calc()
-                self.element += c
-                
-            elif c.islower():
+            if c.isalpha():
+                if c.isupper():
+                    calc()
                 self.element += c
                 
             elif c.isdigit():
                 self.count *= 10
                 self.count += int(c)
                 
-            elif c=='(':
+            else:
                 calc()
-                self.stack.append(defaultdict(int))
+                if c=='(':
+                    self.stack.append(defaultdict(int))
                 
-            elif c==')':
-                calc()
-                self.sub = self.stack.pop()
-                
+                if c==')':
+                    self.sub = self.stack.pop()
         calc()
 
         # assert(len(self.stack)==1)
