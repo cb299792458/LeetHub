@@ -19,16 +19,22 @@ class Solution:
             if c.isupper():
                 calc()
                 self.element += c
+                
             elif c.islower():
                 self.element += c
+                
             elif c.isdigit():
-                self.count = 10 * self.count + int(c)
+                self.count *= 10
+                self.count += int(c)
+                
             elif c=='(':
                 calc()
                 self.stack.append(defaultdict(int))
+                
             elif c==')':
                 calc()
                 self.sub = self.stack.pop()
+                
         calc()
 
         assert(len(self.stack)==1)
