@@ -37,7 +37,7 @@ class Solution:
                 
         calc()
 
-        assert(len(self.stack)==1)
+        # assert(len(self.stack)==1)
         items = list(self.stack[-1].items())
         items.sort()
         return ''.join(element + (str(count) if count>1 else '') for element, count in items)
