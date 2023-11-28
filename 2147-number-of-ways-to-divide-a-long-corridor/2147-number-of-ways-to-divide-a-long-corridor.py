@@ -9,8 +9,8 @@ class Solution:
         for c in corridor:
             if c=='S':
                 seats+=1
-                if seats>2:
-                    seats-=2
+                if seats==3:
+                    seats=1
                     ways*=plants+1
                     plants=0
             else:
