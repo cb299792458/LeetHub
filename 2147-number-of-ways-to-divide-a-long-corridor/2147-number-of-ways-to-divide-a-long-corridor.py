@@ -10,7 +10,7 @@ class Solution:
             if c=='S':
                 seats+=1
                 if seats>2:
-                    seats=1
+                    seats-=2
                     ways*=plants+1
                     plants=0
             else:
