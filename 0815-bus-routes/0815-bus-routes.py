@@ -12,7 +12,6 @@ class Solution:
                     adj_list[j].add(i)
                     
         q = deque([(i,1) for (i,s) in enumerate(routes) if source in s])
-                
         seen = set()
                 
         while q:
