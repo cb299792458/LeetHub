@@ -1,10 +1,15 @@
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
-        best = 0
         buy = prices[0]
+        profit = 0
         
         for curr in prices[1:]:
-            buy = min(buy,curr)
-            best = max(best, curr - buy)
+            # sell today
+            if curr - buy > profit:
+                profit = curr - buy
+                
+            # buy today
+            if curr < buy:
+                buy = curr
         
-        return best
+        return profit
