@@ -8,5 +8,4 @@ class Solution:
             pairs += count // 2
             extra += count % 2
             
-        print(pairs, extra)
         return 2 * pairs + (1 if extra else 0)
