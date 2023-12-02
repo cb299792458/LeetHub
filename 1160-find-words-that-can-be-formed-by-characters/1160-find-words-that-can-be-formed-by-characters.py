@@ -7,13 +7,11 @@ class Solution:
             counts = Counter(word)
             can_make = True
             for c in word:
-                # print(c, counts[c], chars[c])
                 if counts[c]>chars[c]:
                     can_make = False
                     break
             
             if can_make:
-                # print(word)
                 lengths += len(word)
         
         return lengths
