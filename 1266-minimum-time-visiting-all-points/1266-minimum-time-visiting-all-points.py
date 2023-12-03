@@ -6,6 +6,6 @@ class Solution:
             return max(abs(y2-y1),abs(x2-x1))
         
         time = 0
-        for i in range(len(points)-1):
-            time += dist(points[i], points[i+1])
+        for i in range(1,len(points)):
+            time += dist(points[i-1], points[i])
         return time
