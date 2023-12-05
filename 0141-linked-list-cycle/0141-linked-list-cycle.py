@@ -5,18 +5,13 @@
 #         self.next = None
 """
 myDict = {myKey: myValue}
+myObject.myKey = myValue
 
 head = {
-    val: 3,
+    val: 1,
     next: {
         val: 2,
-        next: {
-            val: 0,
-            next: {
-                val: -4,
-                next: None
-            }
-        }
+        next: None
     }
 }
 """
@@ -24,12 +19,11 @@ head = {
 class Solution:
     def hasCycle(self, head: Optional[ListNode]) -> bool:
         seen = []
-        curr = head
         
-        while curr:
+        curr = head
+        while curr != None:
             if curr in seen:
                 return True
             seen.append(curr)
             curr = curr.next
-        
         return False
