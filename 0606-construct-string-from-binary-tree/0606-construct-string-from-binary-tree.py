@@ -7,6 +7,12 @@
 class Solution:
     def tree2str(self, root: Optional[TreeNode]) -> str:
         stack=[]
+        def close():
+            if stack[-1]=='(':
+                stack.pop()
+            else:
+                stack.append(')')
+            
         def dfs(node):
             if not node: return
             stack.append(str(node.val))
@@ -14,20 +20,14 @@ class Solution:
             if node.left:
                 stack.append('(')
                 dfs(node.left)
-                if stack[-1]=='(':
-                    stack.pop()
-                else:
-                    stack.append(')')
+                close()
             
             if node.right:
                 if not node.left:
                     stack.append('()')
                 stack.append('(')
                 dfs(node.right)
-                if stack[-1]=='(':
-                    stack.pop()
-                else:
-                    stack.append(')')
+                close()
             
         dfs(root)
         return ''.join(stack)
