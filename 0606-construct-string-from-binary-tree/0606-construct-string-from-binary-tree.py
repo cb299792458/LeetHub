@@ -14,7 +14,6 @@ class Solution:
                 stack.append(')')
             
         def dfs(node):
-            # if not node: return
             stack.append(str(node.val))
             
             if node.left:
