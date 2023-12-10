@@ -11,4 +11,4 @@ class Solution:
         
         # return list(zip(*matrix))
         
-        return [[matrix[y][x] for y in range(len(matrix))] for x in range(len(matrix[0]))]
+        return [[matrix[c][r] for c in range(R)] for r in range(C)]
