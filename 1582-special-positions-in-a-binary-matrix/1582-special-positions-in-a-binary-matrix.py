@@ -2,8 +2,8 @@ class Solution:
     def numSpecial(self, mat: List[List[int]]) -> int:
         R,C = len(mat),len(mat[0])
         
-        row1s = [0 for _ in range(R)]
-        col1s = [0 for _ in range(C)]
+        row1s = [0] * R
+        col1s = [0] * C
         
         for r in range(R):
             for c in range(C):
