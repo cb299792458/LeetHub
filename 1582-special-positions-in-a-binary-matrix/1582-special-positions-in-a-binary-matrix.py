@@ -11,10 +11,7 @@ class Solution:
                     print(r,c)
                     row1s[r] += 1
                     col1s[c] += 1
-        
-        print(row1s)
-        print(col1s)
-        
+
         ans = 0
         for r in range(R):
             for c in range(C):
