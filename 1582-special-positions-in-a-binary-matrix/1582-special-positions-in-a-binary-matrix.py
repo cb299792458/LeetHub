@@ -8,7 +8,6 @@ class Solution:
         for r in range(R):
             for c in range(C):
                 if mat[r][c]==1:
-                    print(r,c)
                     row1s[r] += 1
                     col1s[c] += 1
 
