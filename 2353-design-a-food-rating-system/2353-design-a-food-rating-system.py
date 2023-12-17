@@ -13,7 +13,6 @@ class FoodRatings:
         heapq.heappush(self.cuisines[cuisine], (-newRating, food))
         
     def highestRated(self, cuisine: str) -> str:
-        # print(self.cuisines[cuisine][0][0] , -self.ratings[self.cuisines[cuisine][0][1]][0])
         while self.cuisines[cuisine][0][0] != -self.ratings[self.cuisines[cuisine][0][1]][0]:
             heapq.heappop(self.cuisines[cuisine])
         return self.cuisines[cuisine][0][1]
