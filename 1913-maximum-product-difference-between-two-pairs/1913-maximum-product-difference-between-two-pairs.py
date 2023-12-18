@@ -1,4 +1,18 @@
 class Solution:
     def maxProductDifference(self, nums: List[int]) -> int:
-        nums.sort()
-        return (nums[-1]*nums[-2]) - (nums[1]*nums[0])
+        lowest, low, high, highest = 10**10,10**10,-10**10,-10**10
+        
+        for num in nums:
+            if num < lowest:
+                low = lowest
+                lowest = num
+            elif num < low:
+                low = num
+                
+            if num > highest:
+                high = highest
+                highest = num
+            elif num > high:
+                high = num
+                
+        return (highest*high) - (lowest*low)
