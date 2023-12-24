@@ -1,9 +1,7 @@
 class Solution:
     def minOperations(self, s: str) -> int:
         ops = 0
-        good = '0'
-        for c in s:
-            if c!=good:
+        for i,c in enumerate(s):
+            if c!=str(i%2):
                 ops += 1
-            good = '1' if good=='0' else '0'
         return min(ops, len(s)-ops)
