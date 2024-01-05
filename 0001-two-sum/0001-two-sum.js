@@ -1,17 +1,13 @@
 var twoSum = function(nums, target) {
     const N = nums.length;
-    const indexOfSeen = new Map();
+    const indexOfPrev = {}
     
     for(let i=0; i<N; i++){
-        let difference = target - nums[i];
-
-        if(indexOfSeen.has(difference)){
-            console.log('sdf')
-            return [i,indexOfSeen.get(difference)];
+        const diff = target - nums[i];
+        if(diff in indexOfPrev){
+            return [indexOfPrev[diff], i];
         }
-        
-        indexOfSeen.set(nums[i],i)
+        indexOfPrev[nums[i]] = i
     }
     
-    console.log(indexOfSeen);
 };
