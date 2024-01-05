@@ -18,8 +18,9 @@ var isValid = function(s) {
         }
     }
     
-    if (stack.length>0) {
-        return false;
-    }
-    return true;
+    // if (stack.length>0) {
+    //     return false;
+    // }
+    // return true;
+    return stack.length===0
 };
