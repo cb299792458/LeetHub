@@ -22,5 +22,5 @@ var isValid = function(s) {
     //     return false;
     // }
     // return true;
-    return stack.length===0
+    return !stack.length
 };
