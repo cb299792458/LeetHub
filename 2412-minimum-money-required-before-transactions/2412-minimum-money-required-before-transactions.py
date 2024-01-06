@@ -12,9 +12,8 @@ class Solution:
             lowest = min(money, lowest)
             money += gain
         
-        for cost, gain in prof[:1]:
-            money -= cost
+        if prof:
+            money -= max(t[0] for t in prof)
             lowest = min(money, lowest)
-            money += gain
             
         return -lowest
