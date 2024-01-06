@@ -6,9 +6,9 @@ class Solution:
         
         heap = []
         for (s,e,p) in jobs:
-            while heap and heap[0][0]<=s:
-                best = max(best, heapq.heappop(heap)[1])
+            while heap and heap[0][0]<=s: # check all paths that end before new start
+                best = max(best, heapq.heappop(heap)[1]) # get best profit up to new job
                 
-            heapq.heappush(heap,(e,best+p))
+            heapq.heappush(heap,(e,best+p)) # add result of doing new job to heap
         
         return max(t[1] for t in heap)
