@@ -12,7 +12,7 @@ class Solution:
             money += gain
         
         if prof:
-            money -= max(t[0] for t in prof)
+            money -= max(cost for cost,_ in prof)
             lowest = min(money, lowest)
             
         return -lowest
