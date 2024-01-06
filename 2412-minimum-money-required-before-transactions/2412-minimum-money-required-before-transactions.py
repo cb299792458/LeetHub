@@ -8,7 +8,7 @@ class Solution:
         money,lowest = 0,0
         for cost, gain in loss:
             money -= cost
-            lowest = min(money, lowest)
+            lowest = min(money, lowest) # will always hit lowest in last step
             money += gain
         
         if prof:
