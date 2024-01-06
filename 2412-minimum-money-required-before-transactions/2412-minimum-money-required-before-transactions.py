@@ -3,7 +3,6 @@ class Solution:
         prof = [t for t in transactions if t[1]>t[0]]
         loss = [t for t in transactions if t[1]<=t[0]]
         
-        prof.sort(key = lambda t: -t[0])
         loss.sort(key = lambda t: t[1])
         
         money,lowest = 0,0
