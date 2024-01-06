@@ -18,5 +18,4 @@ class Solution:
                 prev=grid[nr][nc]
                 if curr>prev: memo[r][c]+=memo[nr][nc]
         
-        # print(memo)
         return sum([sum(row) for row in memo]) % (10**9+7)
