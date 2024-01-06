@@ -12,7 +12,7 @@ class Solution:
             lowest = min(money, lowest)
             money += gain
         
-        for cost, gain in prof:
+        for cost, gain in prof[:1]:
             money -= cost
             lowest = min(money, lowest)
             money += gain
