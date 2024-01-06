@@ -5,7 +5,7 @@ class Solution:
         jobs.sort()
         
         heap = []
-        for s,e,p in jobs:
+        for (s,e,p) in jobs:
             while heap and heap[0][0]<=s:
                 best = max(best, heapq.heappop(heap)[1])
                 
