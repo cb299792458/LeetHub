@@ -8,7 +8,7 @@ class Solution:
             for j in range(i): # 2nd num
                 diff = nums[j]-nums[i]
                 
-                # one more sequence ending at i
+                # there is one more sequence ending at i
                 # than sequences ending at j w/ same diff
                 dp[i][diff] += dp[j][diff] + 1
                 
