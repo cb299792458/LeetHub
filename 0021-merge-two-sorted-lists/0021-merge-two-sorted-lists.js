@@ -27,7 +27,7 @@ var mergeTwoLists = function(list1, list2) {
     
     if (list1) {
         curr.next = list1;
-    } else if (list2) {
+    } else {
         curr.next = list2;
     }
     
