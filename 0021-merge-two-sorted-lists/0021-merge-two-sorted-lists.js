@@ -11,11 +11,11 @@
  * @return {ListNode}
  */
 var mergeTwoLists = function(list1, list2) {
-    const dummy = new ListNode(0, null);
+    const dummy = new ListNode(0,null);
     let curr = dummy;
     
     while(list1 && list2){
-        if(list1.val<list2.val){
+        if(list1.val < list2.val){
             curr.next = list1;
             list1 = list1.next;
         } else {
