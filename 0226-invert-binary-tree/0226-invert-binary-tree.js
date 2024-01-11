@@ -11,17 +11,13 @@
  * @return {TreeNode}
  */
 var invertTree = function(root) {
-    const swap = (node) => {
-        if(!node) return;
-        
-        const temp = node.left;
-        node.left = node.right;
-        node.right = temp;
-        
-        swap(node.left);
-        swap(node.right);
-    }
+    if(!root) return root
     
-    swap(root);
-    return root;
+    const temp = root.right
+    root.right = root.left
+    root.left = temp
+    
+    invertTree(root.left)
+    invertTree(root.right)
+    return root
 };
