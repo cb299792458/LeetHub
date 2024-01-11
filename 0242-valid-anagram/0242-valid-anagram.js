@@ -8,17 +8,11 @@ var isAnagram = function(s, t) {
     const tChars = {};
     
     for(let char of s){
-        // if(sChars[char]===undefined){
-        //     sChars[char]=0;
-        // }
-        sChars[char] ||= 0;
+        sChars[char] || (sChars[char] = 0);
         sChars[char]++;
     }
     
     for(let char of t){
-        // if(tChars[char]===undefined){
-        //     tChars[char]=0;
-        // }
         tChars[char] ||= 0;
         tChars[char]++;
     }
