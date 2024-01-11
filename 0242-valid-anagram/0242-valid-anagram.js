@@ -4,14 +4,30 @@
  * @return {boolean}
  */
 var isAnagram = function(s, t) {
-    counts = {};
-    for (let char of s) {
-        counts[char] ||= 0;
-        counts[char]++;
+    sChars = {};
+    tChars = {};
+    
+    for(let c of s){
+        if(sChars[c]===undefined){
+            sChars[c] = 0;
+        }
+
+        sChars[c]++;
     }
-    for (let char of t) {
-        counts[char] ||= 0;
-        counts[char]--;
+    
+    for(let c of t){
+        if(tChars[c]===undefined){
+            tChars[c] = 0;
+        }
+
+        tChars[c]++;
     }
-    return Object.values(counts).every(c => c===0);
+    
+    for(let c of Object.keys(sChars)){
+        if(sChars[c] !== tChars[c]){
+            return false;
+        }
+    }
+    
+    return Object.keys(sChars).length === Object.keys(tChars).length;
 };
