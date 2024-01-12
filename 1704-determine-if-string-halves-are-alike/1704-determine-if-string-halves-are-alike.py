@@ -1,6 +1,6 @@
 class Solution:
     def halvesAreAlike(self, s: str) -> bool:
-        vowels = set(list('aeiouAEIOU'))
+        vowels = set('aeiouAEIOU')
         count = 0
         for c in s[:len(s)//2]:
             if c in vowels:
