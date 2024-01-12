@@ -20,7 +20,7 @@ class Solution:
             [-1,0]
         ]
         
-        def backtrack(r,c,seen=set()):
+        def backtrack(r,c,seen):
             if r<0 or r==R or c<0 or c==C:
                 return
             if (r,c) in seen:
@@ -38,5 +38,5 @@ class Solution:
                 nr,nc = r+dir[0], c+dir[1]
                 backtrack(nr,nc,seen.copy())
         
-        backtrack(*start)
+        backtrack(*start,set())
         return self.ways
