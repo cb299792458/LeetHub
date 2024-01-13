@@ -1,8 +1,6 @@
 class Solution:
     def minSteps(self, s: str, t: str) -> int:
-        counts = Counter()
-        for c in s:
-            counts[c] += 1
+        counts = Counter(s)
         for c in t:
             counts[c] -= 1
         
