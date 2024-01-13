@@ -4,7 +4,6 @@ class Solution:
         
         @cache
         def match(si,pi):
-            print(si,pi)
             if pi==P:
                 return si==S
             if si==S:
