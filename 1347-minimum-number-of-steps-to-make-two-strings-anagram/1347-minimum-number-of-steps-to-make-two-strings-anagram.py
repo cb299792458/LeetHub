@@ -1,7 +1,5 @@
 class Solution:
     def minSteps(self, s: str, t: str) -> int:
-        counts = Counter(s)
-        for c in t:
-            counts[c] -= 1
+        counts = Counter(s) - Counter(t)
         
-        return sum(abs(v) for v in counts.values())//2
+        return sum(counts.values())
