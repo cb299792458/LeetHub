@@ -14,7 +14,4 @@ class Solution:
                 undefeated.discard(loser)
                 lost_once.add(loser)
         
-        [undefeated,lost_once] = map(list,[undefeated,lost_once])
-        undefeated.sort()
-        lost_once.sort()
-        return [undefeated,lost_once]
+        return map(sorted,map(list,[undefeated,lost_once]))
