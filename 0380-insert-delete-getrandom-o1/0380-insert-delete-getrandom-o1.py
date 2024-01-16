@@ -20,12 +20,9 @@ class RandomizedSet:
         i = self.indices[val]
 
         self.list[i],self.list[-1] = self.list[-1],self.list[i]
-        self.list.pop()
+        self.indices[self.list[i]] = i
 
-        if len(self.list)>i:
-            self.indices[self.list[i]] = i
-
-        del self.indices[val]
+        del self.indices[self.list.pop()]
         return True
         
 
