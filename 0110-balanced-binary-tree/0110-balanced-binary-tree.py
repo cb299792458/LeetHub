@@ -24,7 +24,6 @@ class Solution:
             if node.right and not node.left:
                 return node.right.height < 2
             
-            
             if abs(node.left.height - node.right.height) > 1:
                 return False
             return check_balance(node.left) and check_balance(node.right)
