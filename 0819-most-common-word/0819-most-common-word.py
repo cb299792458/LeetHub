@@ -1,18 +1,17 @@
 class Solution:
     def mostCommonWord(self, paragraph: str, banned: List[str]) -> str:
-        counts = defaultdict(lambda: 0)
-        best = ('', 0) # word, frequency
-        banned = set(banned)
+        counts = defaultdict(int)
+        best = ''
         
         curr = ''
-        for char in list(paragraph+' '):
-            if not char.isalpha():
+        for char in paragraph+' ':
+            if char.isalpha():
+                curr += char.lower()
+            else:
                 if curr and curr not in banned:
                     counts[curr] += 1
-                    if counts[curr] > best[1]:
-                        best = (curr, counts[curr])
-                curr=''
-            else:
-                curr += char.lower()
+                    if counts[curr] > counts[best]:
+                        best = curr
+                curr = ''
         
-        return best[0]
+        return best
