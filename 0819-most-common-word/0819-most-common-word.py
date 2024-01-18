@@ -2,7 +2,6 @@ class Solution:
     def mostCommonWord(self, paragraph: str, banned: List[str]) -> str:
         counts = Counter()
         best = ('', 0) # word, frequency
-        symbols = set(list(' !?\',;.')) # space and all punctuation
         banned = set(banned)
         
         curr = ''
