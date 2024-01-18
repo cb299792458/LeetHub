@@ -1,6 +1,7 @@
 class Solution:
     def mostCommonWord(self, paragraph: str, banned: List[str]) -> str:
         counts = Counter()
+        best = ('', 0)
         symbols = set(list(' !?\',;.'))
         banned = set(banned)
         
@@ -9,10 +10,10 @@ class Solution:
             if not char.isalpha():
                 if curr and curr not in banned:
                     counts[curr] += 1
+                    if counts[curr] > best[1]:
+                        best = (curr, counts[curr])
                 curr=''
             else:
                 curr += char.lower()
         
-        words_and_freqs = [(freq, word) for [word, freq] in counts.items()]
-        words_and_freqs.sort(reverse=True)
-        return words_and_freqs[0][1]
+        return best[0]
