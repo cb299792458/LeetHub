@@ -1,6 +1,6 @@
 class Solution:
     def mostCommonWord(self, paragraph: str, banned: List[str]) -> str:
-        counts = Counter()
+        counts = defaultdict(lambda: 0)
         best = ('', 0) # word, frequency
         banned = set(banned)
         
