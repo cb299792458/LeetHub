@@ -5,4 +5,4 @@ class Solution:
         for i in range(2, len(nums)):
             memo.append(max(memo[-1],nums[i]+memo[-2]))
         
-        return max(memo[-2:])
+        return memo[-1]
