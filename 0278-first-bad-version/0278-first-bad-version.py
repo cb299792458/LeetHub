@@ -7,7 +7,7 @@ class Solution:
         while l<r:
             m = (l+r)//2
             if isBadVersion(m):
-                r = m
+                r = m # r is always bad
             else:
-                l = m + 1
+                l = m + 1 # l is good or first bad
         return l
