@@ -1,15 +1,22 @@
 class Solution:
     def maxLength(self, arr: List[str]) -> int:
-        dp = ['']
-        for word in arr:
-            if len(set(word)) != len(word): continue
-            new_dp = []
-            for string in dp:
-                letters = set(string)
-                if not any(c in letters for c in word):
-                    new_dp.append(string+word)
-                new_dp.append(string)
-            dp = new_dp
+        self.best = 0
         
-        dp.sort(key=len)
-        return len(dp[-1])
+        def recur(i, letters):
+            letters = letters.copy()
+            if i == len(arr):
+                self.best = max(self.best, len(letters))
+                return
+            
+            recur(i+1, letters)
+            
+            word = arr[i]
+            if len(word) == len(set(word)):
+                for c in word:
+                    if c in letters:
+                        return
+                    letters.add(c)
+                recur(i+1, letters)
+        
+        recur(0, set())
+        return self.best
