@@ -8,8 +8,10 @@ class Solution:
                 self.best = max(self.best, len(letters))
                 return
             
+            # skip
             recur(i+1, letters)
             
+            # take
             word = arr[i]
             if len(word) == len(set(word)):
                 for c in word:
