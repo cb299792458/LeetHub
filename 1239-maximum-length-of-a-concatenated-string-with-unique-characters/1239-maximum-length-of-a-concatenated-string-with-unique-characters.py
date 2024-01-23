@@ -2,23 +2,23 @@ class Solution:
     def maxLength(self, arr: List[str]) -> int:
         self.best = 0
         
-        def recur(i, letters):
+        def recur(words, letters):
             letters = letters.copy()
-            if i == len(arr):
+            if not words:
                 self.best = max(self.best, len(letters))
                 return
             
             # skip
-            recur(i+1, letters)
+            recur(words[1:], letters)
             
             # take
-            word = arr[i]
+            word = words[0]
             if len(word) == len(set(word)):
                 for c in word:
                     if c in letters:
                         return
                     letters.add(c)
-                recur(i+1, letters)
+                recur(words[1:], letters)
         
-        recur(0, set())
+        recur(arr, set())
         return self.best
