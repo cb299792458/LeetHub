@@ -15,11 +15,10 @@ class Solution:
             new_memo = [[0 for _ in range(n)] for _ in range(m)]
             for r in range(m):
                 for c in range(n):
-                    old = memo[r][c]
                     for d in dirs:
                         [nr,nc] = [r+d[0], c+d[1]]
                         if -1<nr<m and -1<nc<n:
-                            new_memo[nr][nc] += old
+                            new_memo[nr][nc] += memo[r][c]
             paths += memo[startRow][startColumn]
             memo = new_memo
         
