@@ -10,7 +10,7 @@ class Solution:
                 
             last = num % 10
             if last != 9:
-                recur(10*num + last + 1)
+                recur(10 * num + last + 1)
                 
         for i in range(1,10):
             recur(i)
