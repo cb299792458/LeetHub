@@ -7,8 +7,8 @@ class Solution:
             if amount<0:
                 return math.inf
             
-            branches = [1 + bfs(amount - coin) for coin in coins]
-            return min(branches)
+            branches = [bfs(amount - coin) for coin in coins]
+            return 1 + min(branches)
         
         ans = bfs(amount)
         return ans if ans<math.inf else -1
