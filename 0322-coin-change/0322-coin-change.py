@@ -6,9 +6,7 @@ class Solution:
                 return 0
             if amount<0:
                 return math.inf
-
             
             return 1 + min(bfs(amount - coin) for coin in coins)
         
-        ans = bfs(amount)
-        return ans if ans<math.inf else -1
+        return bfs(amount) if bfs(amount)<math.inf else -1
