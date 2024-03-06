@@ -5,11 +5,13 @@ class Solution:
         fall = [0, float('inf')]
         
         for num in nums:
+            # add num at end and switch
             if num > rise[1]:
-                new_fall = [rise[0]+1, num]
+                new_fall = [rise[0]+1, num] # i had rise and fall reversed here
             if num < fall[1]:
-                new_rise = [fall[0]+1, num]
-                
+                new_rise = [fall[0]+1, num] # for like half an hour T_T
+            
+            # replace end w/ num (no switch)
             if num < rise[1]:
                 rise[1] = num
             if num > fall[1]:
