@@ -9,11 +9,9 @@ class Solution:
                 new_fall = [rise[0]+1, num]
             if num < fall[1]:
                 new_rise = [fall[0]+1, num]
-                # print(new_rise)
                 
             if num < rise[1]:
                 rise[1] = num
-                
             if num > fall[1]:
                 fall[1] = num
             
@@ -21,6 +19,5 @@ class Solution:
                 fall = new_fall
             if new_rise and new_rise[0]>rise[0]:
                 rise = new_rise
-            # print(rise,fall)
                 
         return max(fall[0],rise[0])
