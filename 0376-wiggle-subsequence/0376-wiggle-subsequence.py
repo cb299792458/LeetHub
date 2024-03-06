@@ -17,6 +17,7 @@ class Solution:
             if num > fall[1]:
                 fall[1] = num
             
+            # take best answers to next iteration
             if new_fall and new_fall[0]>fall[0]:
                 fall = new_fall
             if new_rise and new_rise[0]>rise[0]:
