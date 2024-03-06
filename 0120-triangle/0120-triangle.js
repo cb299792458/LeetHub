@@ -14,6 +14,5 @@ const minimumTotal = (triangle) => {
             }
         }
     }
-    console.log(triangle)
     return Math.min(...triangle[triangle.length-1])
 };
