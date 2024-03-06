@@ -5,7 +5,7 @@ const minimumTotal = (triangle) => {
             if (j===0) {
                 triangle[i][j] += triangle[i-1][0];
             } else if (j===row.length-1) {
-                triangle[i][j] += triangle[i-1][triangle[i-1].length-1];
+                triangle[i][j] += triangle[i-1][j-1];
             } else {
                 triangle[i][j] += Math.min(
                     triangle[i-1][j],
