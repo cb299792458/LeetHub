@@ -8,7 +8,7 @@ class Solution:
             if num<0:
                 return n
             best = n
-            for i in range(1, int(n**0.5)+1):
+            for i in range(1, int(sqrt(n)+1)):
                 best = min(best, bfs(num-i*i)+1)
             return best
         
