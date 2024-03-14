@@ -1,6 +1,6 @@
 class Solution:
     def wiggleMaxLength(self, nums: List[int]) -> int:
-        # tuples -> (length, last_number)
+        # memo -> (length, last_number)
         rise = [0, float('-inf')]
         fall = [0, float('inf')]
         
