@@ -15,5 +15,5 @@ var lastStoneWeight = function(stones) {
             sortedStones.sort((a,b) => b - a)
         } 
     }
-    return sortedStones;
+    return sortedStones.length ? sortedStones[0] : 0;
 };
