@@ -3,18 +3,17 @@
  * @return {number}
  */
 var lastStoneWeight = function(stones) {
-    
-    // make a heap, much faster
-    const queue = new MaxPriorityQueue();
-    
-    for (let stone of stones) queue.enqueue(stone)
-    
-    while (queue.size() > 1) {
-        let first = queue.dequeue().element;
-        let second = queue.dequeue().element;
-        if (first !== second) queue.enqueue(first-second)
+    let sortedStones = stones.sort((a,b) => b - a)
+    while (sortedStones.length > 1) {
+        console.log(sortedStones)
+        if (sortedStones[0] === sortedStones[1]) {
+            sortedStones = sortedStones.slice(2, sortedStones.length);
+        } else if (sortedStones[0]>sortedStones[1]) {
+            const newWeight = sortedStones[0]-sortedStones[1];
+            sortedStones.splice(0, 1, newWeight);
+            sortedStones.splice(1, 1);
+            sortedStones.sort((a,b) => b - a)
+        } 
     }
-    
-    return queue.isEmpty() ? 0 : queue.front().element
-
+    return sortedStones;
 };
