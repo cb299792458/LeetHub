@@ -5,7 +5,7 @@
 var lastStoneWeight = function(stones) {
     let sortedStones = stones.sort((a,b) => b - a)
     while (sortedStones.length > 1) {
-        console.log(sortedStones)
+        // console.log(sortedStones)
         if (sortedStones[0] === sortedStones[1]) {
             sortedStones = sortedStones.slice(2, sortedStones.length);
         } else if (sortedStones[0]>sortedStones[1]) {
