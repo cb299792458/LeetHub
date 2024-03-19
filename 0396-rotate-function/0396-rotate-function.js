@@ -14,9 +14,8 @@ var maxRotateFunction = function(nums) {
     for (let j=nums.length-1;j>0;j--) {
         val += sum;
         val -= nums.length * nums[j];
-        best = Math.max(best, val)
+        best = Math.max(best, val);
     }
     
-    return best
-    
+    return best;
 };
