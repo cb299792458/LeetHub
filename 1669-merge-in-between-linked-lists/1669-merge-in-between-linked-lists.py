@@ -10,13 +10,13 @@ class Solution:
             end_of_2 = end_of_2.next
             
         dummy = ListNode(0,list1)
-        ath = bth = dummy
+        before_ath = bth = dummy
         for _ in range(a):
-            ath = ath.next
+            before_ath = before_ath.next
         for _ in range(b+1):
             bth = bth.next
             
-        ath.next = list2
+        before_ath.next = list2
         end_of_2.next = bth.next
         
         return dummy.next
