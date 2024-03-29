@@ -1,39 +1,57 @@
 /**
  * @param {character[][]} board
  * @return {boolean}
+
+make a dict for rows and a dict for cols
+colDict[y] = new Set()         // create an array for each col
+
+for each x:
+    for each y:
+        colDict[y].add(board[y][x]) // add the number to the array/set
+one subgrid: x: 0,1,2 -> outer key
+             y: 0,1,2 -> inner key
+
+             x: 3,4,5 -> 
+             y: 0,1,2
+
+             x: 6,7,8 -> 
+             y: 0,1,2
+
+
  */
 var isValidSudoku = function(board) {
-    let rows = new Map();
-    let cols = new Map();
-    let boxs = new Map();
-    
-    for(let i=0; i<9; i++){
-        for(let j=0; j<9; j++){
-            
-            if(!rows[i]){rows[i] = new Set();}
-            if(!cols[j]){cols[j] = new Set();}
-            if(!boxs[[Math.floor(i/3),Math.floor(j/3)]]){
-                boxs[[Math.floor(i/3),Math.floor(j/3)]] = new Set();
+    let colDict = {0: new Set(), 1: new Set(), 2: new Set(), 3: new Set(), 4: new Set(), 5: new Set(), 6: new Set(), 7: new Set(), 8: new Set()};
+    let rowDict = {0: new Set(), 1: new Set(), 2: new Set(), 3: new Set(), 4: new Set(), 5: new Set(), 6: new Set(), 7: new Set(), 8: new Set()};
+    let subGridDict = {
+        0: {0: new Set(), 1: new Set(), 2: new Set()},
+        1: {0: new Set(), 1: new Set(), 2: new Set()},
+        2: {0: new Set(), 1: new Set(), 2: new Set()},
+    }
+
+    for (let y = 0; y<board.length; y++) { // rows
+        for (let x = 0; x<board[0].length; x++) { // cols
+            if (colDict[x].has(board[y][x]) && board[y][x] !== '.') {
+                return false
             }
-            
-            if(rows[i].has(board[i][j])){
-                return false;
-            } else if(board[i][j] !== '.'){
-                rows[i].add(board[i][j]);
+            if (rowDict[y].has(board[y][x]) && board[y][x] !== '.') {
+                return false
             }
-            
-            if(cols[j].has(board[i][j])){
-                return false;
-            } else if(board[i][j] !== '.'){
-                cols[j].add(board[i][j]);
+
+            // cols
+            colDict[x].add(board[y][x])
+
+            // rows
+            rowDict[y].add(board[y][x])
+
+            const outerKey = Math.floor(x/3)
+            const innerKey = Math.floor(y/3)
+
+            if ( subGridDict[outerKey][innerKey].has(board[y][x]) && board[y][x] !== '.' ) {
+                return false
             }
-            
-            if(boxs[[Math.floor(i/3),Math.floor(j/3)]].has(board[i][j])){
-                return false;
-            } else if(board[i][j] !== '.'){
-                boxs[[Math.floor(i/3),Math.floor(j/3)]].add(board[i][j]);
-            }
+
+            subGridDict[outerKey][innerKey].add(board[y][x])
         }
     }
-    return true;
+    return true
 };
