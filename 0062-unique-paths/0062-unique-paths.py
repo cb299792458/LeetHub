@@ -13,5 +13,4 @@ class Solution:
                 if r==0 and c==0: continue
                 memo[r][c] = get_memo(r-1,c) + get_memo(r,c-1)
         
-        # print(memo)
         return memo[-1][-1]
