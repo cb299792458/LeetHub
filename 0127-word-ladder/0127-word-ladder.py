@@ -22,5 +22,6 @@ class Solution:
                 
                 steps[neighbor] = steps[curr] + 1
                 queue.append(neighbor)
+            if endWord in steps: break
 
         return steps[endWord] if endWord in steps else 0
