@@ -1,5 +1,6 @@
 class Solution:
     def ladderLength(self, beginWord: str, endWord: str, wordList: List[str]) -> int:
+        if endWord not in wordList: return 0
         def adj(beg, end):
             diffs = 0
             for c1, c2 in zip(beg,end):
