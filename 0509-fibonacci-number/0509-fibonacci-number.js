@@ -2,8 +2,10 @@
  * @param {number} n
  * @return {number}
  */
+let ans = {0: 0, 1: 1}
 var fib = function(n) {
-    if (n===0) return 0
-    if (n===1) return 1
-    return fib(n-1) + fib(n-2)
+    if (n in ans) return ans[n];
+    const res = fib(n-1) + fib(n-2)
+    ans[n] = res
+    return res
 };
