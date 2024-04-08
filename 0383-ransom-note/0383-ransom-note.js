@@ -13,7 +13,7 @@ var canConstruct = function(ransomNote, magazine) {
     }
     
     for (let c of ransomNote) {
-        if (counts[c] === undefined || counts[c] === 0) {
+        if (!counts[c]) {
             return false;
         }
         counts[c]--;
