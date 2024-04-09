@@ -5,5 +5,6 @@ class Solution:
             temp = stole
             stole = didnt + num
             didnt = max(temp, didnt)
+            print(stole, didnt)
         
         return max(stole, didnt)
