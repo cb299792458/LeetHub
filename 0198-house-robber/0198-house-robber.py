@@ -1,8 +1,9 @@
 class Solution:
     def rob(self, nums: List[int]) -> int:
-        memo = [nums[0], max(nums[:2])]
+        stole = didnt = 0
+        for num in nums:
+            temp = stole
+            stole = didnt + num
+            didnt = max(temp, didnt)
         
-        for i in range(2, len(nums)):
-            memo.append(max(memo[-1],nums[i]+memo[-2]))
-        
-        return memo[-1]
+        return max(stole, didnt)
