@@ -5,16 +5,16 @@ class Solution:
             return False
         
         @cache
-        def solve(i,diff):
+        def solve(i,total):
             if i==len(nums):
-                if diff:
-                    return False
-                else:
+                if total == s//2:
                     return True
+                else:
+                    return False
             
-            if solve(i+1, diff + nums[i]):
+            if solve(i+1, total + nums[i]):
                 return True
-            if solve(i+1, diff - nums[i]):
+            if solve(i+1, total):
                 return True
             
             return False
