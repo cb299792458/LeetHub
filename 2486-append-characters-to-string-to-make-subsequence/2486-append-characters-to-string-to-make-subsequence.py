@@ -1,9 +1,10 @@
 class Solution:
     def appendCharacters(self, s: str, t: str) -> int:
         i = 0
+        N = len(t)
         for c in s:
-            if i==len(t):
+            if i==N:
                 return 0
             if c==t[i]:
                 i+=1
-        return len(t)-i
+        return N-i
