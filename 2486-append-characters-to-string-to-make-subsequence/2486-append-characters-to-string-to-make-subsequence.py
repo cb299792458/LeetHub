@@ -4,7 +4,7 @@ class Solution:
         N = len(t)
         for c in s:
             if i==N:
-                return 0
+                break
             if c==t[i]:
                 i+=1
         return N-i
