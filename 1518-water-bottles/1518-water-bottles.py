@@ -1,3 +1,14 @@
 class Solution:
     def numWaterBottles(self, numBottles: int, numExchange: int) -> int:
-        return numBottles + (numBottles-1) // (numExchange-1)
+        empty = 0
+        drank = 0
+        
+        while numBottles:
+            drank += numBottles
+            empty += numBottles
+            
+            exchanged = empty // numExchange
+            empty -= exchanged * numExchange
+            numBottles = exchanged
+            
+        return drank
