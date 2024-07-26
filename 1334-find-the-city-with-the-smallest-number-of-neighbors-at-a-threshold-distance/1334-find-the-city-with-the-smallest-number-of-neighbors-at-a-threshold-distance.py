@@ -24,10 +24,9 @@ class Solution:
         ans = None
         least = float('inf')
         for city in range(n):
-            # print(neighbors(city))
-            if len(neighbors(city)) <= least:
-                least = len(neighbors(city))
+            nbrs = len(neighbors(city))
+            if nbrs <= least:
+                least = nbrs
                 ans = city
         
-        # neighbors(5)
         return ans
