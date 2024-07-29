@@ -13,7 +13,6 @@ class Solution:
                 if second<first:
                     decreases[j] += 1
         
-        print(increases, decreases)
         teams = 0
         for j in range(1,N-1):
             second = rating[j]
