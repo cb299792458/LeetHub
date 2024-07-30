@@ -1,13 +1,14 @@
 class Solution:
     def minimumDeletions(self, s: str) -> int:
-        deleted = 0
-        stack = []
+        N = len(s)
+        dp = [0 for _ in range(N+1)]
+        bs = 0
         
-        for char in s:
-            if char=='a' and stack and stack[-1]=='b':
-                stack.pop()
-                deleted += 1
-            else:
-                stack.append(char)
+        for i, c in enumerate(s):
+            if c=='b':
+                dp[i+1] = dp[i]
+                bs += 1
+            else: 
+                dp[i+1] = min(dp[i]+1, bs)
         
-        return deleted
+        return dp[-1]
