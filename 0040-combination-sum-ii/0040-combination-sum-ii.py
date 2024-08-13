@@ -10,4 +10,4 @@ class Solution:
                 for tup in dp[j]:
                     dp[j+c].add(tuple(list(tup) + [c]))
 
-        return list(dp[target])
+        return dp[target]
