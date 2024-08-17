@@ -1,7 +1,7 @@
 class Solution:
     def maxScoreSightseeingPair(self, values: List[int]) -> int:
         best_pair = 0
-        best_spot = 0
+        best_spot = -math.inf
         
         for i, val in enumerate(values):
             best_spot -= 1
