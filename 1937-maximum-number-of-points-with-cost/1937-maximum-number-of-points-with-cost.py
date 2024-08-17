@@ -19,5 +19,4 @@ class Solution:
             
             dp.append(n_best)
                 
-        
         return max(dp[-1])
