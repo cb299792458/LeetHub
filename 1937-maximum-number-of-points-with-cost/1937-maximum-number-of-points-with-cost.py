@@ -16,8 +16,8 @@ class Solution:
                 r_i = N-1-i
                 r_prev[r_i] = max(r_prev[r_i+1]-1, dp[-1][r_i])
                 
-            for i in range(N):
-                n_best[i] = row[i] + max(l_prev[i], r_prev[i])
+            for i, num in enumerate(row):
+                n_best[i] = num + max(l_prev[i], r_prev[i])
             
             dp.append(n_best)
                 
