@@ -12,7 +12,9 @@ class Solution:
             r_prev[-1] = dp[-1][-1]
             for i in range(1,N):
                 l_prev[i] = max(l_prev[i-1]-1, dp[-1][i])
-                r_prev[N-1-i] = max(r_prev[N-i]-1, dp[-1][N-1-i])
+                
+                r_i = N-1-i
+                r_prev[r_i] = max(r_prev[r_i+1]-1, dp[-1][r_i])
                 
             for i in range(N):
                 n_best[i] = row[i] + max(l_prev[i], r_prev[i])
