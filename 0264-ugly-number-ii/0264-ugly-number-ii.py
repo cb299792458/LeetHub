@@ -8,9 +8,9 @@ class Solution:
         for _ in range(n):
             current = heapq.heappop(ugly)
             for f in factors:
-                new_ugly = current * f
-                if new_ugly not in seen:
-                    seen.add(new_ugly)
-                    heapq.heappush(ugly, new_ugly)
+                new = current * f
+                if new not in seen:
+                    seen.add(new)
+                    heapq.heappush(ugly, new)
         
         return current
