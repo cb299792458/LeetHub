@@ -9,7 +9,7 @@ class Solution:
                 return math.inf
             
             copy = 2 + explore(2*curr, curr)
-            paste = 1 + explore(curr+clip, clip) if clip else math.inf
+            paste = 1 + explore(curr+clip, clip) if clip else math.inf # clipboard cannnot be empty
             
             return min(copy,paste)
         
