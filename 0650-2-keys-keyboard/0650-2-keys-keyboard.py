@@ -1,6 +1,7 @@
 class Solution:
     def minSteps(self, n: int) -> int:
         
+        @cache
         def explore(curr, clip):
             if curr == n:
                 return 0
