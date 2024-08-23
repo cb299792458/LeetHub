@@ -28,5 +28,6 @@ class Solution:
             bot *= n
         for i,n in enumerate(numerators):
             top += n*bot//denominators[i]
-        return f"{top//math.gcd(top,bot)}/{bot//math.gcd(top,bot)}"
+        gcd = math.gcd(top,bot)
+        return f"{top//gcd}/{bot//gcd}"
                 
