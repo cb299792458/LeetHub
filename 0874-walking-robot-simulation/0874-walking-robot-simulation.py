@@ -8,7 +8,7 @@ class Solution:
             (-1,0),
             (0,-1)
         ]
-        obstacles = set([(o[1],o[0]) for o in obstacles])
+        obstacles = set([(o[1],o[0]) for o in obstacles]) # hack to reconcile rc vs xy
         best = 0
         
         for com in commands:
