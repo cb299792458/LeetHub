@@ -3,11 +3,11 @@ class Solution:
         total = len(rolls) + n
         missing_total = total * mean - sum(rolls)
         
+        if missing_total>6*n or missing_total<n:
+            return []
+        
         avg = missing_total // n
         extra = missing_total % n
-        
-        if avg<1 or (avg==6 and extra) or avg>6:
-            return []
         
         res = [avg] * n
         
