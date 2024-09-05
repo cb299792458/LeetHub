@@ -9,9 +9,4 @@ class Solution:
         avg = missing_total // n
         extra = missing_total % n
         
-        res = [avg] * n
-        
-        for i in range(extra):
-            res[i] += 1
-        
-        return res
+        return [avg + int(i<extra) for i in range(n)]
