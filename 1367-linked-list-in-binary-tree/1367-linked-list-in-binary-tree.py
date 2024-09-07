@@ -13,6 +13,7 @@ class Solution:
     def isSubPath(self, head: Optional[ListNode], root: Optional[TreeNode]) -> bool:
         if not root:
             return False
+        
         def dfs(list_node, tree_node):
             if not list_node:
                 return True
