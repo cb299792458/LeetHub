@@ -23,5 +23,4 @@ class Solution:
                 return dfs(list_node.next, tree_node.right) or dfs(list_node.next, tree_node.left)
             return False
             
-            
         return dfs(head, root) or self.isSubPath(head, root.left) or self.isSubPath(head, root.right)
