@@ -19,8 +19,9 @@ class Solution:
                 return True
             if not tree_node:
                 return False
-            if list_node.val == tree_node.val:
-                return dfs(list_node.next, tree_node.right) or dfs(list_node.next, tree_node.left)
-            return False
+            if list_node.val != tree_node.val:
+                return False
+            
+            return dfs(list_node.next, tree_node.right) or dfs(list_node.next, tree_node.left)
             
         return dfs(head, root) or self.isSubPath(head, root.left) or self.isSubPath(head, root.right)
