@@ -32,7 +32,8 @@ class Solution:
                 di=0
                 r_min+=1
             
-            r,c = r+dirs[di][0],c+dirs[di][1]
+            r+=dirs[di][0]
+            c+=dirs[di][1]
             curr = curr.next
         
         return res
