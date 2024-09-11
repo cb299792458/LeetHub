@@ -19,16 +19,16 @@
 
  
  */
-var hasPathSum = function(root, targetSum, currentSum = 0) {
+var hasPathSum = function(root, targetSum) {
     // base case
     if (!root) return false; // no node
     if (!root.left && !root.right) { // at leaf
-        if (targetSum === root.val + currentSum) { // we are at the target
+        if (targetSum === root.val) { // we are at the target
             return true
         }
     }
     
     // recursive case
-    return hasPathSum(root.left, targetSum, root.val + currentSum) || hasPathSum(root.right, targetSum, root.val + currentSum) 
+    return hasPathSum(root.left, targetSum - root.val) || hasPathSum(root.right, targetSum - root.val) 
 
 };
