@@ -22,13 +22,14 @@
 var hasPathSum = function(root, targetSum) {
     // base case
     if (!root) return false; // no node
+    targetSum -= root.val
     if (!root.left && !root.right) { // at leaf
-        if (targetSum === root.val) { // we are at the target
+        if (targetSum === 0) { // we are at the target
             return true
         }
     }
     
     // recursive case
-    return hasPathSum(root.left, targetSum - root.val) || hasPathSum(root.right, targetSum - root.val) 
+    return hasPathSum(root.left, targetSum) || hasPathSum(root.right, targetSum) 
 
 };
