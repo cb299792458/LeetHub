@@ -19,31 +19,16 @@
 
  
  */
-var hasPathSum = function(root, targetSum) {
-    if (!root) return false;
-    const stack = [ [root, 0] ];
-    
-    while (stack.length > 0) {
-        let [currentNode, currentSum] = stack.pop();
-        currentSum += currentNode.val;
-        
-        // base case
-        if (!currentNode.left && !currentNode.right) {
-            // this is a leaf
-            if (currentSum === targetSum) {
-                return true
-            }
-            
-        }
-        
-        // right path
-        if (currentNode.right) {
-            stack.push([currentNode.right, currentSum]);
-        }
-        // left path
-        if (currentNode.left) {
-            stack.push([currentNode.left, currentSum]);
+var hasPathSum = function(root, targetSum, currentSum = 0) {
+    // base case
+    if (!root) return false; // no node
+    if (!root.left && !root.right) { // at leaf
+        if (targetSum === root.val + currentSum) { // we are at the target
+            return true
         }
     }
-    return false;
+    
+    // recursive case
+    return hasPathSum(root.left, targetSum, root.val + currentSum) || hasPathSum(root.right, targetSum, root.val + currentSum) 
+
 };
