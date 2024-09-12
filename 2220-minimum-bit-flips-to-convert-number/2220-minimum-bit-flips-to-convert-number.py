@@ -1,4 +1,8 @@
 class Solution:
     def minBitFlips(self, start: int, goal: int) -> int:
-        xor = bin(start ^ goal)
-        return len([c for c in xor if c=='1'])
+        xor = start ^ goal
+        flips = 0
+        while xor:
+            flips += xor % 2
+            xor //= 2
+        return flips
