@@ -11,7 +11,6 @@ class Solution:
                 stack.append(char)
         
         cache = {}
-        
         def helper(stack):
             if len(stack)==1:
                 return stack
