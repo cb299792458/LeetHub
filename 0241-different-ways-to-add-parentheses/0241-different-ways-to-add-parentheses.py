@@ -10,14 +10,14 @@ class Solution:
             else:
                 stack.append(char)
         
-        cache = {}
+        # cache = {}
         def helper(stack):
             if len(stack)==1:
                 return stack
             
-            key = ''.join([str(s) for s in stack])
-            if key in cache:
-                return cache[key]
+            # key = ''.join([str(s) for s in stack])
+            # if key in cache:
+            #     return cache[key]
             
             results = []
             
@@ -33,7 +33,7 @@ class Solution:
                                 results.append(l*r)
                             if c=='-':
                                 results.append(l-r)
-            cache[key]=results
+            # cache[key]=results
             return results
         
         return helper(stack)
