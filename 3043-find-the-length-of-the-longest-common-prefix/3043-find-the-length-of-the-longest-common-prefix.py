@@ -11,6 +11,7 @@ class Solution:
             while num:
                 if num in prefixes:
                     res = max(res, len(str(num)))
+                    break
                 num //= 10
         
         return res
