@@ -12,4 +12,5 @@ class Solution:
             while monostack and monostack[-1][1]<=n:
                 best = max(best, j-monostack[-1][0])
                 monostack.pop()
+
         return best
