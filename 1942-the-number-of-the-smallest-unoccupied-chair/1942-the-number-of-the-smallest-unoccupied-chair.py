@@ -20,3 +20,4 @@ class Solution:
             elif event == 'aleave':
                 heapq.heappush(empty_chairs, taken_chairs[friend])
         
+        return -1 # error
