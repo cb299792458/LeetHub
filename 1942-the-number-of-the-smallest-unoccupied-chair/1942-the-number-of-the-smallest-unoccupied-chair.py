@@ -7,16 +7,16 @@ class Solution:
         
         events = []
         for i,[a,l] in enumerate(times):
-            events.append((a, 'bA', i))
-            events.append((l, 'aL', i))
+            events.append((a, 'arrive', i))
+            events.append((l, 'aleave', i)) # add 'a' to sort leaving first
         events.sort()
         
         for (time, event, friend) in events:
             if friend == targetFriend:
                 return empty_chairs[0]
             
-            if event == 'bA':
+            if event == 'arrive':
                 taken_chairs[friend] = heapq.heappop(empty_chairs)
-            elif event == 'aL':
+            elif event == 'aleave':
                 heapq.heappush(empty_chairs, taken_chairs[friend])
         
