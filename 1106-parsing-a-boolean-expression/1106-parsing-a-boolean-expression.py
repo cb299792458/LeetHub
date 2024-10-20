@@ -7,8 +7,8 @@ class Solution:
                 sub_exp = []
                 while stack[-1]!='(':
                     sub_exp.append(stack.pop())
-                stack.pop()
-                op = stack.pop()
+                stack.pop() # remove '('
+                op = stack.pop() # get !, &, or |
                 
                 match op:
                     case '!':
@@ -19,5 +19,5 @@ class Solution:
                         stack.append('t' if any(c=='t' for c in sub_exp) else 'f')
             elif c!=',':
                 stack.append(c)
-        
+        assert(len(stack)==1)
         return stack==['t']
