@@ -20,4 +20,4 @@ class Solution:
             elif c!=',':
                 stack.append(c)
         
-        return stack[0]=='t'
+        return stack==['t']
