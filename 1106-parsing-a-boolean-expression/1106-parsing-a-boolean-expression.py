@@ -19,5 +19,5 @@ class Solution:
                         stack.append('t' if any(c=='t' for c in sub_exp) else 'f')
             elif c!=',':
                 stack.append(c)
-        assert(len(stack)==1)
+
         return stack==['t']
