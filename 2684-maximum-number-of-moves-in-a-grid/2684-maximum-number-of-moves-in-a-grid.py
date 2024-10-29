@@ -8,12 +8,12 @@ class Solution:
                 return 0
             
             top, mid, bot = 0, 0, 0
-            if r>0 and grid[r][c]<grid[r-1][c+1]:
-                bot = 1 + search(r-1,c+1)
-            if grid[r][c]<grid[r][c+1]:
-                mid += 1 + search(r,c+1)
             if r<M-1 and grid[r][c]<grid[r+1][c+1]:
                 top += 1 + search(r+1,c+1)
+            if grid[r][c]<grid[r][c+1]:
+                mid += 1 + search(r,c+1)
+            if r>0 and grid[r][c]<grid[r-1][c+1]:
+                bot = 1 + search(r-1,c+1)
         
             return max(top, mid, bot)
         
