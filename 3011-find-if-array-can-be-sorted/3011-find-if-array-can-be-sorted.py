@@ -12,8 +12,8 @@ class Solution:
         curr_high = 0
         
         for num in nums:
-            if num<last_high:
-                return False
+            # if num<last_high:
+            #     return False
             bits = bit_count(num)
                         
             if bits == curr_bits:
@@ -22,7 +22,7 @@ class Solution:
                 last_high = curr_high
                 curr_high = num
                 curr_bits = bits
-                if num<last_high:
-                    return False
+            if num<last_high:
+                return False
         
         return True
