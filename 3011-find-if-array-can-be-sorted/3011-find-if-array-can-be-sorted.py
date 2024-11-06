@@ -12,8 +12,6 @@ class Solution:
         curr_high = 0
         
         for num in nums:
-            # if num<last_high:
-            #     return False
             bits = bit_count(num)
                         
             if bits == curr_bits:
