@@ -9,7 +9,7 @@ class Solution:
                 res[i] = replace
                 replace -= code[(i+1)%N]
                 replace += code[(i+1+k)%N]
-        if k<0:
+        elif k<0:
             replace = sum(code[k:])
             for i in range(N):
                 res[i] = replace
