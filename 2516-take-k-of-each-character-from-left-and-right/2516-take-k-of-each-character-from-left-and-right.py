@@ -10,7 +10,6 @@ class Solution:
         for [r, char] in enumerate(s):
             extras[char] += 1
             while counts[char] - extras[char] < k:
-                print(l)
                 extras[s[l]] -= 1
                 l += 1
             res = max(res, r - l + 1)
