@@ -1,19 +1,14 @@
 class Solution:
     def maxEqualRowsAfterFlips(self, matrix: List[List[int]]) -> int:
-        num_cols = len(matrix[0])
-        max_identical_rows = 0
-
-        for current_row in matrix:
-            # Create flipped version using list comprehension
-            flipped_row = [1 - x for x in current_row]
-
-            # Count matching rows using list comprehension and sum
-            identical_row_count = sum(
-                1
-                for compare_row in matrix
-                if compare_row == current_row or compare_row == flipped_row
-            )
-
-            max_identical_rows = max(max_identical_rows, identical_row_count)
-
-        return max_identical_rows
+        counts = defaultdict(int)
+        MAX = 2**len(matrix[0]) - 1
+        
+        for row in matrix:
+            key = 0
+            for n in row:
+                key *= 2
+                key += n
+            key = min(key, MAX - key)
+            counts[key] += 1
+        
+        return max(counts.values())
