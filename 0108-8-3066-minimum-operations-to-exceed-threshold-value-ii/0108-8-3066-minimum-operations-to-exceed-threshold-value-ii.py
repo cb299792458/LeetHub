@@ -6,7 +6,7 @@ class Solution:
         while nums[0]<k:
             x = heapq.heappop(nums)
             y = heapq.heappop(nums)
-            heapq.heappush(nums, min(x, y) * 2 + max(x, y))
+            heapq.heappush(nums, x * 2 + y)
         
             ops += 1
         
