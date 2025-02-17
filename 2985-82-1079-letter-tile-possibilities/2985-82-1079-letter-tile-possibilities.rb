@@ -1,28 +1,25 @@
+# @param {String} tiles
+# @return {Integer}
 def num_tile_possibilities(tiles)
-    # Count the frequency of each character
-    char_counts = Hash.new(0)
-    tiles.each_char { |char| char_counts[char] += 1 }
-    
-    # Start backtracking
-    backtrack(char_counts)
+    poss = []
+    perms(tiles).each do |perm|
+        (0...perm.length).each do |i|
+            poss << perm[0..i]
+        end
+    end
+    poss.uniq.length
 end
 
-def backtrack(char_counts)
-    total = 0
+def perms(string)
+    return [string] if string.length < 2
+    result = []
     
-    char_counts.each do |char, count|
-        next if count == 0
-        
-        # Use this character in the current sequence
-        total += 1
-        char_counts[char] -= 1
-        
-        # Recurse to build longer sequences
-        total += backtrack(char_counts)
-        
-        # Backtrack: restore the character count
-        char_counts[char] += 1
+    char = string[0]
+    rest = string[1..-1]
+    perms(rest).each do |other_chars|
+        (0..other_chars.length).each do |i|
+            result << other_chars[0...i] + char + other_chars[i..-1]
+        end
     end
-    
-    total
+    result.uniq
 end
